@@ -3,18 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0DB7E14325C1CB4000117844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E14225C1CB4000117844 /* AppDelegate.swift */; };
-		0DB7E14525C1CB4000117844 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E14425C1CB4000117844 /* SceneDelegate.swift */; };
 		0DB7E14725C1CB4000117844 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E14625C1CB4000117844 /* ViewController.swift */; };
-		0DB7E14A25C1CB4000117844 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7E14825C1CB4000117844 /* Main.storyboard */; };
 		0DB7E14C25C1CB4300117844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7E14B25C1CB4300117844 /* Assets.xcassets */; };
 		0DB7E14F25C1CB4300117844 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7E14D25C1CB4300117844 /* LaunchScreen.storyboard */; };
 		0DB7E15A25C1CB4400117844 /* GoArenaPocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E15925C1CB4400117844 /* GoArenaPocTests.swift */; };
 		0DB7E16525C1CB4400117844 /* GoArenaPocUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E16425C1CB4400117844 /* GoArenaPocUITests.swift */; };
+		0DB7E19725C1D19D00117844 /* ArenaTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E19625C1D19D00117844 /* ArenaTabbarController.swift */; };
+		0DB7E19F25C1D21C00117844 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E19E25C1D21C00117844 /* FeedViewController.swift */; };
+		0DB7E1A425C1D22900117844 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1A325C1D22900117844 /* SettingsViewController.swift */; };
+		0DB7E1B925C1D29200117844 /* Alamofire+ArrayEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1AB25C1D29200117844 /* Alamofire+ArrayEncoding.swift */; };
+		0DB7E1BA25C1D29200117844 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1AC25C1D29200117844 /* ParameterEncoding.swift */; };
+		0DB7E1BB25C1D29200117844 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1AD25C1D29200117844 /* URLParameterEncoding.swift */; };
+		0DB7E1BC25C1D29200117844 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1AE25C1D29200117844 /* JSONParameterEncoder.swift */; };
+		0DB7E1BD25C1D29200117844 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1B025C1D29200117844 /* NetworkManager.swift */; };
+		0DB7E1BE25C1D29200117844 /* GoArenaEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1B225C1D29200117844 /* GoArenaEndPoint.swift */; };
+		0DB7E1BF25C1D29200117844 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1B425C1D29200117844 /* HTTPTask.swift */; };
+		0DB7E1C025C1D29200117844 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1B525C1D29200117844 /* HTTPMethod.swift */; };
+		0DB7E1C125C1D29200117844 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1B625C1D29200117844 /* Router.swift */; };
+		0DB7E1C225C1D29200117844 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1B725C1D29200117844 /* NetworkLogger.swift */; };
+		0DB7E1C325C1D29200117844 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1B825C1D29200117844 /* EndPointType.swift */; };
+		0DB7E1CE25C1D46900117844 /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1CD25C1D46900117844 /* GenericResponse.swift */; };
+		7B62AB26EDCFC7BD44F9F9D3 /* Pods_GoArenaPoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5247DB3F7FF00642FFDE57D3 /* Pods_GoArenaPoc.framework */; };
+		E121274AAEAFC79912861310 /* Pods_GoArenaPoc_GoArenaPocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED03A986B36CF2131CE87DC /* Pods_GoArenaPoc_GoArenaPocUITests.framework */; };
+		FDE0D55A3FB9B8C454BAA60E /* Pods_GoArenaPocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D929BE072231693EDB3F65CB /* Pods_GoArenaPocTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +53,7 @@
 /* Begin PBXFileReference section */
 		0DB7E13F25C1CB4000117844 /* GoArenaPoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoArenaPoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB7E14225C1CB4000117844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0DB7E14425C1CB4000117844 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0DB7E14625C1CB4000117844 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0DB7E14925C1CB4000117844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DB7E14B25C1CB4300117844 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DB7E14E25C1CB4300117844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DB7E15025C1CB4300117844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +63,30 @@
 		0DB7E16025C1CB4400117844 /* GoArenaPocUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoArenaPocUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB7E16425C1CB4400117844 /* GoArenaPocUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoArenaPocUITests.swift; sourceTree = "<group>"; };
 		0DB7E16625C1CB4400117844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DB7E19625C1D19D00117844 /* ArenaTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaTabbarController.swift; sourceTree = "<group>"; };
+		0DB7E19E25C1D21C00117844 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		0DB7E1A325C1D22900117844 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0DB7E1AB25C1D29200117844 /* Alamofire+ArrayEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire+ArrayEncoding.swift"; sourceTree = "<group>"; };
+		0DB7E1AC25C1D29200117844 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		0DB7E1AD25C1D29200117844 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
+		0DB7E1AE25C1D29200117844 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		0DB7E1B025C1D29200117844 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0DB7E1B225C1D29200117844 /* GoArenaEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoArenaEndPoint.swift; sourceTree = "<group>"; };
+		0DB7E1B425C1D29200117844 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		0DB7E1B525C1D29200117844 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		0DB7E1B625C1D29200117844 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		0DB7E1B725C1D29200117844 /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		0DB7E1B825C1D29200117844 /* EndPointType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		0DB7E1CD25C1D46900117844 /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
+		1019F7734B9448B52ABE45AC /* Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig"; path = "Target Support Files/Pods-GoArenaPoc-GoArenaPocUITests/Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5247DB3F7FF00642FFDE57D3 /* Pods_GoArenaPoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoArenaPoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		590EB82550A386A212DA5481 /* Pods-GoArenaPoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPoc.release.xcconfig"; path = "Target Support Files/Pods-GoArenaPoc/Pods-GoArenaPoc.release.xcconfig"; sourceTree = "<group>"; };
+		608966D1EE5F59CA326D65F7 /* Pods-GoArenaPoc-GoArenaPocUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPoc-GoArenaPocUITests.debug.xcconfig"; path = "Target Support Files/Pods-GoArenaPoc-GoArenaPocUITests/Pods-GoArenaPoc-GoArenaPocUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7E33FC5FCBD740AB05C7CE1A /* Pods-GoArenaPocTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPocTests.release.xcconfig"; path = "Target Support Files/Pods-GoArenaPocTests/Pods-GoArenaPocTests.release.xcconfig"; sourceTree = "<group>"; };
+		AED03A986B36CF2131CE87DC /* Pods_GoArenaPoc_GoArenaPocUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoArenaPoc_GoArenaPocUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3057BD79B2DE15F28309D59 /* Pods-GoArenaPoc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPoc.debug.xcconfig"; path = "Target Support Files/Pods-GoArenaPoc/Pods-GoArenaPoc.debug.xcconfig"; sourceTree = "<group>"; };
+		D929BE072231693EDB3F65CB /* Pods_GoArenaPocTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoArenaPocTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D94526B405A18B6F24B828B9 /* Pods-GoArenaPocTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPocTests.debug.xcconfig"; path = "Target Support Files/Pods-GoArenaPocTests/Pods-GoArenaPocTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B62AB26EDCFC7BD44F9F9D3 /* Pods_GoArenaPoc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDE0D55A3FB9B8C454BAA60E /* Pods_GoArenaPocTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E121274AAEAFC79912861310 /* Pods_GoArenaPoc_GoArenaPocUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +124,8 @@
 				0DB7E15825C1CB4400117844 /* GoArenaPocTests */,
 				0DB7E16325C1CB4400117844 /* GoArenaPocUITests */,
 				0DB7E14025C1CB4000117844 /* Products */,
+				F12FF05B31A2E12C4AE07554 /* Pods */,
+				5E988ED38B5A7148F173C283 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +142,13 @@
 		0DB7E14125C1CB4000117844 /* GoArenaPoc */ = {
 			isa = PBXGroup;
 			children = (
+				0DB7E1A925C1D29200117844 /* Networking */,
+				0DB7E19525C1D14E00117844 /* App */,
+				0DB7E19125C1D0BA00117844 /* Model */,
+				0DB7E19025C1D0B300117844 /* View */,
+				0DB7E18F25C1D0A500117844 /* Controller */,
 				0DB7E14225C1CB4000117844 /* AppDelegate.swift */,
-				0DB7E14425C1CB4000117844 /* SceneDelegate.swift */,
 				0DB7E14625C1CB4000117844 /* ViewController.swift */,
-				0DB7E14825C1CB4000117844 /* Main.storyboard */,
 				0DB7E14B25C1CB4300117844 /* Assets.xcassets */,
 				0DB7E14D25C1CB4300117844 /* LaunchScreen.storyboard */,
 				0DB7E15025C1CB4300117844 /* Info.plist */,
@@ -128,6 +174,135 @@
 			path = GoArenaPocUITests;
 			sourceTree = "<group>";
 		};
+		0DB7E18F25C1D0A500117844 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0DB7E19E25C1D21C00117844 /* FeedViewController.swift */,
+				0DB7E1A325C1D22900117844 /* SettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0DB7E19025C1D0B300117844 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0DB7E19125C1D0BA00117844 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0DB7E1CC25C1D3B500117844 /* DataModel */,
+				0DB7E1CB25C1D3B000117844 /* Request */,
+				0DB7E1CA25C1D3AB00117844 /* Response */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0DB7E19525C1D14E00117844 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0DB7E19625C1D19D00117844 /* ArenaTabbarController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0DB7E1A925C1D29200117844 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0DB7E1AA25C1D29200117844 /* Encoding */,
+				0DB7E1AF25C1D29200117844 /* Manager */,
+				0DB7E1B125C1D29200117844 /* Endpoint */,
+				0DB7E1B325C1D29200117844 /* Service */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0DB7E1AA25C1D29200117844 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				0DB7E1AB25C1D29200117844 /* Alamofire+ArrayEncoding.swift */,
+				0DB7E1AC25C1D29200117844 /* ParameterEncoding.swift */,
+				0DB7E1AD25C1D29200117844 /* URLParameterEncoding.swift */,
+				0DB7E1AE25C1D29200117844 /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		0DB7E1AF25C1D29200117844 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				0DB7E1B025C1D29200117844 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0DB7E1B125C1D29200117844 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				0DB7E1B225C1D29200117844 /* GoArenaEndPoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		0DB7E1B325C1D29200117844 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0DB7E1B425C1D29200117844 /* HTTPTask.swift */,
+				0DB7E1B525C1D29200117844 /* HTTPMethod.swift */,
+				0DB7E1B625C1D29200117844 /* Router.swift */,
+				0DB7E1B725C1D29200117844 /* NetworkLogger.swift */,
+				0DB7E1B825C1D29200117844 /* EndPointType.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0DB7E1CA25C1D3AB00117844 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				0DB7E1CD25C1D46900117844 /* GenericResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		0DB7E1CB25C1D3B000117844 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		0DB7E1CC25C1D3B500117844 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		5E988ED38B5A7148F173C283 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5247DB3F7FF00642FFDE57D3 /* Pods_GoArenaPoc.framework */,
+				AED03A986B36CF2131CE87DC /* Pods_GoArenaPoc_GoArenaPocUITests.framework */,
+				D929BE072231693EDB3F65CB /* Pods_GoArenaPocTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F12FF05B31A2E12C4AE07554 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3057BD79B2DE15F28309D59 /* Pods-GoArenaPoc.debug.xcconfig */,
+				590EB82550A386A212DA5481 /* Pods-GoArenaPoc.release.xcconfig */,
+				608966D1EE5F59CA326D65F7 /* Pods-GoArenaPoc-GoArenaPocUITests.debug.xcconfig */,
+				1019F7734B9448B52ABE45AC /* Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig */,
+				D94526B405A18B6F24B828B9 /* Pods-GoArenaPocTests.debug.xcconfig */,
+				7E33FC5FCBD740AB05C7CE1A /* Pods-GoArenaPocTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DB7E16925C1CB4400117844 /* Build configuration list for PBXNativeTarget "GoArenaPoc" */;
 			buildPhases = (
+				C502BA25ED81F029EE5189ED /* [CP] Check Pods Manifest.lock */,
 				0DB7E13B25C1CB4000117844 /* Sources */,
 				0DB7E13C25C1CB4000117844 /* Frameworks */,
 				0DB7E13D25C1CB4000117844 /* Resources */,
+				08E268C2E3BDD8BBDF5A9CD3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +329,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DB7E16C25C1CB4400117844 /* Build configuration list for PBXNativeTarget "GoArenaPocTests" */;
 			buildPhases = (
+				E86F8995F2C92B259B814DCF /* [CP] Check Pods Manifest.lock */,
 				0DB7E15125C1CB4300117844 /* Sources */,
 				0DB7E15225C1CB4300117844 /* Frameworks */,
 				0DB7E15325C1CB4300117844 /* Resources */,
@@ -170,9 +348,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DB7E16F25C1CB4400117844 /* Build configuration list for PBXNativeTarget "GoArenaPocUITests" */;
 			buildPhases = (
+				92E5B9EBD43336ED7DC97256 /* [CP] Check Pods Manifest.lock */,
 				0DB7E15C25C1CB4400117844 /* Sources */,
 				0DB7E15D25C1CB4400117844 /* Frameworks */,
 				0DB7E15E25C1CB4400117844 /* Resources */,
+				A4AE2151E8F6D0C900C5A9B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,7 +413,6 @@
 			files = (
 				0DB7E14F25C1CB4300117844 /* LaunchScreen.storyboard in Resources */,
 				0DB7E14C25C1CB4300117844 /* Assets.xcassets in Resources */,
-				0DB7E14A25C1CB4000117844 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +432,131 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08E268C2E3BDD8BBDF5A9CD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoArenaPoc/Pods-GoArenaPoc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoArenaPoc/Pods-GoArenaPoc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoArenaPoc/Pods-GoArenaPoc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92E5B9EBD43336ED7DC97256 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoArenaPoc-GoArenaPocUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A4AE2151E8F6D0C900C5A9B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoArenaPoc-GoArenaPocUITests/Pods-GoArenaPoc-GoArenaPocUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoArenaPoc-GoArenaPocUITests/Pods-GoArenaPoc-GoArenaPocUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoArenaPoc-GoArenaPocUITests/Pods-GoArenaPoc-GoArenaPocUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C502BA25ED81F029EE5189ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoArenaPoc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E86F8995F2C92B259B814DCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoArenaPocTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0DB7E13B25C1CB4000117844 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB7E1C325C1D29200117844 /* EndPointType.swift in Sources */,
+				0DB7E1C225C1D29200117844 /* NetworkLogger.swift in Sources */,
+				0DB7E1BF25C1D29200117844 /* HTTPTask.swift in Sources */,
+				0DB7E1BB25C1D29200117844 /* URLParameterEncoding.swift in Sources */,
+				0DB7E1BA25C1D29200117844 /* ParameterEncoding.swift in Sources */,
+				0DB7E1BD25C1D29200117844 /* NetworkManager.swift in Sources */,
 				0DB7E14725C1CB4000117844 /* ViewController.swift in Sources */,
+				0DB7E1B925C1D29200117844 /* Alamofire+ArrayEncoding.swift in Sources */,
 				0DB7E14325C1CB4000117844 /* AppDelegate.swift in Sources */,
-				0DB7E14525C1CB4000117844 /* SceneDelegate.swift in Sources */,
+				0DB7E1BC25C1D29200117844 /* JSONParameterEncoder.swift in Sources */,
+				0DB7E19F25C1D21C00117844 /* FeedViewController.swift in Sources */,
+				0DB7E1A425C1D22900117844 /* SettingsViewController.swift in Sources */,
+				0DB7E1C125C1D29200117844 /* Router.swift in Sources */,
+				0DB7E1CE25C1D46900117844 /* GenericResponse.swift in Sources */,
+				0DB7E1C025C1D29200117844 /* HTTPMethod.swift in Sources */,
+				0DB7E19725C1D19D00117844 /* ArenaTabbarController.swift in Sources */,
+				0DB7E1BE25C1D29200117844 /* GoArenaEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +592,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0DB7E14825C1CB4000117844 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0DB7E14925C1CB4000117844 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0DB7E14D25C1CB4300117844 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -433,7 +721,9 @@
 		};
 		0DB7E16A25C1CB4400117844 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3057BD79B2DE15F28309D59 /* Pods-GoArenaPoc.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,7 +743,9 @@
 		};
 		0DB7E16B25C1CB4400117844 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 590EB82550A386A212DA5481 /* Pods-GoArenaPoc.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -473,8 +765,9 @@
 		};
 		0DB7E16D25C1CB4400117844 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D94526B405A18B6F24B828B9 /* Pods-GoArenaPocTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39L6BTBPL3;
@@ -495,8 +788,9 @@
 		};
 		0DB7E16E25C1CB4400117844 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E33FC5FCBD740AB05C7CE1A /* Pods-GoArenaPocTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39L6BTBPL3;
@@ -517,8 +811,9 @@
 		};
 		0DB7E17025C1CB4400117844 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 608966D1EE5F59CA326D65F7 /* Pods-GoArenaPoc-GoArenaPocUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39L6BTBPL3;
 				INFOPLIST_FILE = GoArenaPocUITests/Info.plist;
@@ -537,8 +832,9 @@
 		};
 		0DB7E17125C1CB4400117844 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1019F7734B9448B52ABE45AC /* Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39L6BTBPL3;
 				INFOPLIST_FILE = GoArenaPocUITests/Info.plist;
