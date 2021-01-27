@@ -7,8 +7,10 @@ target 'GoArenaPoc' do
 
   # Pods for GoArenaPoc
     pod 'SwiftIcons', '~> 3.0'
-
-
+    pod 'FontAwesome.swift'
+    pod 'SDWebImage', '~> 5.0'
+    pod 'NotificationBannerSwift', '~> 3.0.0'
+    pod 'JGProgressHUD'
   target 'GoArenaPocTests' do
     inherit! :search_paths
     # Pods for testing

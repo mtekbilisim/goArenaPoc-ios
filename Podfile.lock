@@ -1,16 +1,42 @@
 PODS:
+  - FontAwesome.swift (1.9.1)
+  - JGProgressHUD (2.2)
+  - MarqueeLabel (4.0.5)
+  - NotificationBannerSwift (3.0.2):
+    - MarqueeLabel (~> 4.0.0)
+    - SnapKit (~> 5.0.0)
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
+  - SnapKit (5.0.1)
   - SwiftIcons (3.0)
 
 DEPENDENCIES:
+  - FontAwesome.swift
+  - JGProgressHUD
+  - NotificationBannerSwift (~> 3.0.0)
+  - SDWebImage (~> 5.0)
   - SwiftIcons (~> 3.0)
 
 SPEC REPOS:
   trunk:
+    - FontAwesome.swift
+    - JGProgressHUD
+    - MarqueeLabel
+    - NotificationBannerSwift
+    - SDWebImage
+    - SnapKit
     - SwiftIcons
 
 SPEC CHECKSUMS:
+  FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
+  JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
+  MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
+  NotificationBannerSwift: 713e20f21b6105f4a36a00e5d9fa414a930d3d8e
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftIcons: 3b748e57d9eee0c7c8d3bdbf2d742c0b1b4c6172
 
-PODFILE CHECKSUM: 907fee5d27b56971bd610c5a5991865675f24a92
+PODFILE CHECKSUM: 515fddd47efc79bfb42d1eee4cfd3af8100780b2
 
 COCOAPODS: 1.9.3
