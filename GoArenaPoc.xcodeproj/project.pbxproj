@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D9FA8DD25C458DD00EF7A7B /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */; };
+		0D9FA8ED25C46B4600EF7A7B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E725C46B4600EF7A7B /* Type.swift */; };
+		0D9FA8EE25C46B4600EF7A7B /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E825C46B4600EF7A7B /* Version.swift */; };
+		0D9FA8EF25C46B4600EF7A7B /* MtekConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E925C46B4600EF7A7B /* MtekConstant.swift */; };
+		0D9FA8F025C46B4600EF7A7B /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8EA25C46B4600EF7A7B /* Size.swift */; };
+		0D9FA8F125C46B4600EF7A7B /* MtekDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8EB25C46B4600EF7A7B /* MtekDevice.swift */; };
+		0D9FA8F225C46B4600EF7A7B /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8EC25C46B4600EF7A7B /* Device.swift */; };
+		0D9FA8F825C4813400EF7A7B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8F725C4813400EF7A7B /* FeedView.swift */; };
+		0D9FA90025C487AB00EF7A7B /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8FF25C487AB00EF7A7B /* FeedTableViewCell.swift */; };
+		0D9FA90525C4892800EF7A7B /* FeedHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA90425C4892800EF7A7B /* FeedHeaderFooterView.swift */; };
 		0DB7E14325C1CB4000117844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E14225C1CB4000117844 /* AppDelegate.swift */; };
 		0DB7E14725C1CB4000117844 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E14625C1CB4000117844 /* ViewController.swift */; };
 		0DB7E14C25C1CB4300117844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7E14B25C1CB4300117844 /* Assets.xcassets */; };
@@ -221,6 +231,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
+		0D9FA8E725C46B4600EF7A7B /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		0D9FA8E825C46B4600EF7A7B /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		0D9FA8E925C46B4600EF7A7B /* MtekConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MtekConstant.swift; sourceTree = "<group>"; };
+		0D9FA8EA25C46B4600EF7A7B /* Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		0D9FA8EB25C46B4600EF7A7B /* MtekDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MtekDevice.swift; sourceTree = "<group>"; };
+		0D9FA8EC25C46B4600EF7A7B /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		0D9FA8F725C4813400EF7A7B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		0D9FA8FF25C487AB00EF7A7B /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		0D9FA90425C4892800EF7A7B /* FeedHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderFooterView.swift; sourceTree = "<group>"; };
 		0DB7E13F25C1CB4000117844 /* GoArenaPoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoArenaPoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB7E14225C1CB4000117844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DB7E14625C1CB4000117844 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -457,6 +477,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D9FA8E125C458E200EF7A7B /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		0D9FA8E225C458E700EF7A7B /* AddPost */ = {
+			isa = PBXGroup;
+			children = (
+				0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */,
+			);
+			path = AddPost;
+			sourceTree = "<group>";
+		};
+		0D9FA8E625C46B4600EF7A7B /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				0D9FA8E725C46B4600EF7A7B /* Type.swift */,
+				0D9FA8E825C46B4600EF7A7B /* Version.swift */,
+				0D9FA8E925C46B4600EF7A7B /* MtekConstant.swift */,
+				0D9FA8EA25C46B4600EF7A7B /* Size.swift */,
+				0D9FA8EB25C46B4600EF7A7B /* MtekDevice.swift */,
+				0D9FA8EC25C46B4600EF7A7B /* Device.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		0D9FA8F625C4812300EF7A7B /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0D9FA8F725C4813400EF7A7B /* FeedView.swift */,
+				0D9FA8FF25C487AB00EF7A7B /* FeedTableViewCell.swift */,
+				0D9FA90425C4892800EF7A7B /* FeedHeaderFooterView.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		0DB7E13625C1CB4000117844 = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +577,7 @@
 				0DB7E14625C1CB4000117844 /* ViewController.swift */,
 				0DB7E21325C1DB0800117844 /* Feed */,
 				0DB7E21425C1DB0E00117844 /* Settings */,
+				0D9FA8E225C458E700EF7A7B /* AddPost */,
 				0DB7E1D225C1D97400117844 /* OnBoarding */,
 				0DB7E19625C1D19D00117844 /* ArenaTabbarController.swift */,
 			);
@@ -528,6 +587,7 @@
 		0DB7E19025C1D0B300117844 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0D9FA8F625C4812300EF7A7B /* Feed */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -635,6 +695,7 @@
 		0DB7E1DB25C1DA1200117844 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0D9FA8E625C46B4600EF7A7B /* Device */,
 				0DB7E21525C1DB7D00117844 /* ObjectSavable */,
 				0DB7E2CF25C1DB7E00117844 /* Reachability */,
 				0DB7E21E25C1DB7D00117844 /* SparrowKit */,
@@ -690,6 +751,7 @@
 		0DB7E21325C1DB0800117844 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				0D9FA8E125C458E200EF7A7B /* New Group */,
 				0DB7E19E25C1D21C00117844 /* FeedViewController.swift */,
 			);
 			path = Feed;
@@ -1540,6 +1602,7 @@
 				0DB7E32B25C1DB7E00117844 /* SPUIImageViewExtenshion.swift in Sources */,
 				0DB7E35525C1DB7E00117844 /* SPLarkSettingsCollectionView.swift in Sources */,
 				0DB7E2E625C1DB7E00117844 /* SPTableView.swift in Sources */,
+				0D9FA8F025C46B4600EF7A7B /* Size.swift in Sources */,
 				0DB7E34025C1DB7E00117844 /* SPBufer.swift in Sources */,
 				0DB7E2DD25C1DB7E00117844 /* SPFormTextFiledTableViewCell.swift in Sources */,
 				0DB7E39825C1DCE300117844 /* Extensions+UIDevice.swift in Sources */,
@@ -1564,6 +1627,7 @@
 				0DB7E2F325C1DB7E00117844 /* SPScrollView.swift in Sources */,
 				0DB7E33D25C1DB7E00117844 /* SPAnimationAlpha.swift in Sources */,
 				0DB7E39925C1DCE300117844 /* Extensions+UIButton.swift in Sources */,
+				0D9FA8DD25C458DD00EF7A7B /* AddPostViewController.swift in Sources */,
 				0DB7E31325C1DB7E00117844 /* SPTypes.swift in Sources */,
 				0DB7E30625C1DB7E00117844 /* SPProposeController.swift in Sources */,
 				0DB7E1E225C1DA2A00117844 /* VLCircularTransition.swift in Sources */,
@@ -1577,6 +1641,7 @@
 				0DB7E1BD25C1D29200117844 /* NetworkManager.swift in Sources */,
 				0DB7E31D25C1DB7E00117844 /* SPArrayExtension.swift in Sources */,
 				0DB7E38A25C1DCE300117844 /* Extensions+URL.swift in Sources */,
+				0D9FA8EE25C46B4600EF7A7B /* Version.swift in Sources */,
 				0DB7E33225C1DB7E00117844 /* SPNativeColors.swift in Sources */,
 				0DB7E33125C1DB7E00117844 /* SPAppLaunch.swift in Sources */,
 				0DB7E38525C1DCE300117844 /* Extensions+UINavigationController.swift in Sources */,
@@ -1606,6 +1671,7 @@
 				0DB7E34A25C1DB7E00117844 /* SPCodeSystemIconPack.swift in Sources */,
 				0DB7E2D625C1DB7E00117844 /* SPFakeBarView.swift in Sources */,
 				0DB7E39625C1DCE300117844 /* Extensions+CIImage.swift in Sources */,
+				0D9FA8F225C46B4600EF7A7B /* Device.swift in Sources */,
 				0DB7E32625C1DB7E00117844 /* SPUINavigationControllerExtenshion.swift in Sources */,
 				0DB7E30D25C1DB7E00117844 /* SPImageCollectionViewCell.swift in Sources */,
 				0DB7E31725C1DB7E00117844 /* SPUITextFieldExtenshion.swift in Sources */,
@@ -1614,6 +1680,7 @@
 				0DB7E2E825C1DB7E00117844 /* SPSocialButton.swift in Sources */,
 				0DB7E2FA25C1DB7E00117844 /* SPGradientView.swift in Sources */,
 				0DB7E30B25C1DB7E00117844 /* SPCollectionViewCell.swift in Sources */,
+				0D9FA8EF25C46B4600EF7A7B /* MtekConstant.swift in Sources */,
 				0DB7E2E025C1DB7E00117844 /* SPFormTextTableViewCell.swift in Sources */,
 				0DB7E30125C1DB7E00117844 /* SPCenterLabelsView.swift in Sources */,
 				0DB7E35625C1DB7E00117844 /* SPLarkPresentingAnimationController.swift in Sources */,
@@ -1655,6 +1722,7 @@
 				0DB7E34825C1DB7E00117844 /* SPCodeAudioIconPack.swift in Sources */,
 				0DB7E1CE25C1D46900117844 /* GenericResponse.swift in Sources */,
 				0DB7E35125C1DB7E00117844 /* SPLarkController.swift in Sources */,
+				0D9FA8F125C46B4600EF7A7B /* MtekDevice.swift in Sources */,
 				0DB7E33625C1DB7E00117844 /* SPLocalNotification.swift in Sources */,
 				0DB7E30725C1DB7E00117844 /* SPNativeTableController.swift in Sources */,
 				0DB7E2F825C1DB7E00117844 /* SPDownloadingUIImageView.swift in Sources */,
@@ -1680,8 +1748,11 @@
 				0DB7E30825C1DB7E00117844 /* SPTableController.swift in Sources */,
 				0DB7E1C025C1D29200117844 /* HTTPMethod.swift in Sources */,
 				0DB7E32225C1DB7E00117844 /* SPUIVisualEffectViewExtenshion.swift in Sources */,
+				0D9FA90525C4892800EF7A7B /* FeedHeaderFooterView.swift in Sources */,
+				0D9FA8F825C4813400EF7A7B /* FeedView.swift in Sources */,
 				0DB7E2EE25C1DB7E00117844 /* SPButton.swift in Sources */,
 				0DB7E31A25C1DB7E00117844 /* SPUIImageExtension.swift in Sources */,
+				0D9FA90025C487AB00EF7A7B /* FeedTableViewCell.swift in Sources */,
 				0DB7E2E925C1DB7E00117844 /* SPAppleMusicSectionButtonsView.swift in Sources */,
 				0DB7E2D925C1DB7E00117844 /* SPPromoTableViewCell.swift in Sources */,
 				0DB7E33A25C1DB7E00117844 /* SPShadowDeep.swift in Sources */,
@@ -1694,6 +1765,7 @@
 				0DB7E31425C1DB7E00117844 /* SPLocale.swift in Sources */,
 				0DB7E34625C1DB7E00117844 /* SPAudio.swift in Sources */,
 				0DB7E32025C1DB7E00117844 /* SPStringExtenshion.swift in Sources */,
+				0D9FA8ED25C46B4600EF7A7B /* Type.swift in Sources */,
 				0DB7E1E025C1DA2A00117844 /* TransitionCoordinator.swift in Sources */,
 				0DB7E32E25C1DB7E00117844 /* SPAppOpener.swift in Sources */,
 				0DB7E34725C1DB7E00117844 /* SPAudioPlayer.swift in Sources */,

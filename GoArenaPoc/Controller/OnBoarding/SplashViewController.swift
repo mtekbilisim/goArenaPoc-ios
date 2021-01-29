@@ -29,6 +29,7 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
         let i = UIImageView()
         i.frame = CGRect(x: (self.view.frame.width / 2) - 90, y: (self.view.frame.height / 2) - 90, width: 180, height: 180)
         i.image = UIImage(named: "logo.png")
+        i.contentMode = .scaleAspectFit
         return i
     }()
     
@@ -67,13 +68,14 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         self.navigationController?.delegate = self.animationCoordinator
         setupUI()
     }
     
     
     private func setupUI() {
-        view.backgroundColor =  .clear
+        view.backgroundColor =  SPNativeColors.purple
 
         triggerButton = UIButton()
         triggerButton.backgroundColor = SPNativeColors.white

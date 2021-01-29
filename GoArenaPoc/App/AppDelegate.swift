@@ -42,7 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func openApp() {
-        window?.rootViewController = ArenaTabbarController()
+        let loggedIn:Bool = true
+        //window?.rootViewController = ArenaTabbarController()
+        if loggedIn {
+            window?.rootViewController = ArenaTabbarController()
+        } else {
+            //window?.rootViewController = UINavigationController(rootViewController: )
+        }
     }
+    
+    
 }
 

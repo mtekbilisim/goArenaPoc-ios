@@ -9,25 +9,25 @@ import UIKit
 
 class FeedViewController: ViewController {
 
+    var feedView = FeedView()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print("viewWillAppear")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Feed"
-        view.backgroundColor = SPNativeColors.customGray
-        
-        
-        let button = SPButton()
-        button.addTarget(self, action: #selector(tapped), for: .touchUpInside)
-        button.setTitle("asdad")
-        button.frame = CGRect(x: 20, y: 210, width: 222, height: 20)
-        view.addSubview(button)
-
+        setupView()
     }
-    
-    @objc func tapped() {
-        let vc = SettingsViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+}
+
+extension FeedViewController {
+    private func setupView() {
+        feedView = FeedView()
+        feedView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(feedView)
+        feedView.setAnchorConstraintsFullSizeTo(view: view)
     }
-
-
-
 }

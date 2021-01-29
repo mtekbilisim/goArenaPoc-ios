@@ -20,20 +20,45 @@ class ArenaTabbarController: UITabBarController {
         
         let feedVC = UINavigationController(rootViewController: FeedViewController())
         feedVC.tabBarItem.title = "Feed"
-        feedVC.tabBarItem.setIcon(icon: .fontAwesomeSolid(.home), size: nil, textColor: .blue)
-//
+        feedVC.tabBarItem.setIcon(icon: .fontAwesomeSolid(.home), size: nil, textColor: SPNativeColors.black)
+        
+        let addpost = AddPostViewController()
+        let button = SPButton()
+        let toMakeButtonUp = tabBar.frame.height / 2
+        button.frame = CGRect(x: 0.0, y: 0.0, width:  tabBar.frame.height, height:  tabBar.frame.height)
+        button.backgroundColor = UIColor.init(hex: "1EC997")
+        button.setCorner(radius: toMakeButtonUp)
+        button.setImage(UIImage(named: "camera")!)
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+
+        if Device.isIPhoneXSimilar() {
+            var center: CGPoint = tabBar.center
+            center.y = center.y -  tabBar.frame.height
+            button.center = center
+        } else {
+            var center: CGPoint = tabBar.center
+            center.y = center.y -  toMakeButtonUp  //heightDifference / 2.0
+            button.center = center
+        }
+        button.addTarget(self, action: #selector(addPostTapped), for:.touchUpInside)
+        view.addSubview(button)
+
         let settingsVC = SettingsViewController()
         let settingsController = UINavigationController(rootViewController:settingsVC)
         settingsController.title = "Settings"
-        settingsController.tabBarItem.setIcon(icon: .dripicon(.user), size: nil, textColor: .blue)
+        settingsController.tabBarItem.setIcon(icon: .dripicon(.user), size: nil, textColor: SPNativeColors.black)
 
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Montserrat", size: 10)!], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Montserrat-Bold", size: 10)!], for: .selected)
-//        UINavigationBar.appearance().isTranslucent = true
-//
-        viewControllers = [feedVC,settingsController]
-            
-
+        viewControllers = [feedVC,addpost, settingsController]
+    }
+    
+    @objc func addPostTapped() {
+        let vc = AddPostViewController()
+        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+        present(vc)
     }
 }
 
@@ -163,5 +188,40 @@ extension UIViewController {
             }
         }
         return true
+    }
+}
+
+extension UIImage{
+
+    var roundMyImage: UIImage {
+        let rect = CGRect(origin:CGPoint(x: 0, y: 0), size: self.size)
+        UIGraphicsBeginImageContextWithOptions(self.size, false, 1)
+        UIBezierPath(
+            roundedRect: rect,
+            cornerRadius: self.size.height
+            ).addClip()
+        self.draw(in: rect)
+        return UIGraphicsGetImageFromCurrentImageContext()!
+    }
+    func resizeMyImage(newWidth: CGFloat) -> UIImage {
+        let scale = newWidth / self.size.width
+        let newHeight = self.size.height * scale
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+
+        self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
+    }
+    func squareMyImage() -> UIImage {
+        UIGraphicsBeginImageContext(CGSize(width: self.size.width, height: self.size.width))
+
+        self.draw(in: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.width))
+
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
     }
 }
