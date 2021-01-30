@@ -85,8 +85,8 @@ final class AppAppearance {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Montserrat-Bold", size: 15)!]
         //navBarAppearance.barTintColor = Global.appColor
-        navBarAppearance.tintColor = SPNativeColors.purple
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: SPNativeColors.purple,NSAttributedString.Key.font: Global.navBarFont!]
+        navBarAppearance.tintColor = UIColor.init(hex: "FCC418")
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(hex: "FCC418"),NSAttributedString.Key.font: Global.navBarFont!]
         navBarAppearance.isTranslucent = true
         
         navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:SPNativeColors.white,
@@ -94,7 +94,7 @@ final class AppAppearance {
 
          //tabBarAppearance
         let tabBarAppearance = UITabBar.appearance()
-        tabBarAppearance.tintColor = SPNativeColors.purple
+        tabBarAppearance.tintColor = UIColor.init(hex: "FCC418")
 
         let tabBarItemAppearance = UITabBarItem.appearance()
         tabBarItemAppearance.setTitleTextAttributes([NSAttributedString.Key.font:navBarFont as Any], for: .normal)
@@ -107,6 +107,10 @@ final class AppAppearance {
 
 extension UINavigationController {
     @objc override open var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
     }
 }

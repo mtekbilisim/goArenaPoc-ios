@@ -28,8 +28,9 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
     lazy var appLogo: UIImageView = {
         let i = UIImageView()
         i.frame = CGRect(x: (self.view.frame.width / 2) - 90, y: (self.view.frame.height / 2) - 90, width: 180, height: 180)
-        i.image = UIImage(named: "logo.png")
+        i.image = UIImage(named: "logo")
         i.contentMode = .scaleAspectFit
+        i.setCorner(radius: 90)
         return i
     }()
     
@@ -75,7 +76,7 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
     
     
     private func setupUI() {
-        view.backgroundColor =  SPNativeColors.purple
+        view.backgroundColor =  UIColor.init(hex: "3EBEF5")
 
         triggerButton = UIButton()
         triggerButton.backgroundColor = SPNativeColors.white

@@ -17,6 +17,7 @@
 		0D9FA8F825C4813400EF7A7B /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8F725C4813400EF7A7B /* FeedView.swift */; };
 		0D9FA90025C487AB00EF7A7B /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8FF25C487AB00EF7A7B /* FeedTableViewCell.swift */; };
 		0D9FA90525C4892800EF7A7B /* FeedHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA90425C4892800EF7A7B /* FeedHeaderFooterView.swift */; };
+		0D9FA90A25C48BFC00EF7A7B /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA90925C48BFC00EF7A7B /* Feed.swift */; };
 		0DB7E14325C1CB4000117844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E14225C1CB4000117844 /* AppDelegate.swift */; };
 		0DB7E14725C1CB4000117844 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E14625C1CB4000117844 /* ViewController.swift */; };
 		0DB7E14C25C1CB4300117844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7E14B25C1CB4300117844 /* Assets.xcassets */; };
@@ -241,6 +242,7 @@
 		0D9FA8F725C4813400EF7A7B /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		0D9FA8FF25C487AB00EF7A7B /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		0D9FA90425C4892800EF7A7B /* FeedHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderFooterView.swift; sourceTree = "<group>"; };
+		0D9FA90925C48BFC00EF7A7B /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		0DB7E13F25C1CB4000117844 /* GoArenaPoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoArenaPoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB7E14225C1CB4000117844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DB7E14625C1CB4000117844 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -680,6 +682,7 @@
 		0DB7E1CC25C1D3B500117844 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				0D9FA90925C48BFC00EF7A7B /* Feed.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1717,6 +1720,7 @@
 				0DB7E38725C1DCE300117844 /* Extensions+String.swift in Sources */,
 				0DB7E2D825C1DB7E00117844 /* SPVibration.swift in Sources */,
 				0DB7E34925C1DB7E00117844 /* SPCodeSocialIconPack.swift in Sources */,
+				0D9FA90A25C48BFC00EF7A7B /* Feed.swift in Sources */,
 				0DB7E1C125C1D29200117844 /* Router.swift in Sources */,
 				0DB7E35225C1DB7E00117844 /* SPLarkSettingsCloseButton.swift in Sources */,
 				0DB7E34825C1DB7E00117844 /* SPCodeAudioIconPack.swift in Sources */,
@@ -1872,7 +1876,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1927,7 +1931,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

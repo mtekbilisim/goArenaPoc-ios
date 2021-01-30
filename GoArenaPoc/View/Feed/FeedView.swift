@@ -10,6 +10,7 @@ import UIKit
 class FeedView: UIView {
 
     var tableView = UITableView()
+    var feeds:[Feed] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,6 +33,24 @@ class FeedView: UIView {
         tableView.setAnchorConstraintsFullSizeTo(view: self)
     }
     
+    func setData(_ feeds: [Feed]) {
+        self.feeds = feeds
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    @objc
+    func likeButtonTapped(_ sender:UIButton) {
+        print(#function)
+    }
+    
+    @objc
+    func commentsTapped(_ sender:UIButton) {
+        print(#function)
+    }
+    
+    
 }
 
 // MARK: - UITABLEVIEW DELEGATE
@@ -42,12 +61,19 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return feeds.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
-        cell.textLabel?.text = "\(indexPath.section)"
+        cell.isUserInteractionEnabled = true
+        let section = indexPath.section
+        let feed = feeds[section]
+        cell.setFeed(feed)
+        cell.commentsButton.tag = section
+        cell.commentsButton.addTarget(self, action: #selector(commentsTapped), for: .touchUpInside)
+        cell.likeButton.tag = section
+        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         return cell
     }
     
@@ -57,7 +83,19 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 365//tableView.estimatedRowHeight
+        let type = feeds[indexPath.section].postType
+        switch type {
+        case .images:
+            return 420
+        case .video :
+            return 360
+        default:
+            return 160
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }

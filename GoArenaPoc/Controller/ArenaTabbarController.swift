@@ -18,17 +18,19 @@ class ArenaTabbarController: UITabBarController {
         super.viewDidLoad()
         delegate = self
         
+        //feed vc
         let feedVC = UINavigationController(rootViewController: FeedViewController())
         feedVC.tabBarItem.title = "Feed"
-        feedVC.tabBarItem.setIcon(icon: .fontAwesomeSolid(.home), size: nil, textColor: SPNativeColors.black)
+        feedVC.tabBarItem.image = UIImage(named: "home")
         
+        //custom middle vc
         let addpost = AddPostViewController()
         let button = SPButton()
         let toMakeButtonUp = tabBar.frame.height / 2
         button.frame = CGRect(x: 0.0, y: 0.0, width:  tabBar.frame.height, height:  tabBar.frame.height)
         button.backgroundColor = UIColor.init(hex: "1EC997")
         button.setCorner(radius: toMakeButtonUp)
-        button.setImage(UIImage(named: "camera")!)
+        button.setImage(UIImage(named: "plusIcon")!)
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
         button.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
@@ -45,14 +47,15 @@ class ArenaTabbarController: UITabBarController {
         button.addTarget(self, action: #selector(addPostTapped), for:.touchUpInside)
         view.addSubview(button)
 
-        let settingsVC = SettingsViewController()
-        let settingsController = UINavigationController(rootViewController:settingsVC)
-        settingsController.title = "Settings"
-        settingsController.tabBarItem.setIcon(icon: .dripicon(.user), size: nil, textColor: SPNativeColors.black)
+        //settings vc
+        let settingsVC = UINavigationController(rootViewController:SettingsViewController())
+        settingsVC.title = "Settings"
+        settingsVC.tabBarItem.image = UIImage(named: "dashboard")
 
+        
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Montserrat", size: 10)!], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Montserrat-Bold", size: 10)!], for: .selected)
-        viewControllers = [feedVC,addpost, settingsController]
+        viewControllers = [feedVC, addpost, settingsVC]
     }
     
     @objc func addPostTapped() {
@@ -187,6 +190,7 @@ extension UIViewController {
                 return (scrollView.contentOffset.y == 0)
             }
         }
+        
         return true
     }
 }

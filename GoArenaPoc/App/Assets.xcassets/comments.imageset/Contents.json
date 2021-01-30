@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "goarena.jpg",
+      "filename" : "Comments Icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Comments Icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Comments Icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
