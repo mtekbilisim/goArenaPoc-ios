@@ -10,6 +10,7 @@ import UIKit
 class FeedView: UIView {
 
     var tableView = UITableView()
+    private var refreshControl = UIRefreshControl()
     var feeds:[Feed] = []
     
     override init(frame: CGRect) {
@@ -21,14 +22,22 @@ class FeedView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - setupView
+
     func setupView() {
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        refreshControl.tintColor = UIColor.init(hex: "FCC418")
+        
         tableView = UITableView.init(frame: CGRect.zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.identifier)
-        // Register the custom header view.
         tableView.register(FeedHeaderFooterView.self,forHeaderFooterViewReuseIdentifier: FeedHeaderFooterView.identifier)
+        tableView.refreshControl = refreshControl
+
         self.addSubview(tableView)
         tableView.setAnchorConstraintsFullSizeTo(view: self)
     }
@@ -37,20 +46,30 @@ class FeedView: UIView {
         self.feeds = feeds
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
     
+    // MARK: - like Tapped
+
     @objc
     func likeButtonTapped(_ sender:UIButton) {
         print(#function)
     }
     
+    // MARK: - comment Button Tapped
+
     @objc
     func commentsTapped(_ sender:UIButton) {
         print(#function)
     }
     
-    
+    // MARK: - pull down refresh
+
+    @objc
+    func refresh () {
+        self.refreshControl.endRefreshing()
+    }
 }
 
 // MARK: - UITABLEVIEW DELEGATE
@@ -78,8 +97,13 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:FeedHeaderFooterView.identifier) as! FeedHeaderFooterView
-        return view
+        if section == 0 {
+            let view = UIView()
+            return view
+        } else {
+            let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:FeedHeaderFooterView.identifier) as! FeedHeaderFooterView
+            return view
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -91,6 +115,14 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
             return 360
         default:
             return 160
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 1
+        } else {
+            return 2
         }
     }
     

@@ -9,6 +9,8 @@ import UIKit
 
 class FeedTableViewCell: UITableViewCell {
    
+    // MARK: - Vars
+
     var profilePicture = SPDownloadingImageView()
     
     var title = UILabel()
@@ -36,6 +38,8 @@ class FeedTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - setupView
+
     private func setupView() {
         
         
@@ -83,14 +87,15 @@ class FeedTableViewCell: UITableViewCell {
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 16
         layout.minimumLineSpacing = 16
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+//        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
 
         collectionView =  UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.collectionViewLayout = layout
         //register cells
-        collectionView.register(SPImageCollectionViewCell.self,forCellWithReuseIdentifier:"cell")
+        collectionView.register(ImagesCollectionViewCell.self,forCellWithReuseIdentifier:ImagesCollectionViewCell.identifier)
+        collectionView.register(VideoCollectionViewCell.self, forCellWithReuseIdentifier: VideoCollectionViewCell.identifier)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = false
@@ -150,6 +155,8 @@ class FeedTableViewCell: UITableViewCell {
         
     }
     
+    // MARK: - setFeed Data
+
     func setFeed(_ feed: Feed) {
         self.feed = feed
         switch feed.postType {
@@ -181,40 +188,74 @@ class FeedTableViewCell: UITableViewCell {
     }
 }
 
+// MARK: - FeedTableViewCell extensions
+
 extension FeedTableViewCell {
     static let identifier = "FeedTableViewCell"
 }
+
+// MARK: - UICollectionViewDelegate
 
 extension FeedTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let feed = self.feed {
             if feed.postType == .images, let images = feed.images  {
                 return images.count
+            } else if feed.postType == .video {
+                return 1
             }
         }
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SPImageCollectionViewCell
-        cell.imageView.setCorner(radius: 16)
+        
         if let feed = self.feed {
             if feed.postType == .images, let images = feed.images  {
+                
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImagesCollectionViewCell.identifier,
+                                                              for: indexPath) as! ImagesCollectionViewCell
                 cell.imageView.setImage(link: images[indexPath.row])
+                
+                return cell
+           
+            } else if feed.postType == .video {
+               
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifier,
+                                                              for: indexPath) as! VideoCollectionViewCell
+                cell.setData(feed)
+                
+                return cell
             }
         }
-        return cell
+        return UICollectionViewCell()
     }
 }
+
+// MARK: - UICollectionViewDelegateFlowLayout
 
 extension FeedTableViewCell:UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let feed = self.feed {
             if feed.postType == .images  {
                 return CGSize(width: collectionView.frame.width - 72, height: collectionView.frame.height - 16)
+            } else if feed.postType == .video {
+                return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
             }
         }
         return CGSize(width: 0, height: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,insetForSectionAt section: Int) -> UIEdgeInsets {
+        if let feed = self.feed {
+            if feed.postType == .images  {
+                return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+
+            } else if feed.postType == .video {
+                return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            }
+        }
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
 }

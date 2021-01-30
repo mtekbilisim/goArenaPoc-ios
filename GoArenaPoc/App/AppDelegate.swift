@@ -43,12 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func openApp() {
         let loggedIn:Bool = true
-        //window?.rootViewController = ArenaTabbarController()
-        if loggedIn {
-            window?.rootViewController = ArenaTabbarController()
-        } else {
-            //window?.rootViewController = UINavigationController(rootViewController: )
-        }
+        window?.rootViewController = ArenaTabbarController()
+        
+//        if User.loggedIn() {
+//            window?.rootViewController = ArenaTabbarController()
+//        } else {
+//          window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+//        }
     }
     
     

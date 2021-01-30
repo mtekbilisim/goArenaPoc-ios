@@ -42,16 +42,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
 
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        self.tabBarController?.tabBar.layer.masksToBounds = true
-        self.tabBarController?.tabBar.isTranslucent = true
-        self.tabBarController?.tabBar.barStyle = .default
-        self.tabBarController?.tabBar.layer.cornerRadius = 25
-        self.tabBarController?.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-
-    }
-    
     @objc private func reachabilityChanged( notification: NSNotification ) {
         guard let reachability = notification.object as? Reachability else { return }
         

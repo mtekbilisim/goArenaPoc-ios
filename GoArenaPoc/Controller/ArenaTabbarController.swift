@@ -50,7 +50,7 @@ class ArenaTabbarController: UITabBarController {
         //settings vc
         let settingsVC = UINavigationController(rootViewController:SettingsViewController())
         settingsVC.title = "Settings"
-        settingsVC.tabBarItem.image = UIImage(named: "dashboard")
+        settingsVC.tabBarItem.image = UIImage(named: "comments")
 
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Montserrat", size: 10)!], for: .normal)

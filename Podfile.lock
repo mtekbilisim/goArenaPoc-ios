@@ -10,6 +10,7 @@ PODS:
   - SDWebImage/Core (5.9.5)
   - SnapKit (5.0.1)
   - SwiftIcons (3.0)
+  - VersaPlayer (3.0.2)
 
 DEPENDENCIES:
   - FontAwesome.swift
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - NotificationBannerSwift (~> 3.0.0)
   - SDWebImage (~> 5.0)
   - SwiftIcons (~> 3.0)
+  - VersaPlayer
 
 SPEC REPOS:
   trunk:
@@ -27,6 +29,7 @@ SPEC REPOS:
     - SDWebImage
     - SnapKit
     - SwiftIcons
+    - VersaPlayer
 
 SPEC CHECKSUMS:
   FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
@@ -36,7 +39,8 @@ SPEC CHECKSUMS:
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftIcons: 3b748e57d9eee0c7c8d3bdbf2d742c0b1b4c6172
+  VersaPlayer: 0e9a0ea7da786729ffb377dbd17b34641a8265e4
 
-PODFILE CHECKSUM: 515fddd47efc79bfb42d1eee4cfd3af8100780b2
+PODFILE CHECKSUM: 035f9ae28a27c7bebb81d826fd233f162a2f5241
 
 COCOAPODS: 1.9.3

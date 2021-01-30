@@ -17,6 +17,7 @@ struct Feed:Codable {
     var comments:String?
     var date: String?
     var images:[String]?
+    var videoUrl:String?
     
 }
 

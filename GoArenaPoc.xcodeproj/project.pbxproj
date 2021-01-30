@@ -18,6 +18,10 @@
 		0D9FA90025C487AB00EF7A7B /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8FF25C487AB00EF7A7B /* FeedTableViewCell.swift */; };
 		0D9FA90525C4892800EF7A7B /* FeedHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA90425C4892800EF7A7B /* FeedHeaderFooterView.swift */; };
 		0D9FA90A25C48BFC00EF7A7B /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA90925C48BFC00EF7A7B /* Feed.swift */; };
+		0D9FA91825C5468B00EF7A7B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA91725C5468A00EF7A7B /* User.swift */; };
+		0D9FA91D25C548EB00EF7A7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA91C25C548EB00EF7A7B /* LoginViewController.swift */; };
+		0D9FA93225C558D700EF7A7B /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA93125C558D700EF7A7B /* VideoCollectionViewCell.swift */; };
+		0D9FA93725C55A5F00EF7A7B /* ImagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA93625C55A5F00EF7A7B /* ImagesCollectionViewCell.swift */; };
 		0DB7E14325C1CB4000117844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E14225C1CB4000117844 /* AppDelegate.swift */; };
 		0DB7E14725C1CB4000117844 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E14625C1CB4000117844 /* ViewController.swift */; };
 		0DB7E14C25C1CB4300117844 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7E14B25C1CB4300117844 /* Assets.xcassets */; };
@@ -243,6 +247,10 @@
 		0D9FA8FF25C487AB00EF7A7B /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		0D9FA90425C4892800EF7A7B /* FeedHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderFooterView.swift; sourceTree = "<group>"; };
 		0D9FA90925C48BFC00EF7A7B /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		0D9FA91725C5468A00EF7A7B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0D9FA91C25C548EB00EF7A7B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0D9FA93125C558D700EF7A7B /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		0D9FA93625C55A5F00EF7A7B /* ImagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		0DB7E13F25C1CB4000117844 /* GoArenaPoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoArenaPoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DB7E14225C1CB4000117844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DB7E14625C1CB4000117844 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -479,13 +487,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D9FA8E125C458E200EF7A7B /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		0D9FA8E225C458E700EF7A7B /* AddPost */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +514,8 @@
 				0D9FA8F725C4813400EF7A7B /* FeedView.swift */,
 				0D9FA8FF25C487AB00EF7A7B /* FeedTableViewCell.swift */,
 				0D9FA90425C4892800EF7A7B /* FeedHeaderFooterView.swift */,
+				0D9FA93125C558D700EF7A7B /* VideoCollectionViewCell.swift */,
+				0D9FA93625C55A5F00EF7A7B /* ImagesCollectionViewCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 			isa = PBXGroup;
 			children = (
 				0D9FA90925C48BFC00EF7A7B /* Feed.swift */,
+				0D9FA91725C5468A00EF7A7B /* User.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -691,6 +695,7 @@
 			isa = PBXGroup;
 			children = (
 				0DB7E1D325C1D98400117844 /* SplashViewController.swift */,
+				0D9FA91C25C548EB00EF7A7B /* LoginViewController.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -754,7 +759,6 @@
 		0DB7E21325C1DB0800117844 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				0D9FA8E125C458E200EF7A7B /* New Group */,
 				0DB7E19E25C1D21C00117844 /* FeedViewController.swift */,
 			);
 			path = Feed;
@@ -1643,6 +1647,7 @@
 				0DB7E38625C1DCE300117844 /* Extensions+DateFormatter.swift in Sources */,
 				0DB7E1BD25C1D29200117844 /* NetworkManager.swift in Sources */,
 				0DB7E31D25C1DB7E00117844 /* SPArrayExtension.swift in Sources */,
+				0D9FA93225C558D700EF7A7B /* VideoCollectionViewCell.swift in Sources */,
 				0DB7E38A25C1DCE300117844 /* Extensions+URL.swift in Sources */,
 				0D9FA8EE25C46B4600EF7A7B /* Version.swift in Sources */,
 				0DB7E33225C1DB7E00117844 /* SPNativeColors.swift in Sources */,
@@ -1697,6 +1702,7 @@
 				0DB7E1BC25C1D29200117844 /* JSONParameterEncoder.swift in Sources */,
 				0DB7E2EA25C1DB7E00117844 /* SPDotsButton.swift in Sources */,
 				0DB7E35025C1DB7E00117844 /* SPShare.swift in Sources */,
+				0D9FA91D25C548EB00EF7A7B /* LoginViewController.swift in Sources */,
 				0DB7E39425C1DCE300117844 /* Extensions+UILabel.swift in Sources */,
 				0DB7E2E325C1DB7E00117844 /* SPProposeTableViewCell.swift in Sources */,
 				0DB7E32A25C1DB7E00117844 /* SPCGSizeExtenshion.swift in Sources */,
@@ -1728,6 +1734,7 @@
 				0DB7E35125C1DB7E00117844 /* SPLarkController.swift in Sources */,
 				0D9FA8F125C46B4600EF7A7B /* MtekDevice.swift in Sources */,
 				0DB7E33625C1DB7E00117844 /* SPLocalNotification.swift in Sources */,
+				0D9FA91825C5468B00EF7A7B /* User.swift in Sources */,
 				0DB7E30725C1DB7E00117844 /* SPNativeTableController.swift in Sources */,
 				0DB7E2F825C1DB7E00117844 /* SPDownloadingUIImageView.swift in Sources */,
 				0DB7E39725C1DCE300117844 /* Extensions+UIImage.swift in Sources */,
@@ -1760,6 +1767,7 @@
 				0DB7E2E925C1DB7E00117844 /* SPAppleMusicSectionButtonsView.swift in Sources */,
 				0DB7E2D925C1DB7E00117844 /* SPPromoTableViewCell.swift in Sources */,
 				0DB7E33A25C1DB7E00117844 /* SPShadowDeep.swift in Sources */,
+				0D9FA93725C55A5F00EF7A7B /* ImagesCollectionViewCell.swift in Sources */,
 				0DB7E2D225C1DB7E00117844 /* UserDefaults.swift in Sources */,
 				0DB7E38F25C1DCE300117844 /* Extensions+UICollectionView.swift in Sources */,
 				0DB7E2D325C1DB7E00117844 /* ObjectSavable.swift in Sources */,
@@ -1951,7 +1959,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39L6BTBPL3;
 				INFOPLIST_FILE = GoArenaPoc/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1973,7 +1981,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39L6BTBPL3;
 				INFOPLIST_FILE = GoArenaPoc/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

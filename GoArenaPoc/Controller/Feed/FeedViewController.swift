@@ -9,11 +9,22 @@ import UIKit
 
 class FeedViewController: ViewController  {
 
+    // MARK: - VARs
+
     var feedView = FeedView()
     var feeds:[Feed] = []
+    var shouldTop:Bool = false
+   
+    
+    // MARK: - LifeCycles
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         print("viewWillAppear")
+        shouldTop = false
+        delay(0.1) {
+            self.shouldTop = true
+        }
     }
     
     override func viewDidLoad() {
@@ -21,10 +32,11 @@ class FeedViewController: ViewController  {
         self.title = "Feed"
         self.tabBarController?.delegate = self
         setupView()
-        self.showLoading()
+        showLoading()
         setDummyData()
     }
-    
+    // MARK: - setData
+
     func setDummyData() {
         for i in 0...20 {
             var type: PostType = .unknown
@@ -64,6 +76,8 @@ class FeedViewController: ViewController  {
     }
 }
 
+// MARK: - extensions setupview
+
 extension FeedViewController {
     private func setupView() {
         feedView = FeedView()
@@ -73,6 +87,8 @@ extension FeedViewController {
     }
 }
 
+// MARK: - UITabBarControllerDelegate
+
 extension FeedViewController:UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 
@@ -80,8 +96,9 @@ extension FeedViewController:UITabBarControllerDelegate {
 
         print(tabBarIndex)
 
-        if tabBarIndex == 0 {
-            self.feedView.tableView.setContentOffset(CGPoint.zero, animated: true)
+        if tabBarIndex == 0 && shouldTop {
+            self.feedView.tableView.setContentOffset(CGPoint(x: 0, y: -Constants.Numbers.topSafeAreaHeight
+                                                                - Constants.Numbers.navBarHeight), animated: true)
         }
     }
 }
