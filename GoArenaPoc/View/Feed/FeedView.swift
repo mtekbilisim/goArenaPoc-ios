@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class FeedView: UIView {
 
@@ -35,6 +37,7 @@ class FeedView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.identifier)
+        tableView.register(FeedVideoTableViewCell.self,forCellReuseIdentifier: FeedVideoTableViewCell.identifier)
         tableView.register(FeedHeaderFooterView.self,forHeaderFooterViewReuseIdentifier: FeedHeaderFooterView.identifier)
         tableView.refreshControl = refreshControl
 
@@ -84,16 +87,40 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
-        cell.isUserInteractionEnabled = true
+        
+        
         let section = indexPath.section
         let feed = feeds[section]
-        cell.setFeed(feed)
-        cell.commentsButton.tag = section
-        cell.commentsButton.addTarget(self, action: #selector(commentsTapped), for: .touchUpInside)
-        cell.likeButton.tag = section
-        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
-        return cell
+
+        if feed.postType == .video {
+            let cell = tableView.dequeueReusableCell(withIdentifier: FeedVideoTableViewCell.identifier, for: indexPath) as! FeedVideoTableViewCell
+//            cell.playerView.link = "https://kidsapi.mtek.me/uploads/_/originals/a668f9f3-bd12-4a03-a489-b931f91612fc.mp4"
+            cell.setFeed(feed)
+            return cell
+        } else if feed.postType == .images {
+            let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
+            cell.isUserInteractionEnabled = true
+
+            cell.setFeed(feed)
+            cell.commentsButton.tag = section
+            cell.commentsButton.addTarget(self, action: #selector(commentsTapped), for: .touchUpInside)
+            cell.likeButton.tag = section
+            cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
+            cell.isUserInteractionEnabled = true
+
+            cell.setFeed(feed)
+            cell.commentsButton.tag = section
+            cell.commentsButton.addTarget(self, action: #selector(commentsTapped), for: .touchUpInside)
+            cell.likeButton.tag = section
+            cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+            return cell
+        }
+   
+    
+        
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

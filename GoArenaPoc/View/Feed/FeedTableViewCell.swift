@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import MBVideoPlayer
 
 class FeedTableViewCell: UITableViewCell {
    
     // MARK: - Vars
+    
+    var videoPlayerView =  MBVideoPlayerView()
 
     var profilePicture = SPDownloadingImageView()
     
@@ -221,8 +224,12 @@ extension FeedTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource
            
             } else if feed.postType == .video {
                
+                
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifier,
                                                               for: indexPath) as! VideoCollectionViewCell
+                
+                cell.isUserInteractionEnabled = true
+                
                 cell.setData(feed)
                 
                 return cell

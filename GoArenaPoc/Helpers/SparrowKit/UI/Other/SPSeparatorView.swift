@@ -23,29 +23,29 @@ import UIKit
 
 class SPSeparatorView: SPView {
     
-    var height: CGFloat? = 0.5 {
-        didSet {
-            if let height = height {
-                self.height = height
-            }
-        }
-    }
+//    var height: CGFloat? = 0.5 {
+//        didSet {
+//            if let height = height {
+//                self.height = height
+//            }
+//        }
+//    }
     
-    override func commonInit() {
-        super.commonInit()
-        self.backgroundColor = UIColor.init(hex: "515B66").withAlphaComponent(0.25)
-        self.round = true
-        self.frame.set(height: self.height!)
-    }
-    
-    func layout(origin: CGPoint, width: CGFloat) {
-        self.frame.origin = CGPoint.init(x: floor(origin.x), y: floor(origin.y))
-        self.frame.set(width: floor(width))
-        self.frame.set(height: self.height!)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.frame.set(height: self.height!)
-    }
+//    override func commonInit() {
+//        super.commonInit()
+//        self.backgroundColor = UIColor.init(hex: "515B66").withAlphaComponent(0.25)
+//        self.round = true
+//        self.frame.set(height: self.height!)
+//    }
+//    
+//    func layout(origin: CGPoint, width: CGFloat) {
+//        self.frame.origin = CGPoint.init(x: floor(origin.x), y: floor(origin.y))
+//        self.frame.set(width: floor(width))
+//        self.frame.set(height: self.height!)
+//    }
+//    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        self.frame.set(height: self.height!)
+//    }
 }

@@ -27,10 +27,11 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
 
     lazy var appLogo: UIImageView = {
         let i = UIImageView()
-        i.frame = CGRect(x: (self.view.frame.width / 2) - 90, y: (self.view.frame.height / 2) - 90, width: 180, height: 180)
-        i.image = UIImage(named: "logo")
+        i.translatesAutoresizingMaskIntoConstraints = false
+    
+        i.image = UIImage(named: "logo2")
         i.contentMode = .scaleAspectFit
-        i.setCorner(radius: 90)
+//        i.setCorner(radius: 90)
         return i
     }()
     
@@ -76,7 +77,7 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
     
     
     private func setupUI() {
-        view.backgroundColor =  UIColor.init(hex: "3EBEF5")
+        view.backgroundColor =  UIColor.init(hex: "059FE7")
 
         triggerButton = UIButton()
         triggerButton.backgroundColor = SPNativeColors.white
@@ -91,6 +92,10 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
 
         view.addSubview(version)
         view.addSubview(appLogo)
+        
+        appLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        appLogo.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
  
 
     }
@@ -160,11 +165,10 @@ extension SplashViewController: CircleTransitionable {
         return self.view
     }
 }
-
 extension SplashViewController {
   func animateSender(button:UIImageView){
 
-      UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 1.5, options: UIView.AnimationOptions.curveLinear, animations: {
+      UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 1.5, options: UIView.AnimationOptions.curveLinear, animations: {
           for constraint in button.constraints{
               if (constraint.firstAttribute == .height)||(constraint.firstAttribute == .width){
                   constraint.constant = 300
@@ -174,7 +178,7 @@ extension SplashViewController {
       }, completion: { (true) in
       })
       DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
-          UIView.animate(withDuration: 0.2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 1.5, options: UIView.AnimationOptions.curveLinear, animations: {
+          UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 1.5, options: UIView.AnimationOptions.curveLinear, animations: {
 
               for constraint in button.constraints{
                   if (constraint.firstAttribute == .height)||(constraint.firstAttribute == .width){

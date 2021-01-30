@@ -41,32 +41,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
 
 
     }
-    
-    @objc private func reachabilityChanged( notification: NSNotification ) {
-        guard let reachability = notification.object as? Reachability else { return }
-        
-        print(reachability.connection)
 
-        if reachability.connection == .unavailable {
-            connectedTheInternet = false
-            if connectionErrorShown == false {
-                //DispatchQueue.main.async {
-                    let banner = GrowingNotificationBanner(title: "Bağlantı hatası", subtitle: "Lütfen internete bağlantınızı kontrol ediniz.", style: .danger)
-                    banner.show(bannerPosition: .top)
-                    self.connectionErrorShown = true
-                    //return
-                //}
-            } else {
-                return
-            }
-        } else if reachability.connection == .cellular || reachability.connection == .wifi {
-            connectedTheInternet = true
-        } else {
-            print("reachability.connection unknown")
-        }
-    }
-
-    
     //MARK: - ADD/REMOVE TABBAR
 
     func showTabbar() {

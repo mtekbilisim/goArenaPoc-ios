@@ -35,6 +35,8 @@ class SPVideoPlayerView: UIView {
                 
                 let player = AVPlayer(url:path)
                 self.playerController.player = player
+                let playerLayer = AVPlayerLayer(player: playerController.player)
+                playerLayer.videoGravity = .resizeAspectFill
             }
         }
     }
