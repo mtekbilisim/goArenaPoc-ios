@@ -16,7 +16,7 @@ let contentWidth:CGFloat = screenWidth - 2*padding
 final class AppAppearance {
     
     static let background = UIColor.init(hex: "52B84D")
-    static let appColor = UIColor.init(hex: "383363")
+    static let appColor = UIColor.init(hex: "059FE7")
     //static let appColor = UIColor(red: CGFloat(88.0/255.0), green: CGFloat(86.0/255.0), blue: CGFloat(214.0/255.0), alpha: CGFloat(1.0))
     static let defaultFont = UIFont(name: "TurkcellSatura", size: 13)
     static let defaultSemiFont = UIFont(name: "TurkcellSatura", size: 10)
@@ -83,8 +83,8 @@ final class AppAppearance {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TurkcellSatura-Bold", size: 15)!]
         //navBarAppearance.barTintColor = Global.appColor
-        navBarAppearance.tintColor = UIColor.init(hex: "FCC418")
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(hex: "FCC418"),NSAttributedString.Key.font: Global.navBarFont!]
+        navBarAppearance.tintColor = UIColor.init(hex: "059FE7")
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(hex: "059FE7"),NSAttributedString.Key.font: Global.navBarFont!]
         navBarAppearance.isTranslucent = true
         
         navBarAppearance.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:SPNativeColors.white,
@@ -92,7 +92,7 @@ final class AppAppearance {
 
          //tabBarAppearance
         let tabBarAppearance = UITabBar.appearance()
-        tabBarAppearance.tintColor = UIColor.init(hex: "FCC418")
+        tabBarAppearance.tintColor = UIColor.init(hex: "059FE7")
 
         let tabBarItemAppearance = UITabBarItem.appearance()
         tabBarItemAppearance.setTitleTextAttributes([NSAttributedString.Key.font:navBarFont as Any], for: .normal)

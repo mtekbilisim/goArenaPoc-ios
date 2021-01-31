@@ -120,7 +120,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
     
     func showLoading() {
         DispatchQueue.main.async {
-            self.hud.textLabel.text = "Yükleniyor"
+            self.hud.textLabel.font = AppAppearance.fifteenB
+            self.hud.textLabel.text = "Lütfen Bekleyiniz"
             self.hud.show(in: self.view)
         }
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: ViewController {
 
     var loginView = LoginView()
     
@@ -37,8 +37,13 @@ class LoginViewController: UIViewController {
     
     @objc
     func loginTapped() {
+        self.showLoading()
         if let email = loginView.emailField.textField.text, let password = loginView.passwordField.textField.text {
-            loginWith(name: email, pass: password)
+            delay(2) {
+                self.loginWith(name: email, pass: password)
+            }
+        } else {
+            self.hideLoading()
         }
     }
     
@@ -49,21 +54,17 @@ class LoginViewController: UIViewController {
         } else {
             GoArenaUser().setRememberMe(bool: false)
         }
-        doLogin(name, pass)
-    }
-    
-    func doLogin(_ name:String, _ password: String) {
-       
-        loginRequest(name,password)
+        loginRequest(name, pass)
     }
     
     private func loginRequest (_ name:String, _ password: String) {
         DispatchQueue.main.async {
+            self.hideLoading()
             if let app = UIApplication.shared.delegate as? AppDelegate {
                 if SPApp.Launch.isFirstLaunch {
                     SPApp.Launch.run()
                 }
-                app.openApp()
+                app.goToDashboardForDemoPurpose()
             }
         }
     }

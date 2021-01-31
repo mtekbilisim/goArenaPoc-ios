@@ -33,7 +33,7 @@ class ArenaTabbarController: UITabBarController {
         button.setImage(UIImage(named: "plusIcon")!)
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
-        button.imageEdgeInsets = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        button.imageEdgeInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
 
         if Device.isIPhoneXSimilar() {
             var center: CGPoint = tabBar.center
@@ -59,7 +59,7 @@ class ArenaTabbarController: UITabBarController {
     }
     
     @objc func addPostTapped() {
-        let vc = AddPostViewController()
+        let vc = UINavigationController(rootViewController:AddPostViewController())
         vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
         present(vc)
     }

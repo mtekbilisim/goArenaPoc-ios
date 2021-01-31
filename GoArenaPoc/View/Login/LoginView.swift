@@ -102,7 +102,7 @@ class LoginView: UIView {
         loginButton.backgroundColor = UIColor.init(hex: "FCC418")
         loginButton.setTitleColor(.white)
         //loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        loginButton.kidShadow(shadowColor: SPNativeColors.black, cornerRadius: 10)
+        loginButton.kidShadow(shadowColor: AppAppearance.appColor, cornerRadius: 10)
         scrollView.addSubview(loginButton)
         
         forgetPasswordButton = SPButton()
