@@ -272,10 +272,10 @@ extension UIView {
         
     }
     
-    func kidShadow(shadowColor:UIColor, cornerRadius:CGFloat? = 20){
+    func kidShadow(shadowColor:UIColor, cornerRadius:CGFloat? = 10){
         
         self.layer.shadowColor = shadowColor.cgColor
-        self.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         self.layer.shadowOpacity = 1
         self.layer.shadowRadius = 0
         self.layer.masksToBounds = false

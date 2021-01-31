@@ -9,6 +9,7 @@ PODS:
   - SDWebImage (5.9.5):
     - SDWebImage/Core (= 5.9.5)
   - SDWebImage/Core (5.9.5)
+  - SimpleCheckbox (2.1.0)
   - SnapKit (5.0.1)
   - SwiftIcons (3.0)
 
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - MBVideoPlayer (from `https://github.com/mwaqasbhati/MBVideoPlayer.git`)
   - NotificationBannerSwift (~> 3.0.0)
   - SDWebImage (~> 5.0)
+  - SimpleCheckbox
   - SwiftIcons (~> 3.0)
 
 SPEC REPOS:
@@ -27,6 +29,7 @@ SPEC REPOS:
     - MarqueeLabel
     - NotificationBannerSwift
     - SDWebImage
+    - SimpleCheckbox
     - SnapKit
     - SwiftIcons
 
@@ -46,9 +49,10 @@ SPEC CHECKSUMS:
   MBVideoPlayer: 521a2a0c83bf7b1bb913d189b1c151f338c35054
   NotificationBannerSwift: 713e20f21b6105f4a36a00e5d9fa414a930d3d8e
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
+  SimpleCheckbox: ddcd433ab8c3a8f57300bebda13151a8f302c7f9
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftIcons: 3b748e57d9eee0c7c8d3bdbf2d742c0b1b4c6172
 
-PODFILE CHECKSUM: d2e563629603df07a29f277fbdf36c32d959a867
+PODFILE CHECKSUM: 9af1a4d415d89a2886c21d02c875f0664ea15a07
 
 COCOAPODS: 1.9.3

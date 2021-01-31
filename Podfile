@@ -12,6 +12,7 @@ target 'GoArenaPoc' do
     pod 'NotificationBannerSwift', '~> 3.0.0'
     pod 'JGProgressHUD'
     pod 'MBVideoPlayer', :git => 'https://github.com/mwaqasbhati/MBVideoPlayer.git'
+    pod 'SimpleCheckbox'
 
   target 'GoArenaPocTests' do
     inherit! :search_paths

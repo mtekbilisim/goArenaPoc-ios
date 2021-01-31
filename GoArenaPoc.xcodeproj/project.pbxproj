@@ -214,6 +214,11 @@
 		0DB7E3B525C1DF7C00117844 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7E3B425C1DF7C00117844 /* Montserrat-Regular.otf */; };
 		0DE4B22825C596B3004062F7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B22725C596B3004062F7 /* Reachability.swift */; };
 		0DE4B26125C5B2BC004062F7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B26025C5B2BC004062F7 /* LoginView.swift */; };
+		0DE4B26A25C69374004062F7 /* TurkcellTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B26925C69374004062F7 /* TurkcellTextField.swift */; };
+		0DE4B28025C6A166004062F7 /* ArenaRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B27F25C6A166004062F7 /* ArenaRadioButton.swift */; };
+		0DE4B28C25C6A817004062F7 /* turkcell_satura_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0DE4B28B25C6A817004062F7 /* turkcell_satura_medium.otf */; };
+		0DE4B29525C6A826004062F7 /* Turkcell_Satura_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DE4B29325C6A826004062F7 /* Turkcell_Satura_Bold.ttf */; };
+		0DE4B29625C6A826004062F7 /* Turkcell_Satura_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DE4B29425C6A826004062F7 /* Turkcell_Satura_Regular.ttf */; };
 		7B62AB26EDCFC7BD44F9F9D3 /* Pods_GoArenaPoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5247DB3F7FF00642FFDE57D3 /* Pods_GoArenaPoc.framework */; };
 		E121274AAEAFC79912861310 /* Pods_GoArenaPoc_GoArenaPocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED03A986B36CF2131CE87DC /* Pods_GoArenaPoc_GoArenaPocUITests.framework */; };
 		FDE0D55A3FB9B8C454BAA60E /* Pods_GoArenaPocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D929BE072231693EDB3F65CB /* Pods_GoArenaPocTests.framework */; };
@@ -450,6 +455,11 @@
 		0DB7E3B425C1DF7C00117844 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.otf"; path = "GoArenaPoc/Assets/Montserrat-Regular.otf"; sourceTree = SOURCE_ROOT; };
 		0DE4B22725C596B3004062F7 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0DE4B26025C5B2BC004062F7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0DE4B26925C69374004062F7 /* TurkcellTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurkcellTextField.swift; sourceTree = "<group>"; };
+		0DE4B27F25C6A166004062F7 /* ArenaRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaRadioButton.swift; sourceTree = "<group>"; };
+		0DE4B28B25C6A817004062F7 /* turkcell_satura_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = turkcell_satura_medium.otf; sourceTree = "<group>"; };
+		0DE4B29325C6A826004062F7 /* Turkcell_Satura_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Turkcell_Satura_Bold.ttf; sourceTree = "<group>"; };
+		0DE4B29425C6A826004062F7 /* Turkcell_Satura_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Turkcell_Satura_Regular.ttf; sourceTree = "<group>"; };
 		1019F7734B9448B52ABE45AC /* Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig"; path = "Target Support Files/Pods-GoArenaPoc-GoArenaPocUITests/Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5247DB3F7FF00642FFDE57D3 /* Pods_GoArenaPoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoArenaPoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		590EB82550A386A212DA5481 /* Pods-GoArenaPoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPoc.release.xcconfig"; path = "Target Support Files/Pods-GoArenaPoc/Pods-GoArenaPoc.release.xcconfig"; sourceTree = "<group>"; };
@@ -553,6 +563,7 @@
 				0DB7E19525C1D14E00117844 /* App */,
 				0DB7E1DB25C1DA1200117844 /* Helpers */,
 				0DB7E36E25C1DCE300117844 /* Extensions */,
+				0DE4B26825C6935F004062F7 /* CustomViews */,
 				0DB7E19125C1D0BA00117844 /* Model */,
 				0DB7E19025C1D0B300117844 /* View */,
 				0DB7E18F25C1D0A500117844 /* Controller */,
@@ -752,6 +763,9 @@
 		0DB7E1F825C1DAD300117844 /* font */ = {
 			isa = PBXGroup;
 			children = (
+				0DE4B29325C6A826004062F7 /* Turkcell_Satura_Bold.ttf */,
+				0DE4B29425C6A826004062F7 /* Turkcell_Satura_Regular.ttf */,
+				0DE4B28B25C6A817004062F7 /* turkcell_satura_medium.otf */,
 				0DB7E3B425C1DF7C00117844 /* Montserrat-Regular.otf */,
 				0DB7E1F925C1DAD300117844 /* Montserrat-Bold.otf */,
 				0DB7E1FA25C1DAD300117844 /* Montserrat-Light.ttf */,
@@ -1328,6 +1342,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		0DE4B26825C6935F004062F7 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				0DE4B26925C69374004062F7 /* TurkcellTextField.swift */,
+				0DE4B27F25C6A166004062F7 /* ArenaRadioButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		5E988ED38B5A7148F173C283 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1459,12 +1482,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE4B29625C6A826004062F7 /* Turkcell_Satura_Regular.ttf in Resources */,
 				0DB7E20A25C1DAD300117844 /* Montserrat-Light.ttf in Resources */,
+				0DE4B29525C6A826004062F7 /* Turkcell_Satura_Bold.ttf in Resources */,
 				0DB7E14F25C1CB4300117844 /* LaunchScreen.storyboard in Resources */,
 				0DB7E14C25C1CB4300117844 /* Assets.xcassets in Resources */,
 				0DB7E20B25C1DAD300117844 /* Montserrat-SemiBold.ttf in Resources */,
 				0DB7E20925C1DAD300117844 /* Montserrat-Bold.otf in Resources */,
 				0DB7E3B525C1DF7C00117844 /* Montserrat-Regular.otf in Resources */,
+				0DE4B28C25C6A817004062F7 /* turkcell_satura_medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1657,6 +1683,7 @@
 				0DB7E33225C1DB7E00117844 /* SPNativeColors.swift in Sources */,
 				0DB7E33125C1DB7E00117844 /* SPAppLaunch.swift in Sources */,
 				0DB7E38525C1DCE300117844 /* Extensions+UINavigationController.swift in Sources */,
+				0DE4B26A25C69374004062F7 /* TurkcellTextField.swift in Sources */,
 				0DB7E2D425C1DB7E00117844 /* TPKeyboardAvoidingSwift.swift in Sources */,
 				0DB7E2EC25C1DB7E00117844 /* SPNativeLargeButton.swift in Sources */,
 				0DB7E34325C1DB7E00117844 /* SPTelegram.swift in Sources */,
@@ -1744,6 +1771,7 @@
 				0DB7E33F25C1DB7E00117844 /* SPDownloader.swift in Sources */,
 				0DB7E2DE25C1DB7E00117844 /* SPFormFeaturedTitleTableViewCell.swift in Sources */,
 				0DB7E2D125C1DB7E00117844 /* ObjectSavableError.swift in Sources */,
+				0DE4B28025C6A166004062F7 /* ArenaRadioButton.swift in Sources */,
 				0DB7E2F125C1DB7E00117844 /* SPAppleMusicButton.swift in Sources */,
 				0DB7E38925C1DCE300117844 /* Extensions+UIApplication.swift in Sources */,
 				0DB7E2DC25C1DB7E00117844 /* SPFormLabelTableViewCell.swift in Sources */,

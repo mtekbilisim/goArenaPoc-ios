@@ -52,6 +52,9 @@
 		<string>Montserrat-Bold.otf</string>
 		<string>Montserrat-Light.ttf</string>
 		<string>Montserrat-SemiBold.ttf</string>
+        <string>Turkcell_Satura_Regular.ttf</string>
+        <string>Turkcell_Satura_Bold.ttf</string>
+        <string>turkcell_satura_medium.otf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
