@@ -1,4 +1,7 @@
 PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - FontAwesome.swift (1.9.1)
   - JGProgressHUD (2.2)
   - MarqueeLabel (4.0.5)
@@ -6,14 +9,20 @@ PODS:
   - NotificationBannerSwift (3.0.2):
     - MarqueeLabel (~> 4.0.0)
     - SnapKit (~> 5.0.0)
+  - PryntTrimmerView (4.0.2)
   - SDWebImage (5.9.5):
     - SDWebImage/Core (= 5.9.5)
   - SDWebImage/Core (5.9.5)
   - SimpleCheckbox (2.1.0)
   - SnapKit (5.0.1)
+  - SteviaLayout (4.7.3)
   - SwiftIcons (3.0)
+  - YPImagePicker (4.4.0):
+    - PryntTrimmerView (~> 4.0.2)
+    - SteviaLayout (~> 4.7.3)
 
 DEPENDENCIES:
+  - Charts
   - FontAwesome.swift
   - JGProgressHUD
   - MBVideoPlayer (from `https://github.com/mwaqasbhati/MBVideoPlayer.git`)
@@ -21,17 +30,22 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - SimpleCheckbox
   - SwiftIcons (~> 3.0)
+  - YPImagePicker
 
 SPEC REPOS:
   trunk:
+    - Charts
     - FontAwesome.swift
     - JGProgressHUD
     - MarqueeLabel
     - NotificationBannerSwift
+    - PryntTrimmerView
     - SDWebImage
     - SimpleCheckbox
     - SnapKit
+    - SteviaLayout
     - SwiftIcons
+    - YPImagePicker
 
 EXTERNAL SOURCES:
   MBVideoPlayer:
@@ -43,16 +57,20 @@ CHECKOUT OPTIONS:
     :git: https://github.com/mwaqasbhati/MBVideoPlayer.git
 
 SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
   JGProgressHUD: d83d7a981b85d11205e19ff8ad5bb9c40571c847
   MarqueeLabel: 00cc0bcd087111dca575878b3531af980559707d
   MBVideoPlayer: 521a2a0c83bf7b1bb913d189b1c151f338c35054
   NotificationBannerSwift: 713e20f21b6105f4a36a00e5d9fa414a930d3d8e
+  PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   SimpleCheckbox: ddcd433ab8c3a8f57300bebda13151a8f302c7f9
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SteviaLayout: c2ecdcff57d44e38fd2f65e54ad52aeae28ca0c4
   SwiftIcons: 3b748e57d9eee0c7c8d3bdbf2d742c0b1b4c6172
+  YPImagePicker: 15aed8bcaa4dad976e11b6114126d731a2f9f3c9
 
-PODFILE CHECKSUM: 9af1a4d415d89a2886c21d02c875f0664ea15a07
+PODFILE CHECKSUM: 47c455076adbf0c76b32f0707c479cd994f2d896
 
 COCOAPODS: 1.9.3

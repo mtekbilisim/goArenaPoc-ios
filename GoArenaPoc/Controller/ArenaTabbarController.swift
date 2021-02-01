@@ -48,14 +48,14 @@ class ArenaTabbarController: UITabBarController {
         view.addSubview(button)
 
         //settings vc
-        let settingsVC = UINavigationController(rootViewController:SettingsViewController())
-        settingsVC.title = "Settings"
-        settingsVC.tabBarItem.image = UIImage(named: "comments")
+        let dashboardVC = UINavigationController(rootViewController:DashboardViewController())
+        dashboardVC.title = "Dashboard"
+        dashboardVC.tabBarItem.image = UIImage(named: "comments")
 
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Montserrat", size: 10)!], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Montserrat-Bold", size: 10)!], for: .selected)
-        viewControllers = [feedVC, addpost, settingsVC]
+        viewControllers = [feedVC, addpost, dashboardVC]
     }
     
     @objc func addPostTapped() {

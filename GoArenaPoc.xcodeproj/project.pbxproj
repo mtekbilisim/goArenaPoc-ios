@@ -32,7 +32,7 @@
 		0DB7E16525C1CB4400117844 /* GoArenaPocUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E16425C1CB4400117844 /* GoArenaPocUITests.swift */; };
 		0DB7E19725C1D19D00117844 /* ArenaTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E19625C1D19D00117844 /* ArenaTabbarController.swift */; };
 		0DB7E19F25C1D21C00117844 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E19E25C1D21C00117844 /* FeedViewController.swift */; };
-		0DB7E1A425C1D22900117844 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1A325C1D22900117844 /* SettingsViewController.swift */; };
+		0DB7E1A425C1D22900117844 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1A325C1D22900117844 /* DashboardViewController.swift */; };
 		0DB7E1B925C1D29200117844 /* Alamofire+ArrayEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1AB25C1D29200117844 /* Alamofire+ArrayEncoding.swift */; };
 		0DB7E1BA25C1D29200117844 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1AC25C1D29200117844 /* ParameterEncoding.swift */; };
 		0DB7E1BB25C1D29200117844 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E1AD25C1D29200117844 /* URLParameterEncoding.swift */; };
@@ -219,6 +219,7 @@
 		0DE4B28C25C6A817004062F7 /* turkcell_satura_medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0DE4B28B25C6A817004062F7 /* turkcell_satura_medium.otf */; };
 		0DE4B29525C6A826004062F7 /* Turkcell_Satura_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DE4B29325C6A826004062F7 /* Turkcell_Satura_Bold.ttf */; };
 		0DE4B29625C6A826004062F7 /* Turkcell_Satura_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DE4B29425C6A826004062F7 /* Turkcell_Satura_Regular.ttf */; };
+		0DE4B2D825C7DE31004062F7 /* DashboardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B2D725C7DE31004062F7 /* DashboardTableCell.swift */; };
 		7B62AB26EDCFC7BD44F9F9D3 /* Pods_GoArenaPoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5247DB3F7FF00642FFDE57D3 /* Pods_GoArenaPoc.framework */; };
 		E121274AAEAFC79912861310 /* Pods_GoArenaPoc_GoArenaPocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED03A986B36CF2131CE87DC /* Pods_GoArenaPoc_GoArenaPocUITests.framework */; };
 		FDE0D55A3FB9B8C454BAA60E /* Pods_GoArenaPocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D929BE072231693EDB3F65CB /* Pods_GoArenaPocTests.framework */; };
@@ -273,7 +274,7 @@
 		0DB7E16625C1CB4400117844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DB7E19625C1D19D00117844 /* ArenaTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArenaTabbarController.swift; sourceTree = "<group>"; };
 		0DB7E19E25C1D21C00117844 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		0DB7E1A325C1D22900117844 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		0DB7E1A325C1D22900117844 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		0DB7E1AB25C1D29200117844 /* Alamofire+ArrayEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire+ArrayEncoding.swift"; sourceTree = "<group>"; };
 		0DB7E1AC25C1D29200117844 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		0DB7E1AD25C1D29200117844 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
@@ -460,6 +461,7 @@
 		0DE4B28B25C6A817004062F7 /* turkcell_satura_medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = turkcell_satura_medium.otf; sourceTree = "<group>"; };
 		0DE4B29325C6A826004062F7 /* Turkcell_Satura_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Turkcell_Satura_Bold.ttf; sourceTree = "<group>"; };
 		0DE4B29425C6A826004062F7 /* Turkcell_Satura_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Turkcell_Satura_Regular.ttf; sourceTree = "<group>"; };
+		0DE4B2D725C7DE31004062F7 /* DashboardTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableCell.swift; sourceTree = "<group>"; };
 		1019F7734B9448B52ABE45AC /* Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig"; path = "Target Support Files/Pods-GoArenaPoc-GoArenaPocUITests/Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5247DB3F7FF00642FFDE57D3 /* Pods_GoArenaPoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoArenaPoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		590EB82550A386A212DA5481 /* Pods-GoArenaPoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPoc.release.xcconfig"; path = "Target Support Files/Pods-GoArenaPoc/Pods-GoArenaPoc.release.xcconfig"; sourceTree = "<group>"; };
@@ -596,7 +598,7 @@
 			children = (
 				0DB7E14625C1CB4000117844 /* ViewController.swift */,
 				0DB7E21325C1DB0800117844 /* Feed */,
-				0DB7E21425C1DB0E00117844 /* Settings */,
+				0DB7E21425C1DB0E00117844 /* Dashboard */,
 				0D9FA8E225C458E700EF7A7B /* AddPost */,
 				0DB7E1D225C1D97400117844 /* OnBoarding */,
 				0DB7E19625C1D19D00117844 /* ArenaTabbarController.swift */,
@@ -607,6 +609,7 @@
 		0DB7E19025C1D0B300117844 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0DE4B2D625C7DE19004062F7 /* Dashboard */,
 				0DE4B25F25C5B2AD004062F7 /* Login */,
 				0D9FA8F625C4812300EF7A7B /* Feed */,
 			);
@@ -782,12 +785,12 @@
 			path = Feed;
 			sourceTree = "<group>";
 		};
-		0DB7E21425C1DB0E00117844 /* Settings */ = {
+		0DB7E21425C1DB0E00117844 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				0DB7E1A325C1D22900117844 /* SettingsViewController.swift */,
+				0DB7E1A325C1D22900117844 /* DashboardViewController.swift */,
 			);
-			path = Settings;
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		0DB7E21525C1DB7D00117844 /* ObjectSavable */ = {
@@ -1351,6 +1354,14 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		0DE4B2D625C7DE19004062F7 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				0DE4B2D725C7DE31004062F7 /* DashboardTableCell.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
 		5E988ED38B5A7148F173C283 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1750,7 +1761,7 @@
 				0DB7E19F25C1D21C00117844 /* FeedViewController.swift in Sources */,
 				0DB7E2E525C1DB7E00117844 /* SPTableViewCell.swift in Sources */,
 				0DB7E38825C1DCE300117844 /* Extensions+Sequence.swift in Sources */,
-				0DB7E1A425C1D22900117844 /* SettingsViewController.swift in Sources */,
+				0DB7E1A425C1D22900117844 /* DashboardViewController.swift in Sources */,
 				0DB7E2FD25C1DB7E00117844 /* SPBlurView.swift in Sources */,
 				0DB7E33025C1DB7E00117844 /* SPAppBadge.swift in Sources */,
 				0DB7E38725C1DCE300117844 /* Extensions+String.swift in Sources */,
@@ -1791,6 +1802,7 @@
 				0DB7E1C025C1D29200117844 /* HTTPMethod.swift in Sources */,
 				0DB7E32225C1DB7E00117844 /* SPUIVisualEffectViewExtenshion.swift in Sources */,
 				0D9FA90525C4892800EF7A7B /* FeedHeaderFooterView.swift in Sources */,
+				0DE4B2D825C7DE31004062F7 /* DashboardTableCell.swift in Sources */,
 				0D9FA8F825C4813400EF7A7B /* FeedView.swift in Sources */,
 				0DB7E2EE25C1DB7E00117844 /* SPButton.swift in Sources */,
 				0DB7E31A25C1DB7E00117844 /* SPUIImageExtension.swift in Sources */,

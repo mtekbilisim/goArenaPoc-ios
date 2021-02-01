@@ -15,7 +15,7 @@ enum Global {
     static let defaultFont = UIFont(name: "TurkcellSatura", size: 13)
     static let regularFont = "Montserrat-Light"
     static let boldFont    = "Montserrat-Bold"
-    static let navBarFont  = UIFont(name: "TurkcellSatura-Bold", size: 15)
+    static let navBarFont  = UIFont(name: "TurkcellSatura-Bold", size: 18)
     static let tabBarFont  = UIFont(name: "TurkcellSatura", size: 10)
     static let tabBarFontSelected  = UIFont(name: "Montserrat-Bold", size: 10)
     static let navBarButtonFont  = UIFont(name: "Montserrat-Light", size: 10)

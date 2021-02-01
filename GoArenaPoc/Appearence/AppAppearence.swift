@@ -81,7 +81,7 @@ final class AppAppearance {
     static func setupAppearance() {
         //navbar appearence
         let navBarAppearance = UINavigationBar.appearance()
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TurkcellSatura-Bold", size: 15)!]
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TurkcellSatura-Bold", size: 18)!]
         //navBarAppearance.barTintColor = Global.appColor
         navBarAppearance.tintColor = UIColor.init(hex: "059FE7")
         navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.init(hex: "059FE7"),NSAttributedString.Key.font: Global.navBarFont!]
