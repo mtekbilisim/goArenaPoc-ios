@@ -29,13 +29,11 @@ struct NetworkManager {
     static let environment : GoArenaNetworkEnvironment = .staging
     let mainRouter = Router<GoArenaApi>()
     
-    func sendRequest<T>(route: GoArenaApi, _ type: T.Type?, _ completion: @escaping ((GenericResponse<T>?, String?) -> Void)) {
+    func sendRequest<T>(route: GoArenaApi, _ type: T.Type?, _ completion: @escaping ((ResponseModel<T>?, String?) -> Void)) {
         print(route)
         mainRouter.request(route) { (data, response, error) in
              if error != nil {
-                
-                completion(nil, "err")
-                
+                completion(nil, error.debugDescription)
            }
            
            if let response = response as? HTTPURLResponse {
@@ -43,64 +41,31 @@ struct NetworkManager {
                 switch result {
                 case .success:
                      guard let responseData = data else {
-                        
-                         completion(nil, "err")
+                        completion(nil, "err")
                          return
                      }
                      do {
                          print(responseData)
                          let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
-                         //print(jsonData)
-                         let apiResponse = try JSONDecoder().decode(GenericResponse<T>.self, from: responseData)
+                         print(jsonData)
+                         let apiResponse = try JSONDecoder().decode(ResponseModel<T>.self, from: responseData)
                          completion(apiResponse,nil)
                         
                     } catch {
                      print(error)
            
-                     completion(nil, "err")
+                        completion(nil, error.localizedDescription)
                     }
                  
                 case .failure(let networkFailureError):
                     print(networkFailureError)
                     printIfDebug(route.path)
-                    printIfDebug(route.headers!.debugDescription)
                     printIfDebug(route.httpMethod.rawValue)
-                    completion(nil,"")
+                    completion(nil,networkFailureError)
                 }
            }
         }
     }
-    
-    func getFeeds(completion: @escaping (_ result: [Feed]? ,_ error: String?)->()){
-        mainRouter.request(.feeds) { (data, response, error) in
-               if error != nil {
-                   completion(nil, "Please check your network connection.")
-               }
-               
-               if let response = response as? HTTPURLResponse {
-                   let result = self.handleNetworkResponse(response)
-                   switch result {
-                   case .success:
-                       guard let responseData = data else {
-                           completion(nil, NetworkResponse.noData.rawValue)
-                           return
-                       }
-                       do {
-                           print(responseData)
-                           let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
-                           print(jsonData)
-                           let apiResponse = try JSONDecoder().decode([Feed].self, from: responseData)
-                           completion(apiResponse,nil)
-                       }catch {
-                           print(error)
-                           completion(nil, NetworkResponse.unableToDecode.rawValue)
-                       }
-                   case .failure(let networkFailureError):
-                       completion(nil, networkFailureError)
-                   }
-               }
-           }
-       }
     
     func printIfDebug(_ string: String) {
         #if DEBUG

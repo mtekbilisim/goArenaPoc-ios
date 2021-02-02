@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.4.0)
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
@@ -27,6 +28,7 @@ PODS:
     - SteviaLayout (~> 4.7.3)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - Charts
   - FontAwesome.swift
   - iOSSnapshotTestCase
@@ -40,6 +42,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Charts
     - FontAwesome.swift
     - iOSSnapshotTestCase
@@ -64,6 +67,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/mwaqasbhati/MBVideoPlayer.git
 
 SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   FontAwesome.swift: 6b52cb7be66eacd28cbfaa0ca7ffd0de4a186a1d
   iOSSnapshotTestCase: 9ab44cb5aa62b84d31847f40680112e15ec579a6
@@ -79,6 +83,6 @@ SPEC CHECKSUMS:
   SwiftIcons: 3b748e57d9eee0c7c8d3bdbf2d742c0b1b4c6172
   YPImagePicker: 15aed8bcaa4dad976e11b6114126d731a2f9f3c9
 
-PODFILE CHECKSUM: 0e17f1a3aa57b907b2dde5c848f31f7d85b2ceb6
+PODFILE CHECKSUM: d34d8444e88efc72827094c0048c3bcb01df08b5
 
 COCOAPODS: 1.9.3

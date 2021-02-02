@@ -49,7 +49,7 @@ class FeedVideoTableViewCell: UITableViewCell {
         title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = ""
-        title.font = AppAppearance.twelveB
+        title.font = AppAppearance.seventeen
         
         date = UILabel()
         date.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +60,7 @@ class FeedVideoTableViewCell: UITableViewCell {
         detailLabel.translatesAutoresizingMaskIntoConstraints = false
         detailLabel.text = ""
         detailLabel.numberOfLines = 2
-        detailLabel.font = AppAppearance.elevenL
+        detailLabel.font = AppAppearance.fifteen
         
         likeButton = SPButton()
         likeButton.translatesAutoresizingMaskIntoConstraints = false

@@ -9,6 +9,7 @@ import UIKit
 import NotificationBannerSwift
 import JGProgressHUD
 import FontAwesome_swift
+import Alamofire
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
 
@@ -16,7 +17,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
     let hud = JGProgressHUD(style: .extraLight)
     var connectedTheInternet:Bool = false
     var connectionErrorShown :Bool = false
-    
+    var isPostDone:Bool = false
     
     init(networkManager: NetworkManager) {
         super.init(nibName: nil, bundle: nil)
@@ -171,7 +172,25 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
         }
     }
     
-    
+    func showSuccessMessage(message:String){
+       if isPostDone {
+            return
+        } else {
+            DispatchQueue.main.async {
+                self.isPostDone = true
+                let leftView = UIImageView(image: UIImage(named: "logo2"))
+                let banner = FloatingNotificationBanner(title: "", subtitle: message,
+                                                   leftView: leftView,
+                                                   style: .success)
+                banner.titleLabel?.font = AppAppearance.sixteenB
+                banner.subtitleLabel?.font = AppAppearance.fifteenB
+                banner.delegate = self
+                banner.show(queuePosition: .front,bannerPosition: .top,cornerRadius: 4,shadowBlurRadius: 2)
+                return
+            }
+        }
+        
+    }
     
     func dialNumber(number : String) {
         let formatedNumber = number.components(separatedBy: NSCharacterSet.decimalDigits.inverted).joined(separator: "")
@@ -182,6 +201,137 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
             return
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    func uploadImage( endUrl: String, imageData: Data?, parameters: [String : Any]?, onCompletion: ((_ file:File) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
+       
+        AF.upload(multipartFormData: { multipartFormData in
+            
+            if let parameters = parameters {
+                for (key, value) in parameters {
+                    if let temp = value as? String {
+                        multipartFormData.append(temp.data(using: .utf8)!, withName: key)
+                    }
+                    if let temp = value as? Int {
+                        multipartFormData.append("\(temp)".data(using: .utf8)!, withName: key)
+                    }
+                    if let temp = value as? NSArray {
+                        temp.forEach({ element in
+                            let keyObj = key + "[]"
+                            if let string = element as? String {
+                                multipartFormData.append(string.data(using: .utf8)!, withName: keyObj)
+                            } else
+                                if let num = element as? Int {
+                                    let value = "\(num)"
+                                    multipartFormData.append(value.data(using: .utf8)!, withName: keyObj)
+                            }
+                        })
+                    }
+                }
+            }
+            
+            if let data = imageData {
+                multipartFormData.append(data, withName: "file", fileName: "\(Date.init().timeIntervalSince1970).png", mimeType: "image/png")
+            }
+        },
+                  to: endUrl, method: .post , headers: nil)
+            .responseJSON(completionHandler: { (response) in
+                
+                print(response)
+                
+                if let err = response.error{
+                    print(err)
+                    onError?(err)
+                    return
+                }
+                print("Succesfully uploaded")
+                
+                let json = response.data
+                let jsonDecoder = JSONDecoder()
+                do {
+                    let fileResponse = try jsonDecoder.decode(FileResponse.self, from: json!)
+                    onCompletion!(fileResponse.data)
+                } catch let error {
+                    print(error.localizedDescription)
+                    DispatchQueue.main.async {
+                        self.hideLoading()
+                    }
+                }
+//                let fileResponse = response.data as! File
+//                let file = File(fileName: fileResponse.fileName, fileDownloadUri: "", fileType: "", size: 0)
+//                print(response)
+//                if (json != nil)
+//                {
+//                    //let jsonObject = JSON(json!)
+//                    print(json)
+//                }
+            })
+    }
+    
+    func uploadVideo( endUrl: String, imageData: Data?, parameters: [String : Any]?, onCompletion: ((_ file:File) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
+       
+        AF.upload(multipartFormData: { multipartFormData in
+            
+            if let parameters = parameters {
+                for (key, value) in parameters {
+                    if let temp = value as? String {
+                        multipartFormData.append(temp.data(using: .utf8)!, withName: key)
+                    }
+                    if let temp = value as? Int {
+                        multipartFormData.append("\(temp)".data(using: .utf8)!, withName: key)
+                    }
+                    if let temp = value as? NSArray {
+                        temp.forEach({ element in
+                            let keyObj = key + "[]"
+                            if let string = element as? String {
+                                multipartFormData.append(string.data(using: .utf8)!, withName: keyObj)
+                            } else
+                                if let num = element as? Int {
+                                    let value = "\(num)"
+                                    multipartFormData.append(value.data(using: .utf8)!, withName: keyObj)
+                            }
+                        })
+                    }
+                }
+            }
+            
+            if let data = imageData {
+                let timestamp = NSDate().timeIntervalSince1970 // just for some random name.
+                multipartFormData.append(data, withName: "file", fileName: "\(timestamp).mp4", mimeType: "\(timestamp)/mp4")
+            }
+        },
+                  to: endUrl, method: .post , headers: nil)
+            .responseJSON(completionHandler: { (response) in
+                
+                print(response)
+                
+                if let err = response.error{
+                    print(err)
+                    onError?(err)
+                    return
+                }
+                print("Succesfully uploaded")
+                
+                let json = response.data
+                let jsonDecoder = JSONDecoder()
+                do {
+                    let fileResponse = try jsonDecoder.decode(FileResponse.self, from: json!)
+                    onCompletion!(fileResponse.data)
+                } catch let error {
+                    print(error.localizedDescription)
+                    DispatchQueue.main.async {
+                        self.hideLoading()
+                    }
+                }
+//                let fileResponse = response.data as! File
+//                let file = File(fileName: fileResponse.fileName, fileDownloadUri: "", fileType: "", size: 0)
+//                print(response)
+//                if (json != nil)
+//                {
+//                    //let jsonObject = JSON(json!)
+//                    print(json)
+//                }
+            })
     }
 }
 
@@ -204,7 +354,7 @@ extension UIViewController {
 
 extension UIViewController {
  
-    func showError(string: String) {
+    func showAlert(string: String) {
         let alert = UIAlertController(title: "", message: string, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Tamam", style: .default)
         alert.addAction(okButton)

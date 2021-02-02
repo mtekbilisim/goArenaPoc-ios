@@ -13,7 +13,7 @@ struct ResponseModel<T: Codable>: Codable {
     var data: T?
     
     private enum CodingKeys: String, CodingKey {
-        case data = "Data"
+        case data = "data"
     }
 
     public init(from decoder: Decoder) throws {
@@ -91,4 +91,9 @@ struct KidsError:Codable {
         self.code = code
         self.message = message
     }
+}
+
+
+struct ArenaResponse: Codable{
+    var id:Int
 }

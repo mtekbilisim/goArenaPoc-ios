@@ -12,11 +12,14 @@ import AVFoundation
 import AVKit
 import Photos
 
+
 class AddPostViewController: ViewController {
+    
+    // MARK: - VARS
+
     let maxLength = 400
     var scrollView =  UIScrollView()
     var sendPostButton = SPButton()
-    
     var textView = UITextView()
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     var keyboardTopView = UIView()
@@ -31,7 +34,7 @@ class AddPostViewController: ViewController {
     var cameraButton: UIButton = {
         let cameraButton = UIButton(type: .custom)
         cameraButton.setImage(UIImage(named: "camera"), for: .normal)
-        cameraButton.addTarget(self, action:#selector(showPicker), for: .touchUpInside)
+        cameraButton.addTarget(self, action:#selector(showUserToPickImage(_ :)), for: .touchUpInside)
         cameraButton.showsTouchWhenHighlighted = true
         return cameraButton
     }()
@@ -72,10 +75,33 @@ class AddPostViewController: ViewController {
         }
     }
     
+    var addedFiles:[File] = [] {
+        didSet {
+            if addedFiles.count > 0 {
+                for file in addedFiles {
+                    print(file.fileDownloadUri)
+                }
+                checkForReadyFiles()
+            }
+        }
+    }
+    var selectedVideo:YPMediaVideo?=nil {
+        didSet {
+            checkForReadyFiles()
+        }
+    }
+    
     let selectedImageV = UIImageView()
     let pickButton = UIButton()
     let resultsButton = UIButton()
-    
+    var addPostRequest = AddPostRequest(status: .DRAFT)
+    var isFilesReadyForUpload:Bool = false {
+        didSet{
+            addPost()
+        }
+    }
+    // MARK: - LIFECYCLES
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = false
@@ -94,9 +120,40 @@ class AddPostViewController: ViewController {
         setupView()
     }
     
+    // MARK: - showUserToPickImage
+    @objc func showUserToPickImage(_ sender: UIButton) {
+
+        let alert = UIAlertController(title: "Dosya Ekle", message: nil, preferredStyle: .actionSheet)
+       
+        alert.addAction(UIAlertAction(title: "Video ", style: .default, handler: { _ in
+            self.showPicker(type: 0)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Fotoğraf", style: .default, handler: { _ in
+            self.showPicker(type: 1)
+        }))
+
+        alert.addAction(UIAlertAction.init(title: "İptal", style: .cancel, handler: nil))
+
+        /*If you want work actionsheet on ipad
+        then you have to use popoverPresentationController to present the actionsheet,
+        otherwise app will crash on iPad */
+        switch UIDevice.current.userInterfaceIdiom {
+        case .pad:
+            alert.popoverPresentationController?.sourceView = self.view
+            alert.popoverPresentationController?.sourceRect = sender.bounds
+            alert.popoverPresentationController?.permittedArrowDirections = .up
+                        
+        default:
+            break
+        }
+
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - Configuration
    @objc
-   func showPicker() {
+    func showPicker(type:Int) {
 
        var config = YPImagePickerConfiguration()
 
@@ -110,8 +167,12 @@ class AddPostViewController: ViewController {
           resized to fit in a 1024x1024 box. Defaults to original image size. */
        // config.targetImageSize = .cappedTo(size: 1024)
        /* Choose what media types are available in the library. Defaults to `.photo` */
-       config.library.mediaType = .photoAndVideo
-       config.library.itemOverlayType = .grid
+        if type == 0 {
+            config.library.mediaType = .video
+        } else {
+            config.library.mediaType = .photo
+        }
+        config.library.itemOverlayType = .grid
        /* Enables selecting the front camera by default, useful for avatars. Defaults to false */
        // config.usesFrontCamera = true
        /* Adds a Filter step in the photo taking process. Defaults to true */
@@ -137,7 +198,12 @@ class AddPostViewController: ViewController {
 
        /* Defines which screens are shown at launch, and their order.
           Default value is `[.library, .photo]` */
-       config.screens = [.library, .photo, .video]
+        if type == 0{
+            config.screens = [.library, .video]
+        } else {
+            config.screens = [.library, .photo]
+
+        }
 
        /* Can forbid the items with very big height with this property */
 //        config.library.minWidthForItem = UIScreen.main.bounds.width * 0.8
@@ -167,7 +233,11 @@ class AddPostViewController: ViewController {
 
        config.maxCameraZoomFactor = 2.0
 
-       config.library.maxNumberOfItems = 5
+        if type == 0 {
+            config.library.maxNumberOfItems = 1
+        } else {
+            config.library.maxNumberOfItems = 5
+        }
        config.gallery.hidesRemoveButton = false
 
        /* Disable scroll to change between mode */
@@ -222,6 +292,8 @@ class AddPostViewController: ViewController {
                 self.imagesList.append(p.image)
             case .video(let v):
                 self.imagesList.append(v.thumbnail)
+                self.selectedVideo = v
+                
             }
         })
 
@@ -231,7 +303,11 @@ class AddPostViewController: ViewController {
                case .photo(let photo):
                    self.selectedImageV.image = photo.image
                    picker.dismiss(animated: true, completion: nil)
+                self.addPostRequest.postType = .IMAGE
+               
                case .video(let video):
+                self.addPostRequest.postType = .VIDEO
+
                    self.selectedImageV.image = video.thumbnail
                    let assetURL = video.url
                    let playerVC = AVPlayerViewController()
@@ -248,16 +324,130 @@ class AddPostViewController: ViewController {
         self.present(picker, animated: true, completion: nil)
 
    }
+    
+    func checkForReadyFiles() {
+        
+        if let v = selectedVideo {
+            self.isFilesReadyForUpload = true
+        } else {
+            if self.imagesList.count == self.addedFiles.count {
+                self.isFilesReadyForUpload = true
+            }
+        }
+    }
     // MARK: - Send Post Tapped
 
     @objc func sendPost(_ sender: UIButton) {
-        
+        self.showLoading()
+        if self.imagesList.count > 0 {
+            uploadFiles()
+        } else  {
+            if let v = self.selectedVideo {
+                self.isFilesReadyForUpload = true
+                self.uploadVideo(video: v)
+            } else {
+                self.isFilesReadyForUpload = true
+            }
+        }
+    }
+    
+    func sendPostRequest(model:AddPostRequest) {
+        self.hideLoading()
+        self.networkManager.sendRequest(route: .addPost(model: model), ArenaResponse.self) { [ weak self] (result, error) in
+            guard let self = self else { return }
+            if let _ = error {
+                DispatchQueue.main.async {
+                    self.hideLoading()
+                    self.showAlert(string: "Bir sorun oluştu")
+                }
+            }
+            if let result = result {
+                if self.addedFiles.count > 0 {
+                    self.addMediasToFeed(feedId:(result.data?.id)!)
+                } else {
+                    DispatchQueue.main.async {
+                        
+                        NotificationCenter.default.post(name: Notification.Name(Notifs.Feed.posted.rawValue),
+                                                        object: nil,
+                                                        userInfo: nil)
+                        self.hideLoading()
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+    }
+    
+    func addMediasToFeed(feedId:Int) {
+        if let v = self.selectedVideo {
+            sendMediaRequest(feedId: feedId, file:addedFiles[0])
+        } else {
+            for file in addedFiles {
+                sendMediaRequest(feedId: feedId, file:file)
+            }
+        }
+    }
+    
+    func sendMediaRequest(feedId:Int, file:File) {
+        networkManager.sendRequest(route: .postMediaForFeed(feedId: feedId, file: file), ArenaResponse.self) { (result, error) in
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: Notification.Name(Notifs.Feed.posted.rawValue),
+                                                object: nil,
+                                                userInfo: nil)
+                self.hideLoading()
+                self.dismiss(animated: true, completion: nil)
+                
+            }
+        }
+    }
+    
+    func uploadFiles() {
+        let images = imagesList
+        for image in images {
+            let data = image.jpegData(compressionQuality: 0.6)
+            uploadImage(endUrl: "http://turkcell.mtek.me:8080/files/uploadFile", imageData: data, parameters: nil) { (file) in
+            self.addedFiles.append(file)
+            } onError: { (err) in
+                DispatchQueue.main.async {
+                    self.showAlert(string: "Bir sorun oluştu.")
+                }
+            }
+        }
+    }
+    func uploadVideo (video:YPMediaVideo) {
+         let videoFileURL = video.url
+        let bytesArr = try? Data(contentsOf: videoFileURL as URL)
+        uploadImage(endUrl: "http://turkcell.mtek.me:8080/files/uploadFile", imageData: bytesArr, parameters: nil) { (file) in
+        self.addedFiles.append(file)
+        } onError: { (err) in
+            DispatchQueue.main.async {
+                self.showAlert(string: "Bir sorun oluştu.")
+            }
+        }
     }
     
     // MARK: - Close VC
     @objc
     func dismissView() {
         dismiss()
+    }
+    
+    func addPost() {
+        let title = self.textView.text ?? ""
+        self.addPostRequest.title = title
+        if let status = self.addPostRequest.postType {
+            self.addPostRequest.postType = status
+        } else {
+            self.addPostRequest.postType = .TEXT
+        }
+        let currentDate = Date()
+        let format = DateFormatter()
+        format.timeZone = .current
+        format.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let dateString = format.string(from: currentDate)
+        self.addPostRequest.postDate = dateString
+        print(addPostRequest)
+        sendPostRequest(model: self.addPostRequest)
     }
 }
 

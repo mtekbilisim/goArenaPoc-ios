@@ -10,6 +10,9 @@
 		0D6972F625C94826000E769B /* ChartUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6972F525C94826000E769B /* ChartUtilsTests.swift */; };
 		0D6972FB25C9484D000E769B /* EquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6972FA25C9484D000E769B /* EquatableTests.swift */; };
 		0D69730025C94883000E769B /* LineChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6972FF25C94883000E769B /* LineChartTests.swift */; };
+		0D80B70825C9A36500D9F0A2 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B70725C9A36500D9F0A2 /* File.swift */; };
+		0D80B72725C9CD8300D9F0A2 /* Notifs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B72625C9CD8300D9F0A2 /* Notifs.swift */; };
+		0D80B72C25C9D5F600D9F0A2 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B72B25C9D5F600D9F0A2 /* Employee.swift */; };
 		0D9FA8DD25C458DD00EF7A7B /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */; };
 		0D9FA8ED25C46B4600EF7A7B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E725C46B4600EF7A7B /* Type.swift */; };
 		0D9FA8EE25C46B4600EF7A7B /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E825C46B4600EF7A7B /* Version.swift */; };
@@ -221,6 +224,7 @@
 		0DE07D6525C96A53002BCCFC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE07D6425C96A53002BCCFC /* Comment.swift */; };
 		0DE07D6A25C97078002BCCFC /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE07D6925C97078002BCCFC /* Like.swift */; };
 		0DE07D6F25C970CA002BCCFC /* FeedStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE07D6E25C970CA002BCCFC /* FeedStatus.swift */; };
+		0DE07DA125C98BD5002BCCFC /* AddPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE07DA025C98BD5002BCCFC /* AddPostRequest.swift */; };
 		0DE4B22825C596B3004062F7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B22725C596B3004062F7 /* Reachability.swift */; };
 		0DE4B26125C5B2BC004062F7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B26025C5B2BC004062F7 /* LoginView.swift */; };
 		0DE4B26A25C69374004062F7 /* TurkcellTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B26925C69374004062F7 /* TurkcellTextField.swift */; };
@@ -258,6 +262,9 @@
 		0D6972F525C94826000E769B /* ChartUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartUtilsTests.swift; sourceTree = "<group>"; };
 		0D6972FA25C9484D000E769B /* EquatableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquatableTests.swift; sourceTree = "<group>"; };
 		0D6972FF25C94883000E769B /* LineChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartTests.swift; sourceTree = "<group>"; };
+		0D80B70725C9A36500D9F0A2 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		0D80B72625C9CD8300D9F0A2 /* Notifs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifs.swift; sourceTree = "<group>"; };
+		0D80B72B25C9D5F600D9F0A2 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		0D9FA8E725C46B4600EF7A7B /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		0D9FA8E825C46B4600EF7A7B /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
@@ -475,6 +482,7 @@
 		0DE07D6425C96A53002BCCFC /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		0DE07D6925C97078002BCCFC /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		0DE07D6E25C970CA002BCCFC /* FeedStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStatus.swift; sourceTree = "<group>"; };
+		0DE07DA025C98BD5002BCCFC /* AddPostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostRequest.swift; sourceTree = "<group>"; };
 		0DE4B22725C596B3004062F7 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0DE4B26025C5B2BC004062F7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0DE4B26925C69374004062F7 /* TurkcellTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurkcellTextField.swift; sourceTree = "<group>"; };
@@ -526,6 +534,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D80B70625C9A35900D9F0A2 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				0D80B70725C9A36500D9F0A2 /* File.swift */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
 		0D9FA8E225C458E700EF7A7B /* AddPost */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,6 +743,7 @@
 		0DB7E1CB25C1D3B000117844 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				0DE07DA025C98BD5002BCCFC /* AddPostRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -734,13 +751,9 @@
 		0DB7E1CC25C1D3B500117844 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				0D9FA90925C48BFC00EF7A7B /* Feed.swift */,
-				0D9FA91725C5468A00EF7A7B /* User.swift */,
-				0DE07D5A25C96A00002BCCFC /* Media.swift */,
-				0DE07D5F25C96A15002BCCFC /* PostType.swift */,
-				0DE07D6425C96A53002BCCFC /* Comment.swift */,
-				0DE07D6925C97078002BCCFC /* Like.swift */,
-				0DE07D6E25C970CA002BCCFC /* FeedStatus.swift */,
+				0D80B70625C9A35900D9F0A2 /* File */,
+				0DE07DA625C99496002BCCFC /* Feed */,
+				0DE07DA525C9948F002BCCFC /* Employee */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1364,6 +1377,29 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0DE07DA525C9948F002BCCFC /* Employee */ = {
+			isa = PBXGroup;
+			children = (
+				0D80B72B25C9D5F600D9F0A2 /* Employee.swift */,
+			);
+			path = Employee;
+			sourceTree = "<group>";
+		};
+		0DE07DA625C99496002BCCFC /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				0D9FA90925C48BFC00EF7A7B /* Feed.swift */,
+				0D9FA91725C5468A00EF7A7B /* User.swift */,
+				0DE07D5A25C96A00002BCCFC /* Media.swift */,
+				0DE07D5F25C96A15002BCCFC /* PostType.swift */,
+				0DE07D6425C96A53002BCCFC /* Comment.swift */,
+				0DE07D6925C97078002BCCFC /* Like.swift */,
+				0DE07D6E25C970CA002BCCFC /* FeedStatus.swift */,
+				0D80B72625C9CD8300D9F0A2 /* Notifs.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		0DE4B22625C596B3004062F7 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -1734,6 +1770,7 @@
 				0D9FA8DD25C458DD00EF7A7B /* AddPostViewController.swift in Sources */,
 				0DB7E31325C1DB7E00117844 /* SPTypes.swift in Sources */,
 				0DB7E30625C1DB7E00117844 /* SPProposeController.swift in Sources */,
+				0D80B72725C9CD8300D9F0A2 /* Notifs.swift in Sources */,
 				0DB7E1E225C1DA2A00117844 /* VLCircularTransition.swift in Sources */,
 				0DB7E1BA25C1D29200117844 /* ParameterEncoding.swift in Sources */,
 				0DB7E34B25C1DB7E00117844 /* SPCodeDraw.swift in Sources */,
@@ -1761,6 +1798,7 @@
 				0DB7E31925C1DB7E00117844 /* SPUIFontExtenshion.swift in Sources */,
 				0DB7E30325C1DB7E00117844 /* SPSocialIconView.swift in Sources */,
 				0DB7E39225C1DCE300117844 /* Extensions+Magnetic.swift in Sources */,
+				0DE07DA125C98BD5002BCCFC /* AddPostRequest.swift in Sources */,
 				0DB7E14725C1CB4000117844 /* ViewController.swift in Sources */,
 				0DB7E35325C1DB7E00117844 /* SPLarkSettingsCollectionViewCell.swift in Sources */,
 				0DB7E30525C1DB7E00117844 /* SPGolubevIconView.swift in Sources */,
@@ -1846,6 +1884,7 @@
 				0DE4B28025C6A166004062F7 /* ArenaRadioButton.swift in Sources */,
 				0DB7E2F125C1DB7E00117844 /* SPAppleMusicButton.swift in Sources */,
 				0DB7E38925C1DCE300117844 /* Extensions+UIApplication.swift in Sources */,
+				0D80B70825C9A36500D9F0A2 /* File.swift in Sources */,
 				0DB7E2DC25C1DB7E00117844 /* SPFormLabelTableViewCell.swift in Sources */,
 				0DB7E34D25C1DB7E00117844 /* SPDevice.swift in Sources */,
 				0DB7E2E225C1DB7E00117844 /* SPImageTableViewCell.swift in Sources */,
@@ -1877,6 +1916,7 @@
 				0DB7E38F25C1DCE300117844 /* Extensions+UICollectionView.swift in Sources */,
 				0DB7E2D325C1DB7E00117844 /* ObjectSavable.swift in Sources */,
 				0DB7E30F25C1DB7E00117844 /* SPMengTransformCollectionView.swift in Sources */,
+				0D80B72C25C9D5F600D9F0A2 /* Employee.swift in Sources */,
 				0DB7E2F725C1DB7E00117844 /* SPGradeBlurView.swift in Sources */,
 				0DB7E31625C1DB7E00117844 /* SPUITableViewCellExtenshion.swift in Sources */,
 				0DB7E31425C1DB7E00117844 /* SPLocale.swift in Sources */,

@@ -10,12 +10,10 @@ import UIKit
 class FeedViewController: ViewController  {
 
     // MARK: - VARs
-
     var feedView = FeedView()
     var feeds:[Feed] = []
     var shouldTop:Bool = false
    
-    
     // MARK: - LifeCycles
 
     override func viewWillAppear(_ animated: Bool) {
@@ -29,6 +27,10 @@ class FeedViewController: ViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(self.feedDone),
+                                               name: NSNotification.Name(rawValue: Notifs.Feed.posted.rawValue),
+                                               object: nil)
         self.title = "Feed"
         self.tabBarController?.delegate = self
         setupView()
@@ -38,17 +40,17 @@ class FeedViewController: ViewController  {
 
     func getFeeds() {
         self.showLoading()
-        networkManager.getFeeds { [weak self] (result, error) in
+        networkManager.sendRequest(route: .feeds, [Feed].self) { [ weak self] (result, error) in
             guard let self = self else { return }
-            if let error = error {
-                self.showError(string: error)
+            if let _ = error {
+                self.showAlert(string: "Bir sorun oluştu")
                 DispatchQueue.main.async {
                     self.hideLoading()
                     self.feedView.refreshControl.endRefreshing()
                 }
             }
             if let result = result {
-                self.feeds = result
+                self.feeds = result.data ?? []
                 print(result)
                 DispatchQueue.main.async {
                     self.hideLoading()
@@ -63,6 +65,10 @@ class FeedViewController: ViewController  {
                 }
             }
         }
+    }
+    
+    @objc func feedDone(notification: Notification) {
+        self.showSuccessMessage(message: "İletiniz  gönderilmiştir.")
     }
 }
 

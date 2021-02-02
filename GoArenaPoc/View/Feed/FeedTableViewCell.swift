@@ -69,7 +69,7 @@ class FeedTableViewCell: UITableViewCell {
         detailLabel.translatesAutoresizingMaskIntoConstraints = false
         detailLabel.text = ""
         detailLabel.numberOfLines = 2
-        detailLabel.font = AppAppearance.fourteen
+        detailLabel.font = AppAppearance.fifteen
         
         likeButton = SPButton()
         likeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -180,7 +180,6 @@ class FeedTableViewCell: UITableViewCell {
         title.text = feed.user.username ?? ""
         if let datepost = feed.postDate {
             date.text = datepost
-
 //            let postDate = date.toDateString(dateFormatter: DateFormatter(format: "yyyy-MM-dd'T'HH:mm:ssZ"), outputFormat: "HH:mm")
 //            print(postDate)
 //            date.text = postDate!.timeAgoSinceDate
@@ -220,46 +219,45 @@ extension FeedTableViewCell {
 extension FeedTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let feed = self.feed {
-//            if feed.postType == .images, let images = feed.images  {
-//                return images.count
-//            } else if feed.postType == .video {
-//                return 1
-//            }
+            if feed.postType == .IMAGE {
+                let images = feed.medias
+                return images.count
+            } else if feed.postType == .VIDEO {
+                return 1
+            }
         }
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 //
-//        if let feed = self.feed {
-//            if feed.postType == .images, let images = feed.images  {
-//
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImagesCollectionViewCell.identifier,
-//                                                              for: indexPath) as! ImagesCollectionViewCell
-//                cell.imageView.setImage(link: images[indexPath.row])
-//
-//                return cell
-//
-//            } else if feed.postType == .video {
-//
-//
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifier,
-//                                                              for: indexPath) as! VideoCollectionViewCell
-//
-//                cell.isUserInteractionEnabled = true
-//
-//                cell.setData(feed)
-//
-//                return cell
-//            }
-//        }
+        if let feed = self.feed {
+            if feed.postType == .IMAGE {
+                let images = feed.medias
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImagesCollectionViewCell.identifier,
+                                                              for: indexPath) as! ImagesCollectionViewCell
+                cell.imageView.setImage(link: images[indexPath.row].uri)
+                return cell
+
+            } else if feed.postType == .VIDEO {
+
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifier,
+                                                              for: indexPath) as! VideoCollectionViewCell
+                cell.isUserInteractionEnabled = true
+
+                cell.setData(feed)
+
+                return cell
+            }
+        }
         return UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let url = URL(string: (feed?.images![indexPath.row])!)!
-//        let image = UIImage(data: try! Data(contentsOf: url))
-//        delegate?.openSelectedPhoto(image: image!,indexPath: indexPath)
+        if let uri = URL(string: (feed?.medias[indexPath.row].uri)!) {
+            let image = UIImage(data: try! Data(contentsOf: uri))
+            delegate?.openSelectedPhoto(image: image!,indexPath: indexPath)
+        }
     }
 }
 
@@ -269,7 +267,11 @@ extension FeedTableViewCell:UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let feed = self.feed {
             if feed.postType == .IMAGE  {
-                return CGSize(width: collectionView.frame.width - 72, height: collectionView.frame.height - 16)
+                if feed.medias.count > 1 {
+                    return CGSize(width: collectionView.frame.width - 72, height: collectionView.frame.height - 16)
+                } else {
+                    return CGSize(width: collectionView.frame.width , height: collectionView.frame.height)
+                }
             } else if feed.postType == .VIDEO {
                 return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
             }
@@ -280,8 +282,11 @@ extension FeedTableViewCell:UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,insetForSectionAt section: Int) -> UIEdgeInsets {
         if let feed = self.feed {
             if feed.postType == .IMAGE  {
-                return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-
+                if feed.medias.count > 1 {
+                    return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+                } else {
+                    return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                }
             } else if feed.postType == .VIDEO {
                 return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             }

@@ -22,6 +22,8 @@ public enum GoArenaApi {
 
     // MARK: - AUTH
     case feeds
+    case addPost(model: AddPostRequest)
+    case postMediaForFeed(feedId: Int, file:File)
 
 }
 
@@ -61,9 +63,10 @@ extension GoArenaApi: EndPointType {
        
         // MARK: - AUTH
 
-        case .feeds:
+        case .feeds, .addPost:
             return "feeds"
-        
+        case .postMediaForFeed(let feedId, _ ):
+            return "feeds/\(feedId)/medias"
             
          // end path
         }
@@ -78,6 +81,12 @@ extension GoArenaApi: EndPointType {
         // MARK: - AUTH
         case  .feeds:
             return .get
+            
+        case .addPost:
+            return .post
+            
+        case .postMediaForFeed:
+            return .post
        
         
         // end httpMethod
@@ -94,6 +103,24 @@ extension GoArenaApi: EndPointType {
         // MARK: - AUTH
         case .feeds:
             return .request
+            
+        case .addPost(let model):
+            return .requestParameters(bodyParameters: ["title": model.title as Any,
+                                                       "postType": model.postType!.rawValue,
+                                                       "likes": 0,
+                                                       "postDate": "2021-02-02T14:14:45.283Z",
+                                                       "userId": 8,
+                                                       "status": model.status.rawValue],
+                                      bodyEncoding: .jsonEncoding,
+                                      urlParameters: nil)
+            
+        case .postMediaForFeed(let feedId, let file):
+            return .requestParameters(bodyParameters: ["uri": file.fileDownloadUri,
+                                                       "mimeType": file.fileType,
+                                                       "feedId": feedId,
+                                                       "userId": 8],
+                                      bodyEncoding: .jsonEncoding,
+                                      urlParameters: nil)
 
         
         // end task

@@ -79,7 +79,6 @@ class FeedView: UIView {
     @objc
     func refresh () {
         delegate?.refreshData()
-       
     }
 }
 

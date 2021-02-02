@@ -26,13 +26,13 @@ class LoginViewController: ViewController {
         
         setupView()
 
-        for family: String in UIFont.familyNames{
-            print(family)
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
+//        for family: String in UIFont.familyNames{
+//            print(family)
+//            for names: String in UIFont.fontNames(forFamilyName: family)
+//            {
+//                print("== \(names)")
+//            }
+//        }
     }
     
     @objc

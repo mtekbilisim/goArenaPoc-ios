@@ -16,6 +16,7 @@ target 'GoArenaPoc' do
     pod 'SimpleCheckbox'
     pod 'Charts'
     pod 'YPImagePicker'
+    pod 'Alamofire', '~> 5.2'
 
   target 'GoArenaPocTests' do
     inherit! :search_paths
