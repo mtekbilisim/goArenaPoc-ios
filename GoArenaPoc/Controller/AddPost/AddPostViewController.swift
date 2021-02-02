@@ -13,7 +13,7 @@ import AVKit
 import Photos
 
 class AddPostViewController: ViewController {
-    let maxLength = 600
+    let maxLength = 400
     var scrollView =  UIScrollView()
     var sendPostButton = SPButton()
     
@@ -36,9 +36,10 @@ class AddPostViewController: ViewController {
         return cameraButton
     }()
     
+    
     var charactersLeftLabel: UILabel = {
         let charactersLeftLabel = UILabel()
-        charactersLeftLabel.text = "0/600"
+        charactersLeftLabel.text = "0/400"
         charactersLeftLabel.textColor = UIColor.init(hex: "059FE7")
         charactersLeftLabel.font = AppAppearance.seventeen
         return charactersLeftLabel
@@ -61,6 +62,16 @@ class AddPostViewController: ViewController {
             }
         }
     }
+    
+    var imagesList:[UIImage] = [] {
+        didSet {
+            print(imagesList.map({$0.size}))
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
     let selectedImageV = UIImageView()
     let pickButton = UIButton()
     let resultsButton = UIButton()
@@ -138,7 +149,7 @@ class AddPostViewController: ViewController {
        config.video.libraryTimeLimit = 500.0
 
        /* Adds a Crop step in the photo taking process, after filters. Defaults to .none */
-       config.showsCrop = .rectangle(ratio: (16/9))
+    config.showsCrop = .none //.rectangle(ratio: (16/9))
 
        /* Defines the overlay view for the camera. Defaults to UIView(). */
        // let overlayView = UIView()
@@ -204,6 +215,15 @@ class AddPostViewController: ViewController {
                return
            }
            _ = items.map { print("🧀 \($0)") }
+        
+        _  = items.map({
+            switch $0 {
+            case .photo(let p):
+                self.imagesList.append(p.image)
+            case .video(let v):
+                self.imagesList.append(v.thumbnail)
+            }
+        })
 
            self.selectedItems = items
            if let firstItem = items.first {
@@ -213,7 +233,6 @@ class AddPostViewController: ViewController {
                    picker.dismiss(animated: true, completion: nil)
                case .video(let video):
                    self.selectedImageV.image = video.thumbnail
-
                    let assetURL = video.url
                    let playerVC = AVPlayerViewController()
                    let player = AVPlayer(playerItem: AVPlayerItem(url:assetURL))
@@ -346,6 +365,23 @@ extension AddPostViewController {
        
 
     }
+    
+    @objc func deletePhotoImage(_ sender: UIButton) {
+       
+        let mutableImages: NSMutableArray! = NSMutableArray.init(array: selectedItems)
+        let mut: NSMutableArray! = NSMutableArray.init(array: imagesList)
+        
+        mutableImages.removeObject(at: sender.tag)
+        mut.removeObject(at: sender.tag)
+        
+        self.selectedItems = NSMutableArray.init(array: mutableImages) as! [YPMediaItem]
+        self.imagesList = NSMutableArray.init(array: mut) as! [UIImage]
+
+        self.collectionView.deleteItems(at: [IndexPath.init(item: sender.tag, section: 0)])
+        let indexSet = IndexSet(integer: 0)       // Change integer to whatever section you want to reload
+        collectionView.reloadSections(indexSet)
+        
+      }
 }
 
 // MARK: - UITextViewDelegate
@@ -392,29 +428,33 @@ extension AddPostViewController: YPImagePickerDelegate {
 
 extension AddPostViewController:UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.selectedItems.count
+        return self.imagesList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImagesCollectionViewCell.identifier,
                                                       for: indexPath) as! ImagesCollectionViewCell
-        cell.layer.cornerRadius = 5
-        cell.contentView.layer.cornerRadius = 5
-        let shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: 5)
-        cell.layer.masksToBounds = false
-        cell.layer.shadowColor = UIColor.red.cgColor
-        cell.layer.shadowOffset = CGSize(width: 0.5, height: 1)
-        cell.layer.shadowOpacity = 0.25
-        cell.layer.shadowPath = shadowPath.cgPath
         
-        for item in self.selectedItems.map({$0}) {
-            switch item {
-            case .photo(let photo):
-                cell.imageView.setImage(image: photo.image, animatable: true)
-            case .video(let video):
-                cell.imageView.setImage(image: video.thumbnail, animatable: true)
-            }
-        }
+        let deleteButton = UIButton(type: .custom)
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        deleteButton.setImage(UIImage(named: "close"), for: .normal)
+        deleteButton.backgroundColor = UIColor.white
+        deleteButton.contentVerticalAlignment = .center
+        deleteButton.contentHorizontalAlignment = .center
+        deleteButton.imageEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        deleteButton.addTarget(self, action:#selector(deletePhotoImage), for: .touchUpInside)
+        deleteButton.showsTouchWhenHighlighted = true
+        deleteButton.setCorner(radius: 15)
+        cell.addSubview(deleteButton)
+        deleteButton.tag = indexPath.row
+       
+        deleteButton.topAnchor.constraint(equalTo: cell.topAnchor,constant: 4).isActive = true
+        deleteButton.trailingAnchor.constraint(equalTo: cell.trailingAnchor,constant: -4).isActive = true
+        deleteButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        deleteButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
+
+        cell.imageView.setImage(image: imagesList[indexPath.row], animatable: true)
+
        
         return cell
     }

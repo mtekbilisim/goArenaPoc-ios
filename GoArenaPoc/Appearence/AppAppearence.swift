@@ -29,7 +29,7 @@ final class AppAppearance {
     static let boldFont    = "TurkcellSatura-Bold"
     static let navBarFont  = UIFont(name: "TurkcellSatura", size: 15)
     static let tabBarFont  = UIFont(name: "Montserrat-Bold", size: 10)
-    static let tabBarFontSelected  = UIFont(name: "TurkcellSatura", size: 10)
+    static let tabBarFontSelected  = UIFont(name: "TurkcellSatura", size: 13)
     static let navBarButtonFont  = UIFont(name: "Montserrat-Medium", size: 10)
     
     static let formFont = UIFont(name: "Montserrat-Bold", size: 13)
@@ -98,7 +98,7 @@ final class AppAppearance {
         tabBarItemAppearance.setTitleTextAttributes([NSAttributedString.Key.font:navBarFont as Any], for: .normal)
         tabBarItemAppearance.setTitleTextAttributes([NSAttributedString.Key.font:self.tabBarFontSelected!], for: .selected)
 
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "TurkcellSatura", size: 14)!], for: UIControl.State.normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "TurkcellSatura", size: 16)!], for: UIControl.State.normal)
 
     }
 }

@@ -42,8 +42,10 @@ extension DashboardViewController:UITableViewDelegate, UITableViewDataSource {
         cell.contentView.isUserInteractionEnabled = false
         if indexPath.row == 0 {
             //cell.setBarData(count: Int(12), range: UInt32(300))
+//            cell.setLineDataCount(2, range: 30)
+            cell.setDataCount(10, range: 31)
+
         } else {
-           // cell.setLineDataCount(Int(12), range: UInt32(300))
         }
         return cell
     }
