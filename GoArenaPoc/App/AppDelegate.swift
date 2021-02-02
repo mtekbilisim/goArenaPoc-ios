@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if User.loggedIn() {
             window?.rootViewController = ArenaTabbarController()
         } else {
-          window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+            window?.rootViewController = UINavigationController(rootViewController: LoginViewController(networkManager: self.networkManager))
         }
     }
     

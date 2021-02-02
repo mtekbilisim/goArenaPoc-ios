@@ -29,15 +29,13 @@ struct NetworkManager {
     static let environment : GoArenaNetworkEnvironment = .staging
     let mainRouter = Router<GoArenaApi>()
     
-    func sendRequest<T>(route: GoArenaApi, _ type: T.Type?, _ completion: @escaping ((GenericResponse<T>?, KidsGenericError?) -> Void)) {
+    func sendRequest<T>(route: GoArenaApi, _ type: T.Type?, _ completion: @escaping ((GenericResponse<T>?, String?) -> Void)) {
         print(route)
         mainRouter.request(route) { (data, response, error) in
              if error != nil {
-                let kidsError = KidsError(code: 404, message: error?.localizedDescription)
-                let err = KidsGenericError(error: kidsError)
-                completion(nil, err)
-                self.printIfDebug("------------- sendRequest error  ------------- ")
-                self.printIfDebug("error: \(error.debugDescription)")
+                
+                completion(nil, "err")
+                
            }
            
            if let response = response as? HTTPURLResponse {
@@ -45,9 +43,8 @@ struct NetworkManager {
                 switch result {
                 case .success:
                      guard let responseData = data else {
-                         let kidsError = KidsError(code: 404, message: NetworkResponse.noData.rawValue)
-                         let err = KidsGenericError(error: kidsError)
-                         completion(nil, err)
+                        
+                         completion(nil, "err")
                          return
                      }
                      do {
@@ -59,10 +56,8 @@ struct NetworkManager {
                         
                     } catch {
                      print(error)
-                     self.printIfDebug("error: \(error)")
-                     let kidsError = KidsError(code: 404, message: NetworkResponse.unableToDecode.rawValue)
-                     let err = KidsGenericError(error: kidsError)
-                     completion(nil, err)
+           
+                     completion(nil, "err")
                     }
                  
                 case .failure(let networkFailureError):
@@ -70,30 +65,42 @@ struct NetworkManager {
                     printIfDebug(route.path)
                     printIfDebug(route.headers!.debugDescription)
                     printIfDebug(route.httpMethod.rawValue)
-
-                     guard let responseData = data else {
-                         let kidsError = KidsError(code: 404, message: NetworkResponse.noData.rawValue)
-                         let err = KidsGenericError(error: kidsError)
-                         completion(nil, err)
-                         return
-                     }
-                     do {
-                          print(responseData)
-                          let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
-                          //print(jsonData)
-                          let apiResponse = try JSONDecoder().decode(KidsGenericError.self, from: responseData)
-                          completion(nil,apiResponse)
-                         
-                     }catch {
-                         self.printIfDebug("error: \(error)")
-                         let kidsError = KidsError(code: 404, message: NetworkResponse.unableToDecode.rawValue)
-                         let err = KidsGenericError(error: kidsError)
-                         completion(nil, err)
-                     }
+                    completion(nil,"")
                 }
            }
         }
     }
+    
+    func getFeeds(completion: @escaping (_ result: [Feed]? ,_ error: String?)->()){
+        mainRouter.request(.feeds) { (data, response, error) in
+               if error != nil {
+                   completion(nil, "Please check your network connection.")
+               }
+               
+               if let response = response as? HTTPURLResponse {
+                   let result = self.handleNetworkResponse(response)
+                   switch result {
+                   case .success:
+                       guard let responseData = data else {
+                           completion(nil, NetworkResponse.noData.rawValue)
+                           return
+                       }
+                       do {
+                           print(responseData)
+                           let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
+                           print(jsonData)
+                           let apiResponse = try JSONDecoder().decode([Feed].self, from: responseData)
+                           completion(apiResponse,nil)
+                       }catch {
+                           print(error)
+                           completion(nil, NetworkResponse.unableToDecode.rawValue)
+                       }
+                   case .failure(let networkFailureError):
+                       completion(nil, networkFailureError)
+                   }
+               }
+           }
+       }
     
     func printIfDebug(_ string: String) {
         #if DEBUG

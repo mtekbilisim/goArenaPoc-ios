@@ -7,22 +7,34 @@
 
 import Foundation
 
+struct ResponseModel<T: Codable>: Codable {
+    
+    // MARK: - Properties
+    var data: T?
+    
+    private enum CodingKeys: String, CodingKey {
+        case data = "Data"
+    }
+
+    public init(from decoder: Decoder) throws {
+        let keyedContainer = try decoder.container(keyedBy: CodingKeys.self)
+        data = try? keyedContainer.decode(T.self, forKey: CodingKeys.data)
+    }
+}
+
+
 struct GenericResponse<T: Codable>: Codable {
     
     // MARK: - Properties
  
-    let publicStatus: Bool?
     let data: T?
     
     private enum GenericCodingKeys: String, CodingKey {
-        case publicStatus  = "public"
         case data = "data"
     }
 
     public init(from decoder: Decoder) throws {
         let keyedContainer = try decoder.container(keyedBy: GenericCodingKeys.self)
-        
-        publicStatus = (try? keyedContainer.decode(Bool.self, forKey: GenericCodingKeys.publicStatus)) ?? false
         data = try keyedContainer.decode(T.self, forKey: GenericCodingKeys.data)
     }
 }

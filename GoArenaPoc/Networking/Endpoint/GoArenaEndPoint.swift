@@ -21,7 +21,7 @@ enum GoArenaNetworkEnvironment {
 public enum GoArenaApi {
 
     // MARK: - AUTH
-    case logout
+    case feeds
 
 }
 
@@ -32,17 +32,17 @@ extension GoArenaApi: EndPointType {
     var environmentBaseURL : String {
         switch NetworkManager.environment {
         
-        case .dev: return "" //Working code copy. Changes made by developers are deployed here so integration and features can be tested. This environment is rapidly updated and contains the most recent version of the application.
+        case .dev: return "http://turkcell.mtek.me:8080/" //Working code copy. Changes made by developers are deployed here so integration and features can be tested. This environment is rapidly updated and contains the most recent version of the application.
         
-        case .qa: return "" // (Not all companies will have this). Environment for quality assurance; this provides a less frequently changed version of the application which testers can perform checks against. This allows reporting on a common revision so developers know whether particular issues found by testers has already been corrected in the development code.
+        case .qa: return "http://turkcell.mtek.me:8080/" // (Not all companies will have this). Environment for quality assurance; this provides a less frequently changed version of the application which testers can perform checks against. This allows reporting on a common revision so developers know whether particular issues found by testers has already been corrected in the development code.
         //Quality Assurance
         //STB
 
-        case .staging: return "" //This is the release candidate, and this environment is normally a mirror of the production environment. The staging area contains the "next" version of the application and is used for final stress testing and client/manager approvals before going live.
+        case .staging: return "http://turkcell.mtek.me:8080/" //This is the release candidate, and this environment is normally a mirror of the production environment. The staging area contains the "next" version of the application and is used for final stress testing and client/manager approvals before going live.
         //test
         //PRP
 
-        case .production: return "" //This is the currently released version of the application, accessible to the client/end users. This version preferably does not change except for during scheduled releases.
+        case .production: return "http://turkcell.mtek.me:8080/" //This is the currently released version of the application, accessible to the client/end users. This version preferably does not change except for during scheduled releases.
         //production
         
         }
@@ -61,8 +61,8 @@ extension GoArenaApi: EndPointType {
        
         // MARK: - AUTH
 
-        case .logout:
-            return "auth/logout"
+        case .feeds:
+            return "feeds"
         
             
          // end path
@@ -76,8 +76,8 @@ extension GoArenaApi: EndPointType {
         switch self {
        
         // MARK: - AUTH
-        case  .logout:
-            return .post
+        case  .feeds:
+            return .get
        
         
         // end httpMethod
@@ -92,8 +92,8 @@ extension GoArenaApi: EndPointType {
         switch self {
         
         // MARK: - AUTH
-        case .logout:
-            return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
+        case .feeds:
+            return .request
 
         
         // end task
@@ -104,9 +104,6 @@ extension GoArenaApi: EndPointType {
 
     var headers: HTTPHeaders? {
         switch self {
-        
-        case .logout:
-            return nil
 
         default:
             return nil

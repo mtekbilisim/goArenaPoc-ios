@@ -47,7 +47,7 @@ extension String {
 
 extension String {
 
-    func toDate(withFormat format: String = "HH:mm:ss")-> Date?{
+    func toDate(withFormat format: String = "HH:mm:ss")-> Date? {
 
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)

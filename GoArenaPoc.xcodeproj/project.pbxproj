@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D6972F625C94826000E769B /* ChartUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6972F525C94826000E769B /* ChartUtilsTests.swift */; };
+		0D6972FB25C9484D000E769B /* EquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6972FA25C9484D000E769B /* EquatableTests.swift */; };
+		0D69730025C94883000E769B /* LineChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6972FF25C94883000E769B /* LineChartTests.swift */; };
 		0D9FA8DD25C458DD00EF7A7B /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */; };
 		0D9FA8ED25C46B4600EF7A7B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E725C46B4600EF7A7B /* Type.swift */; };
 		0D9FA8EE25C46B4600EF7A7B /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E825C46B4600EF7A7B /* Version.swift */; };
@@ -212,6 +215,12 @@
 		0DB7E39925C1DCE300117844 /* Extensions+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E38325C1DCE300117844 /* Extensions+UIButton.swift */; };
 		0DB7E39A25C1DCE300117844 /* Extensions+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB7E38425C1DCE300117844 /* Extensions+Array.swift */; };
 		0DB7E3B525C1DF7C00117844 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0DB7E3B425C1DF7C00117844 /* Montserrat-Regular.otf */; };
+		0DE07D5425C966CE002BCCFC /* BarChartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE07D5325C966CE002BCCFC /* BarChartTableViewCell.swift */; };
+		0DE07D5B25C96A00002BCCFC /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE07D5A25C96A00002BCCFC /* Media.swift */; };
+		0DE07D6025C96A15002BCCFC /* PostType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE07D5F25C96A15002BCCFC /* PostType.swift */; };
+		0DE07D6525C96A53002BCCFC /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE07D6425C96A53002BCCFC /* Comment.swift */; };
+		0DE07D6A25C97078002BCCFC /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE07D6925C97078002BCCFC /* Like.swift */; };
+		0DE07D6F25C970CA002BCCFC /* FeedStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE07D6E25C970CA002BCCFC /* FeedStatus.swift */; };
 		0DE4B22825C596B3004062F7 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B22725C596B3004062F7 /* Reachability.swift */; };
 		0DE4B26125C5B2BC004062F7 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B26025C5B2BC004062F7 /* LoginView.swift */; };
 		0DE4B26A25C69374004062F7 /* TurkcellTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B26925C69374004062F7 /* TurkcellTextField.swift */; };
@@ -220,6 +229,9 @@
 		0DE4B29525C6A826004062F7 /* Turkcell_Satura_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DE4B29325C6A826004062F7 /* Turkcell_Satura_Bold.ttf */; };
 		0DE4B29625C6A826004062F7 /* Turkcell_Satura_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DE4B29425C6A826004062F7 /* Turkcell_Satura_Regular.ttf */; };
 		0DE4B2D825C7DE31004062F7 /* DashboardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B2D725C7DE31004062F7 /* DashboardTableCell.swift */; };
+		0DE4B6B425C93780004062F7 /* GSImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B6B325C93780004062F7 /* GSImageViewerController.swift */; };
+		0DE4B6D725C9468C004062F7 /* BarChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4B6D625C9468C004062F7 /* BarChartTests.swift */; };
+		0DE4B70825C9479C004062F7 /* FBSnapshotTestCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE4B70725C9479C004062F7 /* FBSnapshotTestCase.framework */; };
 		7B62AB26EDCFC7BD44F9F9D3 /* Pods_GoArenaPoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5247DB3F7FF00642FFDE57D3 /* Pods_GoArenaPoc.framework */; };
 		E121274AAEAFC79912861310 /* Pods_GoArenaPoc_GoArenaPocUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AED03A986B36CF2131CE87DC /* Pods_GoArenaPoc_GoArenaPocUITests.framework */; };
 		FDE0D55A3FB9B8C454BAA60E /* Pods_GoArenaPocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D929BE072231693EDB3F65CB /* Pods_GoArenaPocTests.framework */; };
@@ -243,6 +255,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D6972F525C94826000E769B /* ChartUtilsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartUtilsTests.swift; sourceTree = "<group>"; };
+		0D6972FA25C9484D000E769B /* EquatableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquatableTests.swift; sourceTree = "<group>"; };
+		0D6972FF25C94883000E769B /* LineChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartTests.swift; sourceTree = "<group>"; };
 		0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		0D9FA8E725C46B4600EF7A7B /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		0D9FA8E825C46B4600EF7A7B /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
@@ -454,6 +469,12 @@
 		0DB7E38325C1DCE300117844 /* Extensions+UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIButton.swift"; sourceTree = "<group>"; };
 		0DB7E38425C1DCE300117844 /* Extensions+Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+Array.swift"; sourceTree = "<group>"; };
 		0DB7E3B425C1DF7C00117844 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.otf"; path = "GoArenaPoc/Assets/Montserrat-Regular.otf"; sourceTree = SOURCE_ROOT; };
+		0DE07D5325C966CE002BCCFC /* BarChartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartTableViewCell.swift; sourceTree = "<group>"; };
+		0DE07D5A25C96A00002BCCFC /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		0DE07D5F25C96A15002BCCFC /* PostType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostType.swift; sourceTree = "<group>"; };
+		0DE07D6425C96A53002BCCFC /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		0DE07D6925C97078002BCCFC /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		0DE07D6E25C970CA002BCCFC /* FeedStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStatus.swift; sourceTree = "<group>"; };
 		0DE4B22725C596B3004062F7 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		0DE4B26025C5B2BC004062F7 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0DE4B26925C69374004062F7 /* TurkcellTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurkcellTextField.swift; sourceTree = "<group>"; };
@@ -462,6 +483,9 @@
 		0DE4B29325C6A826004062F7 /* Turkcell_Satura_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Turkcell_Satura_Bold.ttf; sourceTree = "<group>"; };
 		0DE4B29425C6A826004062F7 /* Turkcell_Satura_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Turkcell_Satura_Regular.ttf; sourceTree = "<group>"; };
 		0DE4B2D725C7DE31004062F7 /* DashboardTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableCell.swift; sourceTree = "<group>"; };
+		0DE4B6B325C93780004062F7 /* GSImageViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSImageViewerController.swift; sourceTree = "<group>"; };
+		0DE4B6D625C9468C004062F7 /* BarChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartTests.swift; sourceTree = "<group>"; };
+		0DE4B70725C9479C004062F7 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1019F7734B9448B52ABE45AC /* Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig"; path = "Target Support Files/Pods-GoArenaPoc-GoArenaPocUITests/Pods-GoArenaPoc-GoArenaPocUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5247DB3F7FF00642FFDE57D3 /* Pods_GoArenaPoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoArenaPoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		590EB82550A386A212DA5481 /* Pods-GoArenaPoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoArenaPoc.release.xcconfig"; path = "Target Support Files/Pods-GoArenaPoc/Pods-GoArenaPoc.release.xcconfig"; sourceTree = "<group>"; };
@@ -486,6 +510,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE4B70825C9479C004062F7 /* FBSnapshotTestCase.framework in Frameworks */,
 				FDE0D55A3FB9B8C454BAA60E /* Pods_GoArenaPocTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +605,10 @@
 			children = (
 				0DB7E15925C1CB4400117844 /* GoArenaPocTests.swift */,
 				0DB7E15B25C1CB4400117844 /* Info.plist */,
+				0DE4B6D625C9468C004062F7 /* BarChartTests.swift */,
+				0D6972F525C94826000E769B /* ChartUtilsTests.swift */,
+				0D6972FA25C9484D000E769B /* EquatableTests.swift */,
+				0D6972FF25C94883000E769B /* LineChartTests.swift */,
 			);
 			path = GoArenaPocTests;
 			sourceTree = "<group>";
@@ -602,6 +631,7 @@
 				0D9FA8E225C458E700EF7A7B /* AddPost */,
 				0DB7E1D225C1D97400117844 /* OnBoarding */,
 				0DB7E19625C1D19D00117844 /* ArenaTabbarController.swift */,
+				0DE4B6B325C93780004062F7 /* GSImageViewerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -706,6 +736,11 @@
 			children = (
 				0D9FA90925C48BFC00EF7A7B /* Feed.swift */,
 				0D9FA91725C5468A00EF7A7B /* User.swift */,
+				0DE07D5A25C96A00002BCCFC /* Media.swift */,
+				0DE07D5F25C96A15002BCCFC /* PostType.swift */,
+				0DE07D6425C96A53002BCCFC /* Comment.swift */,
+				0DE07D6925C97078002BCCFC /* Like.swift */,
+				0DE07D6E25C970CA002BCCFC /* FeedStatus.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1358,6 +1393,7 @@
 			isa = PBXGroup;
 			children = (
 				0DE4B2D725C7DE31004062F7 /* DashboardTableCell.swift */,
+				0DE07D5325C966CE002BCCFC /* BarChartTableViewCell.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -1365,6 +1401,7 @@
 		5E988ED38B5A7148F173C283 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DE4B70725C9479C004062F7 /* FBSnapshotTestCase.framework */,
 				5247DB3F7FF00642FFDE57D3 /* Pods_GoArenaPoc.framework */,
 				AED03A986B36CF2131CE87DC /* Pods_GoArenaPoc_GoArenaPocUITests.framework */,
 				D929BE072231693EDB3F65CB /* Pods_GoArenaPocTests.framework */,
@@ -1415,6 +1452,7 @@
 				0DB7E15125C1CB4300117844 /* Sources */,
 				0DB7E15225C1CB4300117844 /* Frameworks */,
 				0DB7E15325C1CB4300117844 /* Resources */,
+				7E73EFFA7E28C4E5FC3A653E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1539,6 +1577,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoArenaPoc/Pods-GoArenaPoc-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7E73EFFA7E28C4E5FC3A653E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoArenaPocTests/Pods-GoArenaPocTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoArenaPocTests/Pods-GoArenaPocTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoArenaPocTests/Pods-GoArenaPocTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		92E5B9EBD43336ED7DC97256 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1648,6 +1703,7 @@
 				0DB7E31125C1DB7E00117844 /* SPImagesCollectionView.swift in Sources */,
 				0DB7E32B25C1DB7E00117844 /* SPUIImageViewExtenshion.swift in Sources */,
 				0DB7E35525C1DB7E00117844 /* SPLarkSettingsCollectionView.swift in Sources */,
+				0DE07D5B25C96A00002BCCFC /* Media.swift in Sources */,
 				0DB7E2E625C1DB7E00117844 /* SPTableView.swift in Sources */,
 				0D9FA8F025C46B4600EF7A7B /* Size.swift in Sources */,
 				0DB7E34025C1DB7E00117844 /* SPBufer.swift in Sources */,
@@ -1685,6 +1741,7 @@
 				0DB7E31225C1DB7E00117844 /* SPPageCollectionView.swift in Sources */,
 				0DB7E2F025C1DB7E00117844 /* SPAppStoreActionButton.swift in Sources */,
 				0DB7E1E825C1DAC800117844 /* AppAppearence.swift in Sources */,
+				0DE07D5425C966CE002BCCFC /* BarChartTableViewCell.swift in Sources */,
 				0DB7E38625C1DCE300117844 /* Extensions+DateFormatter.swift in Sources */,
 				0DB7E1BD25C1D29200117844 /* NetworkManager.swift in Sources */,
 				0DB7E31D25C1DB7E00117844 /* SPArrayExtension.swift in Sources */,
@@ -1692,10 +1749,12 @@
 				0DB7E38A25C1DCE300117844 /* Extensions+URL.swift in Sources */,
 				0D9FA8EE25C46B4600EF7A7B /* Version.swift in Sources */,
 				0DB7E33225C1DB7E00117844 /* SPNativeColors.swift in Sources */,
+				0DE4B6B425C93780004062F7 /* GSImageViewerController.swift in Sources */,
 				0DB7E33125C1DB7E00117844 /* SPAppLaunch.swift in Sources */,
 				0DB7E38525C1DCE300117844 /* Extensions+UINavigationController.swift in Sources */,
 				0DE4B26A25C69374004062F7 /* TurkcellTextField.swift in Sources */,
 				0DB7E2D425C1DB7E00117844 /* TPKeyboardAvoidingSwift.swift in Sources */,
+				0DE07D6525C96A53002BCCFC /* Comment.swift in Sources */,
 				0DB7E2EC25C1DB7E00117844 /* SPNativeLargeButton.swift in Sources */,
 				0DB7E34325C1DB7E00117844 /* SPTelegram.swift in Sources */,
 				0DB7E39A25C1DCE300117844 /* Extensions+Array.swift in Sources */,
@@ -1749,8 +1808,10 @@
 				0DB7E2E325C1DB7E00117844 /* SPProposeTableViewCell.swift in Sources */,
 				0DB7E32A25C1DB7E00117844 /* SPCGSizeExtenshion.swift in Sources */,
 				0DB7E38B25C1DCE300117844 /* Extensions+UIColor.swift in Sources */,
+				0DE07D6025C96A15002BCCFC /* PostType.swift in Sources */,
 				0DB7E38D25C1DCE300117844 /* Extensions+UIDatePicker.swift in Sources */,
 				0DB7E30C25C1DB7E00117844 /* SPMengTransformCollectionViewCell.swift in Sources */,
+				0DE07D6F25C970CA002BCCFC /* FeedStatus.swift in Sources */,
 				0DB7E2EF25C1DB7E00117844 /* SPCircleCloseButton.swift in Sources */,
 				0DB7E31025C1DB7E00117844 /* SPCollectionView.swift in Sources */,
 				0DB7E2DA25C1DB7E00117844 /* SPFormButtonTableViewCell.swift in Sources */,
@@ -1810,6 +1871,7 @@
 				0DB7E2E925C1DB7E00117844 /* SPAppleMusicSectionButtonsView.swift in Sources */,
 				0DB7E2D925C1DB7E00117844 /* SPPromoTableViewCell.swift in Sources */,
 				0DB7E33A25C1DB7E00117844 /* SPShadowDeep.swift in Sources */,
+				0DE07D6A25C97078002BCCFC /* Like.swift in Sources */,
 				0D9FA93725C55A5F00EF7A7B /* ImagesCollectionViewCell.swift in Sources */,
 				0DB7E2D225C1DB7E00117844 /* UserDefaults.swift in Sources */,
 				0DB7E38F25C1DCE300117844 /* Extensions+UICollectionView.swift in Sources */,
@@ -1838,6 +1900,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D6972F625C94826000E769B /* ChartUtilsTests.swift in Sources */,
+				0D69730025C94883000E769B /* LineChartTests.swift in Sources */,
+				0DE4B6D725C9468C004062F7 /* BarChartTests.swift in Sources */,
+				0D6972FB25C9484D000E769B /* EquatableTests.swift in Sources */,
 				0DB7E15A25C1CB4400117844 /* GoArenaPocTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

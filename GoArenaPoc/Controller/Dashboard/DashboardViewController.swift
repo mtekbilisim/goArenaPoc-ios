@@ -22,8 +22,8 @@ extension DashboardViewController {
     private func setupView() {
         tableView = UITableView.init(frame: CGRect.zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .clear
-        tableView.register(DashboardTableCell.self, forCellReuseIdentifier: DashboardTableCell.identifier)
+        tableView.backgroundColor = UIColor.init(hex: "023953")
+        tableView.register(DashboardLineTableCell.self, forCellReuseIdentifier: DashboardLineTableCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -38,20 +38,19 @@ extension DashboardViewController:UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DashboardTableCell.identifier, for: indexPath) as! DashboardTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: DashboardLineTableCell.identifier, for: indexPath) as! DashboardLineTableCell
         cell.contentView.isUserInteractionEnabled = false
         if indexPath.row == 0 {
             //cell.setBarData(count: Int(12), range: UInt32(300))
 //            cell.setLineDataCount(2, range: 30)
-            cell.setDataCount(10, range: 31)
-
         } else {
+            cell.setDataCount(5, range: 31)
         }
         return cell
     }
             
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 400//UITableView.automaticDimension
+        return 500//UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

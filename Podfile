@@ -20,10 +20,14 @@ target 'GoArenaPoc' do
   target 'GoArenaPocTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'iOSSnapshotTestCase'
+
   end
 
   target 'GoArenaPocUITests' do
     # Pods for testing
+    pod 'iOSSnapshotTestCase'
+
   end
 
 end

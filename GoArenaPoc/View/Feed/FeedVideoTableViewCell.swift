@@ -144,14 +144,26 @@ class FeedVideoTableViewCell: UITableViewCell {
 
     func setFeed(_ feed: Feed) {
         self.feed = feed
-        self.playerView.link = "https://kidsapi.mtek.me/uploads/_/originals/59722eb8-0360-4db5-b9af-650db311d9b7.mp4"
-        profilePicture.setImage(link: feed.picture!)
-        title.text = feed.name
-        date.text = feed.date
-        detailLabel.text = feed.detailText
-        likeButton.setTitle(feed.likes!)
-        commentsButton.setTitle(feed.comments!)
+        profilePicture.setImage(link: feed.user.avatar ?? "")
+        title.text = feed.user.username ?? ""
+        if let datepost = feed.postDate {
+            date.text = datepost
 
+//            let postDate = date.toDateString(dateFormatter: DateFormatter(format: "yyyy-MM-dd'T'HH:mm:ssZ"), outputFormat: "HH:mm")
+//            print(postDate)
+//            date.text = postDate!.timeAgoSinceDate
+        }
+
+        detailLabel.text = feed.title
+        if let likeCount = feed.likes {
+            likeButton.setTitle("\(likeCount)")
+        }
+        
+        if let count = feed.comments?.count, count > 0 {
+            commentsButton.setTitle("\(count)")
+        } else {
+            commentsButton.setTitle("0")
+        }
     }
     
     override func layoutSubviews() {

@@ -12,10 +12,21 @@ import FontAwesome_swift
 
 class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigationControllerDelegate {
 
+    var networkManager = NetworkManager()
     let hud = JGProgressHUD(style: .extraLight)
     var connectedTheInternet:Bool = false
     var connectionErrorShown :Bool = false
     
+    
+    init(networkManager: NetworkManager) {
+        super.init(nibName: nil, bundle: nil)
+        self.networkManager = networkManager
+     }
+     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+        
     override var preferredStatusBarStyle: UIStatusBarStyle {
           if #available(iOS 13.0, *) {
              return .lightContent
@@ -194,7 +205,7 @@ extension UIViewController {
 extension UIViewController {
  
     func showError(string: String) {
-        let alert = UIAlertController(title: "Bağlantı hatası", message: string, preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: string, preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Tamam", style: .default)
         alert.addAction(okButton)
         

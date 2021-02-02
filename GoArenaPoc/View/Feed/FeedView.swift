@@ -9,11 +9,18 @@ import UIKit
 import AVKit
 import AVFoundation
 
+
+protocol FeedViewDelegate:class {
+    func openselectedImage(image: UIImage, indexPath:IndexPath)
+    func refreshData()
+}
 class FeedView: UIView {
 
     var tableView = UITableView()
-    private var refreshControl = UIRefreshControl()
+    var refreshControl = UIRefreshControl()
     var feeds:[Feed] = []
+    
+    weak var delegate:FeedViewDelegate? = nil
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,7 +78,8 @@ class FeedView: UIView {
 
     @objc
     func refresh () {
-        self.refreshControl.endRefreshing()
+        delegate?.refreshData()
+       
     }
 }
 
@@ -92,15 +100,17 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
         let section = indexPath.section
         let feed = feeds[section]
 
-        if feed.postType == .video {
-            let cell = tableView.dequeueReusableCell(withIdentifier: FeedVideoTableViewCell.identifier, for: indexPath) as! FeedVideoTableViewCell
-//            cell.playerView.link = "https://kidsapi.mtek.me/uploads/_/originals/a668f9f3-bd12-4a03-a489-b931f91612fc.mp4"
+        if feed.postType == .VIDEO {
+            let cell = tableView.dequeueReusableCell(withIdentifier: FeedVideoTableViewCell.identifier,
+                                                     for: indexPath) as! FeedVideoTableViewCell
+            cell.playerView.link = feed.medias[0].uri
             cell.setFeed(feed)
             return cell
-        } else if feed.postType == .images {
-            let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
+        } else if feed.postType == .IMAGE {
+            let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier,
+                                                     for: indexPath) as! FeedTableViewCell
             cell.isUserInteractionEnabled = true
-
+            cell.delegate = self
             cell.setFeed(feed)
             cell.commentsButton.tag = section
             cell.commentsButton.addTarget(self, action: #selector(commentsTapped), for: .touchUpInside)
@@ -108,7 +118,8 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
             cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as! FeedTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier,
+                                                     for: indexPath) as! FeedTableViewCell
             cell.isUserInteractionEnabled = true
 
             cell.setFeed(feed)
@@ -136,9 +147,9 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let type = feeds[indexPath.section].postType
         switch type {
-        case .images:
+        case .IMAGE:
             return 420
-        case .video :
+        case .VIDEO :
             return 360
         default:
             return 160
@@ -160,4 +171,10 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
 }
 
 
+extension FeedView:FeedTableViewCellDelegate {
+
+    func openSelectedPhoto(image: UIImage, indexPath:IndexPath) {
+        delegate?.openselectedImage(image: image, indexPath:IndexPath(row: 0, section: 0))
+    }
+}
 

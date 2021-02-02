@@ -10,7 +10,7 @@ import SwiftIcons
 
 class ArenaTabbarController: UITabBarController {
     
-    //let networkManager = NetworkManager()
+    let networkManager = NetworkManager()
 
     var count:Int = 1
     
@@ -19,12 +19,12 @@ class ArenaTabbarController: UITabBarController {
         delegate = self
         
         //feed vc
-        let feedVC = UINavigationController(rootViewController: FeedViewController())
+        let feedVC = UINavigationController(rootViewController: FeedViewController(networkManager: self.networkManager))
         feedVC.tabBarItem.title = "Feed"
         feedVC.tabBarItem.image = UIImage(named: "home")
         
         //custom middle vc
-        let addpost = AddPostViewController()
+        let addpost = AddPostViewController(networkManager: self.networkManager)
         let button = SPButton()
         let toMakeButtonUp = tabBar.frame.height / 2
         button.frame = CGRect(x: 0.0, y: 0.0, width:  tabBar.frame.height, height:  tabBar.frame.height)
@@ -48,7 +48,7 @@ class ArenaTabbarController: UITabBarController {
         view.addSubview(button)
 
         //settings vc
-        let dashboardVC = UINavigationController(rootViewController:DashboardViewController())
+        let dashboardVC = UINavigationController(rootViewController:DashboardViewController(networkManager: self.networkManager))
         dashboardVC.title = "Dashboard"
         dashboardVC.tabBarItem.image = UIImage(named: "comments")
 
@@ -59,7 +59,7 @@ class ArenaTabbarController: UITabBarController {
     }
     
     @objc func addPostTapped() {
-        let vc = UINavigationController(rootViewController:AddPostViewController())
+        let vc = UINavigationController(rootViewController:AddPostViewController(networkManager: self.networkManager))
         vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
         present(vc)
     }

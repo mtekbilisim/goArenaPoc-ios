@@ -26,8 +26,6 @@ class VideoCollectionViewCell: UICollectionViewCell {
         
         
         playerView = MBVideoPlayerView(configuration: nil, theme: nil, header: nil)
-        
-
         playerView.pinEdges(to: self)
         playerView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(playerView)
@@ -35,16 +33,13 @@ class VideoCollectionViewCell: UICollectionViewCell {
     }
     
     func setData(_ feed: Feed) {
-        print(feed.postType?.rawValue)
-        let playerItems = [
-            PlayerItem(title: feed.name ?? "", url: "https://kidsapi.mtek.me/uploads/_/originals/a668f9f3-bd12-4a03-a489-b931f91612fc.mp4", thumbnail: "1"),
-            ]
-        
-        if let currentItem = playerItems.first {
-            playerView.setPlayList(currentItem: currentItem, items: playerItems, fullScreenView: contentView)
-        }
-        
-        
+//        let playerItems = [
+//            PlayerItem(title: feed.name ?? "", url: "https://kidsapi.mtek.me/uploads/_/originals/a668f9f3-bd12-4a03-a489-b931f91612fc.mp4", thumbnail: "1"),
+//            ]
+//        
+//        if let currentItem = playerItems.first {
+//            playerView.setPlayList(currentItem: currentItem, items: playerItems, fullScreenView: contentView)
+//        }
     }
 }
 

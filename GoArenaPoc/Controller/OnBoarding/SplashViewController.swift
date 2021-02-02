@@ -13,7 +13,6 @@ import NotificationBannerSwift
 
 class SplashViewController: ViewController, UIViewControllerTransitioningDelegate {
     
-    var networkManager: NetworkManager!
     var triggerButton:UIButton!
     var isOnline:Bool = false
     
@@ -44,16 +43,7 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
         l.text = "Versiyon \(Bundle.main.infoDictionary!["CFBundleShortVersionString"]! as! String)"
         return l
     }()
-    
-    init(networkManager: NetworkManager) {
-        super.init(nibName: nil, bundle: nil)
-        self.networkManager = networkManager
-    }
-        
-    required init?(coder aDecoder: NSCoder) {
-       fatalError("init(coder:) has not been implemented")
-    }
-//
+   
     let transition = VLCircularTransition()
     let animationCoordinator = TransitionCoordinator()
 
