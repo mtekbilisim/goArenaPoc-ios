@@ -14,8 +14,8 @@
             filePath = "GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "557"
-            endingLineNumber = "557"
+            startingLineNumber = "569"
+            endingLineNumber = "569"
             landmarkName = "addAccessory()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "595"
-            endingLineNumber = "595"
+            startingLineNumber = "607"
+            endingLineNumber = "607"
             landmarkName = "calculateCharacters()"
             landmarkType = "7">
          </BreakpointContent>
@@ -205,8 +205,8 @@
             filePath = "GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "567"
-            endingLineNumber = "567"
+            startingLineNumber = "579"
+            endingLineNumber = "579"
             landmarkName = "deletePhotoImage(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -253,8 +253,8 @@
             filePath = "GoArenaPoc/View/Feed/FeedTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "setupView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -269,8 +269,8 @@
             filePath = "GoArenaPoc/View/Feed/FeedTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "setupView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -285,8 +285,8 @@
             filePath = "GoArenaPoc/View/Feed/FeedTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "setFeed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -301,8 +301,8 @@
             filePath = "GoArenaPoc/View/Feed/FeedTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
             landmarkName = "setFeed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -395,24 +395,8 @@
             filePath = "GoArenaPoc/View/Feed/FeedTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "setupView()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B6FB1331-FB05-4F25-9F87-F1806CFBFED3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GoArenaPoc/View/Feed/FeedTableViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "setupView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -427,8 +411,8 @@
             filePath = "GoArenaPoc/View/Feed/FeedTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "setFeed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -443,8 +427,8 @@
             filePath = "GoArenaPoc/View/Feed/FeedTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "setFeed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -459,8 +443,8 @@
             filePath = "GoArenaPoc/View/Feed/FeedTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "setFeed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -475,8 +459,8 @@
             filePath = "GoArenaPoc/View/Feed/FeedTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "layoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -491,8 +475,8 @@
             filePath = "GoArenaPoc/View/Feed/FeedVideoTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "setupView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -507,8 +491,8 @@
             filePath = "GoArenaPoc/View/Feed/FeedTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "setFeed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -779,13 +763,13 @@
             filePath = "GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "422"
-            endingLineNumber = "422"
+            startingLineNumber = "434"
+            endingLineNumber = "434"
             landmarkName = "uploadVideo(video:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "4C6AE854-EE29-4F75-82BF-605E655C21A2 - e40ede4f15950934"
+                  uuid = "4C6AE854-EE29-4F75-82BF-605E655C21A2 - e40ede4f159508fe"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -795,12 +779,12 @@
                   urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "422"
-                  endingLineNumber = "422"
+                  startingLineNumber = "428"
+                  endingLineNumber = "428"
                   offsetFromSymbolStart = "176">
                </Location>
                <Location
-                  uuid = "4C6AE854-EE29-4F75-82BF-605E655C21A2 - 3acb19719844bd20"
+                  uuid = "4C6AE854-EE29-4F75-82BF-605E655C21A2 - 3acb19719844bc66"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -810,9 +794,57 @@
                   urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "423"
-                  endingLineNumber = "423"
+                  startingLineNumber = "429"
+                  endingLineNumber = "429"
                   offsetFromSymbolStart = "236">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D759F8F-6F41-40D1-8F59-EE83B01F69BB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "348"
+            endingLineNumber = "348"
+            landmarkName = "setFeed(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9D759F8F-6F41-40D1-8F59-EE83B01F69BB - f627c104c775c1da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GoArenaPoc.AddPostViewController.setFeed(GoArenaPoc.Feed) -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "340"
+                  endingLineNumber = "340"
+                  offsetFromSymbolStart = "236">
+               </Location>
+               <Location
+                  uuid = "9D759F8F-6F41-40D1-8F59-EE83B01F69BB - 490669c26fe43cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in GoArenaPoc.AddPostViewController.setFeed(GoArenaPoc.Feed) -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "341"
+                  endingLineNumber = "341"
+                  offsetFromSymbolStart = "32">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -13,6 +13,7 @@ import AVFoundation
 protocol FeedViewDelegate:class {
     func openselectedImage(image: UIImage, indexPath:IndexPath)
     func refreshData()
+    func moreTapped(feed:Feed)
 }
 class FeedView: UIView {
 
@@ -74,8 +75,11 @@ class FeedView: UIView {
         print(#function)
     }
     
+    @objc
+    func moreButtonTapped( _ sender: UIButton) {
+        delegate?.moreTapped(feed: self.feeds[sender.tag])
+    }
     // MARK: - pull down refresh
-
     @objc
     func refresh () {
         delegate?.refreshData()
@@ -102,7 +106,9 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
         if feed.postType == .VIDEO {
             let cell = tableView.dequeueReusableCell(withIdentifier: FeedVideoTableViewCell.identifier,
                                                      for: indexPath) as! FeedVideoTableViewCell
-            cell.playerView.link = feed.medias[0].uri
+            if let media = feed.medias,media.count > 0 {
+                cell.playerView.link = media[0].uri
+            }
             cell.setFeed(feed)
             return cell
         } else if feed.postType == .IMAGE {
@@ -126,6 +132,8 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
             cell.commentsButton.addTarget(self, action: #selector(commentsTapped), for: .touchUpInside)
             cell.likeButton.tag = section
             cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+            cell.moreButton.tag = section
+            cell.moreButton.addTarget(self, action: #selector(moreButtonTapped(_  :)), for: .touchUpInside)
             return cell
         }
    
@@ -147,9 +155,17 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
         let type = feeds[indexPath.section].postType
         switch type {
         case .IMAGE:
-            return 420
+            if feeds[indexPath.section].medias!.count > 0 {
+                return 420
+            } else {
+                return 150
+            }
         case .VIDEO :
-            return 360
+            if feeds[indexPath.section].medias!.count > 0 {
+                return 360
+            } else {
+                return 150
+            }
         default:
             return 160
         }

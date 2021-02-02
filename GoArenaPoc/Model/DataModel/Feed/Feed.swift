@@ -14,7 +14,7 @@ struct Feed:Codable {
     var likes:Int?
     var comments:[Comment]?
     var postDate: String?
-    var medias:[Media]
+    var medias:[Media]?
     var user:User
     var status:FeedStatus
 }

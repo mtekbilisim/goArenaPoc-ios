@@ -1,6 +1,6 @@
 //
-//  KidsEndPoint.swift
-//  KidsVid Demo
+//  GoArenaEndPoint.swift
+//  GoArenaEndPoc
 //
 //  Created by Adem Özsayın on 23.09.2020.
 //
@@ -20,10 +20,15 @@ enum GoArenaNetworkEnvironment {
 
 public enum GoArenaApi {
 
-    // MARK: - AUTH
+    // MARK: - FEED
     case feeds
     case addPost(model: AddPostRequest)
     case postMediaForFeed(feedId: Int, file:File)
+   
+    // MARK: - DASHBOARD
+
+    case sales
+    case employeeSalesWithShopId
 
 }
 
@@ -61,13 +66,19 @@ extension GoArenaApi: EndPointType {
     var path: String {
         switch self {
        
-        // MARK: - AUTH
+        // MARK: - FEED
 
         case .feeds, .addPost:
             return "feeds"
         case .postMediaForFeed(let feedId, _ ):
             return "feeds/\(feedId)/medias"
             
+        // MARK: - DASHBOARD
+        
+        case .sales:
+            return "dashboard"
+        case .employeeSalesWithShopId:
+            return "dashboard"
          // end path
         }
             
@@ -78,16 +89,21 @@ extension GoArenaApi: EndPointType {
     var httpMethod: HTTPMethod {
         switch self {
        
-        // MARK: - AUTH
+        // MARK: - FEED
         case  .feeds:
             return .get
-            
         case .addPost:
             return .post
-            
         case .postMediaForFeed:
             return .post
-       
+            
+        // MARK: - DASHBOARD
+        case .sales:
+            return .get
+            
+        case .employeeSalesWithShopId:
+            return .get
+
         
         // end httpMethod
 
@@ -100,7 +116,7 @@ extension GoArenaApi: EndPointType {
     var task: HTTPTask {
         switch self {
         
-        // MARK: - AUTH
+        // MARK: - FEED
         case .feeds:
             return .request
             
@@ -121,8 +137,13 @@ extension GoArenaApi: EndPointType {
                                                        "userId": 8],
                                       bodyEncoding: .jsonEncoding,
                                       urlParameters: nil)
-
+            
+        // MARK: - DASHBOARD
         
+        case .sales:
+            return .request
+        case .employeeSalesWithShopId:
+            return .requestParameters(bodyParameters: nil, bodyEncoding: .urlEncoding, urlParameters: ["employee":7,"shop":3])
         // end task
 
         }

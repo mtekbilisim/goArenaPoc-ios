@@ -37,6 +37,8 @@ class FeedTableViewCell: UITableViewCell {
     
     var feed:Feed?
     
+    var moreButton = SPButton()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
@@ -91,6 +93,11 @@ class FeedTableViewCell: UITableViewCell {
         commentsButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5);
         
 
+        moreButton = SPButton()
+        moreButton.translatesAutoresizingMaskIntoConstraints = false
+        let moreIcon = UIImage(named: "more")
+        moreButton.setImage(moreIcon!)
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 16
@@ -110,7 +117,7 @@ class FeedTableViewCell: UITableViewCell {
         collectionView.showsHorizontalScrollIndicator = false
 
         //constraints
-        contentView.addSubviews([ profilePicture, title, date, detailLabel, likeButton, commentsButton,collectionView])
+        contentView.addSubviews([ profilePicture, title, date, detailLabel, likeButton, commentsButton,collectionView, moreButton])
         
         profilePicture.setAnchorConstraintsEqualTo(widthAnchor: 40,
                                                    heightAnchor: 40,
@@ -125,6 +132,13 @@ class FeedTableViewCell: UITableViewCell {
                                                    bottomAnchor: nil,
                                                    leadingAnchor: (profilePicture.trailingAnchor, 8),
                                                    trailingAnchor: nil)
+        
+        moreButton.setAnchorConstraintsEqualTo(widthAnchor: nil,
+                                                   heightAnchor: nil,
+                                                   topAnchor: (profilePicture.topAnchor, 0),
+                                                   bottomAnchor: nil,
+                                                   leadingAnchor: nil,
+                                                   trailingAnchor: (self.trailingAnchor, -16) )
         
         date.setAnchorConstraintsEqualTo(widthAnchor: nil,
                                                    heightAnchor: nil,
@@ -153,6 +167,8 @@ class FeedTableViewCell: UITableViewCell {
                                                    bottomAnchor: (contentView.bottomAnchor, -12),
                                                    leadingAnchor: (likeButton.trailingAnchor, 32),
                                                    trailingAnchor: nil )
+        
+        
         
         collectionView.topAnchor.constraint(equalTo: detailLabel.bottomAnchor,constant: padding).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 0).isActive = true
@@ -220,8 +236,9 @@ extension FeedTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let feed = self.feed {
             if feed.postType == .IMAGE {
-                let images = feed.medias
-                return images.count
+                if let images = feed.medias {
+                    return images.count
+                }
             } else if feed.postType == .VIDEO {
                 return 1
             }
@@ -233,10 +250,11 @@ extension FeedTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource
 //
         if let feed = self.feed {
             if feed.postType == .IMAGE {
-                let images = feed.medias
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImagesCollectionViewCell.identifier,
                                                               for: indexPath) as! ImagesCollectionViewCell
-                cell.imageView.setImage(link: images[indexPath.row].uri)
+                if let images = feed.medias {
+                    cell.imageView.setImage(link: images[indexPath.row].uri)
+                }
                 return cell
 
             } else if feed.postType == .VIDEO {
@@ -254,9 +272,12 @@ extension FeedTableViewCell:UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let uri = URL(string: (feed?.medias[indexPath.row].uri)!) {
-            let image = UIImage(data: try! Data(contentsOf: uri))
-            delegate?.openSelectedPhoto(image: image!,indexPath: indexPath)
+        if let media = feed?.medias{
+            let item = media[indexPath.row]
+            if let uri = URL(string: item.uri) {
+                let image = UIImage(data: try! Data(contentsOf: uri))
+                delegate?.openSelectedPhoto(image: image!,indexPath: indexPath)
+            }
         }
     }
 }
@@ -267,7 +288,7 @@ extension FeedTableViewCell:UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let feed = self.feed {
             if feed.postType == .IMAGE  {
-                if feed.medias.count > 1 {
+                if let media = feed.medias, media.count > 1 {
                     return CGSize(width: collectionView.frame.width - 72, height: collectionView.frame.height - 16)
                 } else {
                     return CGSize(width: collectionView.frame.width , height: collectionView.frame.height)
@@ -282,7 +303,7 @@ extension FeedTableViewCell:UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout,insetForSectionAt section: Int) -> UIEdgeInsets {
         if let feed = self.feed {
             if feed.postType == .IMAGE  {
-                if feed.medias.count > 1 {
+                if let media = feed.medias, media.count > 1 {
                     return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
                 } else {
                     return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)

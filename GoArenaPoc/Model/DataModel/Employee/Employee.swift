@@ -19,13 +19,3 @@ struct Employee:Codable {
     
 }
 
-enum EmployeeType: String {
-    case  MANAGER, EMPLOYEE,UNKNOWN
-}
-
-extension EmployeeType: Codable {
-    public init(from decoder: Decoder) throws {
-        self = try EmployeeType(rawValue: decoder.singleValueContainer().decode(RawValue.self)) ?? .UNKNOWN
-    }
-}
-

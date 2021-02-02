@@ -14,6 +14,7 @@ class ArenaTabbarController: UITabBarController {
 
     var count:Int = 1
     
+    var button = SPButton()
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -25,7 +26,7 @@ class ArenaTabbarController: UITabBarController {
         
         //custom middle vc
         let addpost = AddPostViewController(networkManager: self.networkManager)
-        let button = SPButton()
+        button = SPButton()
         let toMakeButtonUp = tabBar.frame.height / 2
         button.frame = CGRect(x: 0.0, y: 0.0, width:  tabBar.frame.height, height:  tabBar.frame.height)
         button.backgroundColor = UIColor.init(hex: "1EC997")

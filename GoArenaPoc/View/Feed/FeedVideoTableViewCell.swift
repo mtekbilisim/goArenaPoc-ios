@@ -28,6 +28,8 @@ class FeedVideoTableViewCell: UITableViewCell {
     
     var playerView = SPVideoPlayerView()
     
+    var moreButton = SPButton()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
@@ -50,6 +52,8 @@ class FeedVideoTableViewCell: UITableViewCell {
         title.translatesAutoresizingMaskIntoConstraints = false
         title.text = ""
         title.font = AppAppearance.seventeen
+        
+       
         
         date = UILabel()
         date.translatesAutoresizingMaskIntoConstraints = false
@@ -81,6 +85,11 @@ class FeedVideoTableViewCell: UITableViewCell {
         commentsButton.semanticContentAttribute = .forceLeftToRight
         commentsButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5);
         
+        moreButton = SPButton()
+        moreButton.translatesAutoresizingMaskIntoConstraints = false
+        let moreIcon = UIImage(named: "more")
+        moreButton.setImage(moreIcon!)
+        
 
         playerView = SPVideoPlayerView()
         playerView.translatesAutoresizingMaskIntoConstraints = false
@@ -88,7 +97,7 @@ class FeedVideoTableViewCell: UITableViewCell {
         contentView.addSubview(playerView)
         
         //constraints
-        contentView.addSubviews([ profilePicture, title, date, detailLabel, likeButton, commentsButton])
+        contentView.addSubviews([ profilePicture, title, date, detailLabel, likeButton, commentsButton, moreButton])
         
         profilePicture.setAnchorConstraintsEqualTo(widthAnchor: 40,
                                                    heightAnchor: 40,
@@ -103,6 +112,13 @@ class FeedVideoTableViewCell: UITableViewCell {
                                                    bottomAnchor: nil,
                                                    leadingAnchor: (profilePicture.trailingAnchor, 8),
                                                    trailingAnchor: nil)
+        
+        moreButton.setAnchorConstraintsEqualTo(widthAnchor: nil,
+                                                   heightAnchor: nil,
+                                                   topAnchor: (profilePicture.topAnchor, 0),
+                                                   bottomAnchor: nil,
+                                                   leadingAnchor: nil,
+                                                   trailingAnchor: (self.trailingAnchor, -16) )
         
         date.setAnchorConstraintsEqualTo(widthAnchor: nil,
                                                    heightAnchor: nil,

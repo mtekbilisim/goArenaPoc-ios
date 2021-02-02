@@ -70,6 +70,37 @@ class FeedViewController: ViewController  {
     @objc func feedDone(notification: Notification) {
         self.showSuccessMessage(message: "İletiniz  gönderilmiştir.")
     }
+    
+    func showOptions(feed: Feed) {
+
+        let alert = UIAlertController(title: "Seçiniz", message: nil, preferredStyle: .actionSheet)
+       
+        alert.addAction(UIAlertAction(title: "Gönderiyi Düzelt ", style: .default, handler: { _ in
+            self.editFeed(feed:feed)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Sil", style: .destructive, handler: { _ in
+            self.deleteFeed(feed:feed)
+        }))
+
+        alert.addAction(UIAlertAction.init(title: "İptal", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func editFeed(feed:Feed) {
+        let editVC = AddPostViewController(networkManager: self.networkManager)
+        editVC.setFeed(feed)
+        let vc = UINavigationController(rootViewController:editVC)
+        vc.modalPresentationStyle = .fullScreen //or .overFullScreen for transparency
+        present(vc, animated: true, completion: nil)
+
+    }
+    
+    func deleteFeed(feed:Feed) {
+        
+    }
 }
 
 // MARK: - extensions setupview
@@ -90,9 +121,7 @@ extension FeedViewController:UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
 
         let tabBarIndex = tabBarController.selectedIndex
-
         print(tabBarIndex)
-
         if tabBarIndex == 0 && shouldTop {
             self.feedView.tableView.setContentOffset(CGPoint(x: 0, y: -Constants.Numbers.topSafeAreaHeight
                                                                 - Constants.Numbers.navBarHeight), animated: true)
@@ -101,6 +130,10 @@ extension FeedViewController:UITabBarControllerDelegate {
 }
 
 extension FeedViewController: FeedViewDelegate {
+    func moreTapped(feed: Feed) {
+        showOptions(feed: feed)
+    }
+    
     func openselectedImage(image: UIImage, indexPath:IndexPath) {
         let imageInfo  = GSImageInfo(image: image, imageMode: .aspectFit)
         let transitionInfo = GSTransitionInfo(fromView: self.feedView)

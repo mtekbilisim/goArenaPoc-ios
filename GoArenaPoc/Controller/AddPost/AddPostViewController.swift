@@ -335,6 +335,18 @@ class AddPostViewController: ViewController {
             }
         }
     }
+    
+    func setFeed(_ feed:Feed) {
+        self.showLoading()
+        delay(0.1) {
+            self.textView.text = feed.title
+            self.title = "İleti Güncelle"
+            self.hideLoading()
+            self.accessory.isHidden = true
+            self.sendPostButton.setTitle("Güncelle")
+        }
+        
+    }
     // MARK: - Send Post Tapped
 
     @objc func sendPost(_ sender: UIButton) {

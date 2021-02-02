@@ -13,6 +13,12 @@
 		0D80B70825C9A36500D9F0A2 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B70725C9A36500D9F0A2 /* File.swift */; };
 		0D80B72725C9CD8300D9F0A2 /* Notifs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B72625C9CD8300D9F0A2 /* Notifs.swift */; };
 		0D80B72C25C9D5F600D9F0A2 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B72B25C9D5F600D9F0A2 /* Employee.swift */; };
+		0D80B73125C9D7B100D9F0A2 /* EmployeeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B73025C9D7B100D9F0A2 /* EmployeeType.swift */; };
+		0D80B73625C9D7D000D9F0A2 /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B73525C9D7D000D9F0A2 /* Sale.swift */; };
+		0D80B73B25C9D87700D9F0A2 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B73A25C9D87700D9F0A2 /* Shop.swift */; };
+		0D80B74025C9D89B00D9F0A2 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B73F25C9D89B00D9F0A2 /* Expectation.swift */; };
+		0D80B74725C9F08200D9F0A2 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B74625C9F08200D9F0A2 /* ReportTableViewCell.swift */; };
+		0D80B76325CA022E00D9F0A2 /* EditFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B76225CA022E00D9F0A2 /* EditFeedViewController.swift */; };
 		0D9FA8DD25C458DD00EF7A7B /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */; };
 		0D9FA8ED25C46B4600EF7A7B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E725C46B4600EF7A7B /* Type.swift */; };
 		0D9FA8EE25C46B4600EF7A7B /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E825C46B4600EF7A7B /* Version.swift */; };
@@ -265,6 +271,12 @@
 		0D80B70725C9A36500D9F0A2 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		0D80B72625C9CD8300D9F0A2 /* Notifs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifs.swift; sourceTree = "<group>"; };
 		0D80B72B25C9D5F600D9F0A2 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		0D80B73025C9D7B100D9F0A2 /* EmployeeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeType.swift; sourceTree = "<group>"; };
+		0D80B73525C9D7D000D9F0A2 /* Sale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
+		0D80B73A25C9D87700D9F0A2 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		0D80B73F25C9D89B00D9F0A2 /* Expectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expectation.swift; sourceTree = "<group>"; };
+		0D80B74625C9F08200D9F0A2 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
+		0D80B76225CA022E00D9F0A2 /* EditFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFeedViewController.swift; sourceTree = "<group>"; };
 		0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		0D9FA8E725C46B4600EF7A7B /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		0D9FA8E825C46B4600EF7A7B /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
@@ -829,6 +841,7 @@
 			isa = PBXGroup;
 			children = (
 				0DB7E19E25C1D21C00117844 /* FeedViewController.swift */,
+				0D80B76225CA022E00D9F0A2 /* EditFeedViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -1381,6 +1394,10 @@
 			isa = PBXGroup;
 			children = (
 				0D80B72B25C9D5F600D9F0A2 /* Employee.swift */,
+				0D80B73025C9D7B100D9F0A2 /* EmployeeType.swift */,
+				0D80B73525C9D7D000D9F0A2 /* Sale.swift */,
+				0D80B73A25C9D87700D9F0A2 /* Shop.swift */,
+				0D80B73F25C9D89B00D9F0A2 /* Expectation.swift */,
 			);
 			path = Employee;
 			sourceTree = "<group>";
@@ -1430,6 +1447,7 @@
 			children = (
 				0DE4B2D725C7DE31004062F7 /* DashboardTableCell.swift */,
 				0DE07D5325C966CE002BCCFC /* BarChartTableViewCell.swift */,
+				0D80B74625C9F08200D9F0A2 /* ReportTableViewCell.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -1728,6 +1746,7 @@
 				0DB7E32925C1DB7E00117844 /* SPDateExtenshion.swift in Sources */,
 				0DB7E2D525C1DB7E00117844 /* Utils.swift in Sources */,
 				0DB7E38C25C1DCE300117844 /* Extensions+UITableView.swift in Sources */,
+				0D80B73625C9D7D000D9F0A2 /* Sale.swift in Sources */,
 				0DB7E32825C1DB7E00117844 /* SPUILabelExtenshion.swift in Sources */,
 				0DB7E1BF25C1D29200117844 /* HTTPTask.swift in Sources */,
 				0DB7E1D425C1D98400117844 /* SplashViewController.swift in Sources */,
@@ -1764,6 +1783,7 @@
 				0DB7E35A25C1DB7E00117844 /* SPLarkControllerExtenshion.swift in Sources */,
 				0DB7E33325C1DB7E00117844 /* SPConstraints.swift in Sources */,
 				0DB7E39125C1DCE300117844 /* Extensions+UIView.swift in Sources */,
+				0D80B74725C9F08200D9F0A2 /* ReportTableViewCell.swift in Sources */,
 				0DB7E2F325C1DB7E00117844 /* SPScrollView.swift in Sources */,
 				0DB7E33D25C1DB7E00117844 /* SPAnimationAlpha.swift in Sources */,
 				0DB7E39925C1DCE300117844 /* Extensions+UIButton.swift in Sources */,
@@ -1788,6 +1808,7 @@
 				0DB7E33225C1DB7E00117844 /* SPNativeColors.swift in Sources */,
 				0DE4B6B425C93780004062F7 /* GSImageViewerController.swift in Sources */,
 				0DB7E33125C1DB7E00117844 /* SPAppLaunch.swift in Sources */,
+				0D80B74025C9D89B00D9F0A2 /* Expectation.swift in Sources */,
 				0DB7E38525C1DCE300117844 /* Extensions+UINavigationController.swift in Sources */,
 				0DE4B26A25C69374004062F7 /* TurkcellTextField.swift in Sources */,
 				0DB7E2D425C1DB7E00117844 /* TPKeyboardAvoidingSwift.swift in Sources */,
@@ -1858,6 +1879,7 @@
 				0DB7E34425C1DB7E00117844 /* SPInstagram.swift in Sources */,
 				0DB7E2FB25C1DB7E00117844 /* SPSeparatorView.swift in Sources */,
 				0DB7E19F25C1D21C00117844 /* FeedViewController.swift in Sources */,
+				0D80B76325CA022E00D9F0A2 /* EditFeedViewController.swift in Sources */,
 				0DB7E2E525C1DB7E00117844 /* SPTableViewCell.swift in Sources */,
 				0DB7E38825C1DCE300117844 /* Extensions+Sequence.swift in Sources */,
 				0DB7E1A425C1D22900117844 /* DashboardViewController.swift in Sources */,
@@ -1878,6 +1900,7 @@
 				0DB7E30725C1DB7E00117844 /* SPNativeTableController.swift in Sources */,
 				0DB7E2F825C1DB7E00117844 /* SPDownloadingUIImageView.swift in Sources */,
 				0DB7E39725C1DCE300117844 /* Extensions+UIImage.swift in Sources */,
+				0D80B73B25C9D87700D9F0A2 /* Shop.swift in Sources */,
 				0DB7E33F25C1DB7E00117844 /* SPDownloader.swift in Sources */,
 				0DB7E2DE25C1DB7E00117844 /* SPFormFeaturedTitleTableViewCell.swift in Sources */,
 				0DB7E2D125C1DB7E00117844 /* ObjectSavableError.swift in Sources */,
@@ -1917,6 +1940,7 @@
 				0DB7E2D325C1DB7E00117844 /* ObjectSavable.swift in Sources */,
 				0DB7E30F25C1DB7E00117844 /* SPMengTransformCollectionView.swift in Sources */,
 				0D80B72C25C9D5F600D9F0A2 /* Employee.swift in Sources */,
+				0D80B73125C9D7B100D9F0A2 /* EmployeeType.swift in Sources */,
 				0DB7E2F725C1DB7E00117844 /* SPGradeBlurView.swift in Sources */,
 				0DB7E31625C1DB7E00117844 /* SPUITableViewCellExtenshion.swift in Sources */,
 				0DB7E31425C1DB7E00117844 /* SPLocale.swift in Sources */,

@@ -10,7 +10,7 @@ import Charts
 
 class DashboardLineTableCell: UITableViewCell, ChartViewDelegate, IAxisValueFormatter {
     
-    let months = ["","1st Week", "2nd Week'", "3rd Week","4th Week"]
+    let months = ["","1. Hafta", "2. Hafta'", "3. Hafta","4. Hafta"]
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return months[Int(value) % months.count]
@@ -32,11 +32,12 @@ class DashboardLineTableCell: UITableViewCell, ChartViewDelegate, IAxisValueForm
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
         chartView =  LineChartView()
+        chartView.roundTop(radius: 20)
         chartView.backgroundColor = UIColor.init(hex: "023953")
         chartView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(chartView)
         chartView.setAnchorConstraintsEqualTo(widthAnchor: nil, heightAnchor: nil,
-                                              topAnchor: (self.topAnchor, 40),
+                                              topAnchor: (self.topAnchor, 50),
                                               bottomAnchor: (self.bottomAnchor, 0),
                                               leadingAnchor: (self.leadingAnchor, 0),
                                               trailingAnchor: (self.trailingAnchor, 0))
@@ -137,7 +138,15 @@ class DashboardLineTableCell: UITableViewCell, ChartViewDelegate, IAxisValueForm
     
     
     private func setupView() {
-        self.backgroundColor = .clear//UIColor.init(hex: "FFFFFF")
+        self.backgroundColor = .white//UIColor.init(hex: "FFFFFF")
+        let chartTitleLabel = UILabel()
+        chartTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+        chartTitleLabel.text =  "Ürün Kategori"
+        chartTitleLabel.textColor = .black
+        chartTitleLabel.font = UIFont(name: "TurkcellSatura", size: 32)
+        self.addSubview(chartTitleLabel)
+        chartTitleLabel.leading(16)
+        chartTitleLabel.top(4)
     }
     
     func generateLineData(count: Int) -> LineChartData {
