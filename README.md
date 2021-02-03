@@ -15,11 +15,11 @@ IOS DOKUMANTASYON
 Go Arena Poc projesi model-view-controller katmanıyla oluşturulmuştur. Network katmanında Apple standart NSURLSessionTask sınıfı kullanılmış olup, 3rd parti kütüphane kullanılmamıştır.
 Network katmanı Encode,Manager,EndPoint ve Servis olarak dört katmandan oluşturulmuştur.
 
-Model katmanın request,response ve data model olarak 3 katmandan oluşturulmuştur. Controllerdan oluşturulan istekler custom viewlere gönderilerek ekranda gösterillmiştir.
+Model katmanı request,response ve data model olarak 3 katmandan oluşturulmuştur. Controllerdan oluşturulan istekler custom viewlere gönderilerek ekranda gösterillmiştir.
 
 Uygulama içinde yardımcı olarak kullanılan her fonksiyon ve extensionlar ayrı birer dosyada, root klasörü altında durmaktadır. Ekstara olarak UI ihtiyacı olarak çekilen kütüphaneler için CocoaPods kullanılmıştır.
 
-Uygulama kodun okunabilirliğini göz önünde bulundurarak storyboard gibi projelerin kapsamlaştığı durumlarda oluşan zorluklardan dolayı full-code olarak yazılmıştır.
+Uygulama, kodun okunabilirliliği göz önünde alınarak, storyboard ile yazılan projelerde karşılaşılan zorluklara karşı full-code olarak yazılmıştır.
 
 Uygulamanın Unit Testleri root klasörü altındadır.
 
