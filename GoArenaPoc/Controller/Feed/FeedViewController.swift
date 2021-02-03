@@ -34,7 +34,10 @@ class FeedViewController: ViewController  {
         self.title = "Feed"
         self.tabBarController?.delegate = self
         setupView()
-        getFeeds()
+        self.showLoading()
+        delay(3) {
+            self.getFeeds()
+        }
     }
     // MARK: - setData
 

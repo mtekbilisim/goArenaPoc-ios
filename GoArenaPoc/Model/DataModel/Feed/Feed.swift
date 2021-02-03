@@ -9,14 +9,14 @@ import Foundation
 
 struct Feed:Codable {
     var id:Int?
-    var title:String
+    var title:String?
     var postType:PostType?
-    var likes:Int?
+    //var likes:Int?
     var comments:[Comment]?
     var postDate: String?
     var medias:[Media]?
-    var user:User
-    var status:FeedStatus
+    var user:User?
+    var status:FeedStatus?
     var tags:[String]?
 }
 

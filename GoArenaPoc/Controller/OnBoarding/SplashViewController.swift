@@ -106,7 +106,7 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
                 
         } else if reachability.connection == .cellular || reachability.connection == .wifi {
             isOnline = true
-            connectAPI()
+            //connectAPI()
             checkToken()
         }
     }
@@ -169,7 +169,9 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
                 }) { (finished) in
                     self.appLogo.transform = CGAffineTransform.identity.scaledBy(x: 0, y: 0) // Scale your image
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
-                        self.goToDashboard()
+                        delay(0.3) {
+                            self.goToDashboard()
+                        }
                     }
                 }
             }

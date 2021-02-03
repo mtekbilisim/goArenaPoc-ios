@@ -383,11 +383,11 @@ class AddPostViewController: ViewController {
     func updateFeed(feed:Feed) {
         guard let feedId = feed.id else { return }
         self.showLoading()
-        var model = AddPostRequest(status: feed.status)
-        model.likes = feed.likes
+        var model = AddPostRequest(status: feed.status!)
+//        model.likes = feed.likes
         model.postDate = feed.postDate
         model.title = textView.text ?? ""
-        model.userId = feed.user.id!
+        model.userId = feed.user?.id!
         let currentDate = Date()
         let format = DateFormatter()
         format.timeZone = .current

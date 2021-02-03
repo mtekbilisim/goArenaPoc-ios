@@ -151,11 +151,13 @@ extension GoArenaApi: EndPointType {
         // MARK: - FEED
         case .feeds:
             return .request
+//            return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
+
             
         case .addPost(let model):
             return .requestParameters(bodyParameters: ["title": model.title as Any,
                                                        "postType": model.postType!.rawValue,
-                                                       "likes": 0,
+//                                                       "likes": 0,
                                                        "postDate": "2021-02-02T14:14:45.283Z",
                                                        "userId": 8,
                                                        "status": model.status.rawValue],
@@ -175,7 +177,7 @@ extension GoArenaApi: EndPointType {
                                                        "userId":8,
                                                        "title": model.title as Any,
                                                        "postType": model.postType!.rawValue,
-                                                       "likes": 0,
+//                                                       "likes": 0,
                                                        "postDate": "2021-02-02T14:14:45.283Z",
                                                        "status": "APPROVED"], // change thıs to Draft
                                       bodyEncoding: .jsonEncoding,

@@ -11,7 +11,7 @@ struct Comment:Codable {
     var id:Int
     var comment:String
     var postDate:String
-    var user:User
+    //var user:User?
     var feedId:Int
 }
 
