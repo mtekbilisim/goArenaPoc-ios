@@ -683,8 +683,8 @@
             filePath = "GoArenaPoc/Controller/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "uploadImage(endUrl:imageData:parameters:onCompletion:onError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -699,8 +699,8 @@
             filePath = "GoArenaPoc/Controller/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
             landmarkName = "uploadImage(endUrl:imageData:parameters:onCompletion:onError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -715,8 +715,8 @@
             filePath = "GoArenaPoc/Controller/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "uploadImage(endUrl:imageData:parameters:onCompletion:onError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -731,8 +731,8 @@
             filePath = "GoArenaPoc/Controller/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "uploadImage(endUrl:imageData:parameters:onCompletion:onError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -747,8 +747,8 @@
             filePath = "GoArenaPoc/Controller/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
             landmarkName = "uploadImage(endUrl:imageData:parameters:onCompletion:onError:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -965,7 +965,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "B8E3A345-D137-4062-83F5-243B483A613C"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
@@ -997,7 +997,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "11F0F2E0-DFE3-42FE-AE8D-C744E484761A"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
@@ -1005,54 +1005,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
             endingLineNumber = "141"
-            landmarkName = "tokenRequest()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "11F0F2E0-DFE3-42FE-AE8D-C744E484761A - fd403493fa805805"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;GoArenaPoc.User&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.SplashViewController.(tokenRequest in _BE1169CE02CEA064AFBDDC42EF0D0740)() -&gt; ()"
-                  moduleName = "GoArenaPoc"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "141"
-                  endingLineNumber = "141"
-                  offsetFromSymbolStart = "220">
-               </Location>
-               <Location
-                  uuid = "11F0F2E0-DFE3-42FE-AE8D-C744E484761A - 962e02b3f9f3319c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;GoArenaPoc.User&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.SplashViewController.(tokenRequest in _BE1169CE02CEA064AFBDDC42EF0D0740)() -&gt; ()"
-                  moduleName = "GoArenaPoc"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2CB91897-C495-48E4-B9B9-D6B04EA178DF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
             landmarkName = "tokenRequest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1131,8 +1083,8 @@
             filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "tokenRequest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1147,8 +1099,8 @@
             filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "scaleLogo()"
             landmarkType = "7">
             <Locations>
@@ -1195,8 +1147,8 @@
             filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "goToDashboard()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1227,8 +1179,8 @@
             filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "tokenRequest()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1339,8 +1291,8 @@
             filePath = "GoArenaPoc/View/Dashboard/BarChartTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "setData(data:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1355,8 +1307,8 @@
             filePath = "GoArenaPoc/View/Dashboard/BarChartTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "setData(data:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1371,8 +1323,8 @@
             filePath = "GoArenaPoc/View/Dashboard/BarChartTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "setData(data:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1387,8 +1339,8 @@
             filePath = "GoArenaPoc/View/Dashboard/BarChartTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "setData(data:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1403,8 +1355,8 @@
             filePath = "GoArenaPoc/View/Dashboard/BarChartTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "setData(data:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1580,6 +1532,86 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "38"
                   endingLineNumber = "38"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D2104009-0D7A-4C86-9A84-946CF27EA127"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "tokenRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BCCD5C1B-7E2D-4D7D-8CC0-B2F13794A009"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "tokenRequest()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9B13613-CF89-4E2B-93F2-B65890F1039F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "tokenRequest()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C9B13613-CF89-4E2B-93F2-B65890F1039F - 9ade5cc78445d10c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;GoArenaPoc.User&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.SplashViewController.(tokenRequest in _BE1169CE02CEA064AFBDDC42EF0D0740)() -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "140"
+                  endingLineNumber = "140"
+                  offsetFromSymbolStart = "432">
+               </Location>
+               <Location
+                  uuid = "C9B13613-CF89-4E2B-93F2-B65890F1039F - fd403493fa805805"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;GoArenaPoc.User&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.SplashViewController.(tokenRequest in _BE1169CE02CEA064AFBDDC42EF0D0740)() -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
                   offsetFromSymbolStart = "24">
                </Location>
             </Locations>

@@ -163,30 +163,29 @@ extension GoArenaApi: EndPointType {
         
         // MARK: - FEED
         case .feeds:
-            return .request
-//            return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
+            return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
 
             
         case .addPost(let model):
-            return .requestParameters(bodyParameters: ["title": model.title as Any,
+            return .requestParametersAndHeaders(bodyParameters: ["title": model.title as Any,
                                                        "postType": model.postType!.rawValue,
 //                                                       "likes": 0,
                                                        "postDate": "2021-02-02T14:14:45.283Z",
                                                        "userId": 8,
                                                        "status": model.status.rawValue],
                                       bodyEncoding: .jsonEncoding,
-                                      urlParameters: nil)
+                                      urlParameters: nil,additionHeaders: headers)
             
         case .postMediaForFeed(let feedId, let file):
-            return .requestParameters(bodyParameters: ["uri": file.fileDownloadUri,
+            return .requestParametersAndHeaders(bodyParameters: ["uri": file.fileDownloadUri,
                                                        "mimeType": file.fileType,
                                                        "feedId": feedId,
                                                        "userId": 8],
                                       bodyEncoding: .jsonEncoding,
-                                      urlParameters: nil)
+                                      urlParameters: nil,additionHeaders: headers)
             
         case .updateFeed(let feedId, let model):
-            return .requestParameters(bodyParameters: ["id":feedId,
+            return .requestParametersAndHeaders(bodyParameters: ["id":feedId,
                                                        "userId":8,
                                                        "title": model.title as Any,
                                                        "postType": model.postType!.rawValue,
@@ -194,7 +193,7 @@ extension GoArenaApi: EndPointType {
                                                        "postDate": "2021-02-02T14:14:45.283Z",
                                                        "status": "APPROVED"], // change thıs to Draft
                                       bodyEncoding: .jsonEncoding,
-                                      urlParameters: nil)
+                                      urlParameters: nil,additionHeaders: headers)
             
         case .deleteFeed:
             return .request
@@ -204,22 +203,22 @@ extension GoArenaApi: EndPointType {
         case .sales:
             return .request
         case .employeeSalesWithShopId:
-            return .requestParameters(bodyParameters: nil, bodyEncoding: .urlEncoding, urlParameters: ["employee":8,"shop":3])
+            return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .urlEncoding, urlParameters: ["employee":8,"shop":3], additionHeaders: headers)
             
         case .getToken(let email, let password):
-            return .requestParameters(bodyParameters: ["email":email,
+            return .requestParametersAndHeaders(bodyParameters: ["email":email,
                                                        "password":password], bodyEncoding: .jsonEncoding,
-                                      urlParameters: nil)
+                                      urlParameters: nil, additionHeaders: headers)
             
         case .me:
             return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
             
             
         case .getExpectationWithEmployeeAndShopId:
-            return .requestParameters(bodyParameters: nil, bodyEncoding: .urlEncoding, urlParameters: ["employee":8,"shop":3])
+            return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .urlEncoding, urlParameters: ["employee":8,"shop":3], additionHeaders:headers)
             
         case .dashboardChartUser:
-            return .request
+            return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
         // end task
         }
     }
@@ -227,7 +226,7 @@ extension GoArenaApi: EndPointType {
 
     var headers: HTTPHeaders? {
         switch self {
-        case .me:
+        case .me,.feeds,. addPost , .postMediaForFeed, .updateFeed, .deleteFeed, .sales, .employeeSalesWithShopId, .getExpectationWithEmployeeAndShopId ,.dashboardChartUser:
             return ["Authorization": User.storedToken()]
         default:
             return nil

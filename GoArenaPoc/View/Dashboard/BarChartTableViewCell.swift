@@ -39,7 +39,7 @@ class BarChartTableViewCell: UITableViewCell, ChartViewDelegate {
         self.backgroundColor = .white//UIColor.init(hex: "FFFFFF")
         let chartTitleLabel = UILabel()
         chartTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        chartTitleLabel.text =  "Satışlar"
+        chartTitleLabel.text =  "Satışlar - Cihaz"
         chartTitleLabel.textColor = .black
         chartTitleLabel.font = UIFont(name: "TurkcellSatura", size: 32)
         self.addSubview(chartTitleLabel)
@@ -48,7 +48,7 @@ class BarChartTableViewCell: UITableViewCell, ChartViewDelegate {
         
         barChartView =  BarChartView()
         barChartView.roundTop(radius: 20)
-        barChartView.backgroundColor = UIColor.init(hex: "023953")
+        barChartView.backgroundColor = .white//UIColor.init(hex: "023953")
         barChartView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(barChartView)
         
@@ -58,66 +58,8 @@ class BarChartTableViewCell: UITableViewCell, ChartViewDelegate {
                                               leadingAnchor: (self.leadingAnchor, 0),
                                               trailingAnchor: (self.trailingAnchor, 0))
         barChartView.delegate = self
-        
-//        self.setup(barLineChartView: self.barChartView)
-                
-//        barChartView.drawBarShadowEnabled = false
-//        barChartView.drawValueAboveBarEnabled = false
-//
-//        barChartView.maxVisibleCount = 60
-//
-//        let legend = barChartView.legend
-//        legend.enabled = true
-//        legend.horizontalAlignment = .right
-//        legend.verticalAlignment = .top
-//        legend.orientation = .vertical
-//        legend.drawInside = true
-//        legend.yOffset = 10.0;
-//        legend.xOffset = 10.0;
-//        legend.yEntrySpace = 0.0;
-//
-//
-//        let yaxis = barChartView.leftAxis
-//        yaxis.spaceTop = 0.35
-//        yaxis.axisMinimum = 0
-//        yaxis.drawGridLinesEnabled = false
-//
-//        barChartView.rightAxis.enabled = true
-//
-//
-//        barChartView.delegate = self
-//        barChartView.noDataText = "You need to provide data for the chart."
-//        barChartView.chartDescription?.textColor = UIColor.clear
-//
-//        let xaxis = barChartView.xAxis
-//        //xaxis.valueFormatter = axisFormatDelegate
-//        xaxis.forceLabelsEnabled = true
-//        xaxis.drawGridLinesEnabled = false
-//        xaxis.labelPosition = .bottom
-//        xaxis.centerAxisLabelsEnabled = true
-//        xaxis.valueFormatter = IndexAxisValueFormatter(values:self.months)
-//        xaxis.granularityEnabled = true
-//        xaxis.granularity = 1
-//
-    }
-    
-//    func setup(barLineChartView chartView: BarLineChartViewBase) {
-//        chartView.chartDescription!.enabled = false
-//
-//        chartView.dragEnabled = true
-//        chartView.setScaleEnabled(true)
-//        chartView.pinchZoomEnabled = false
-//
-//        // ChartYAxis *leftAxis = chartView.leftAxis;
-//
-//        let xAxis = chartView.xAxis
-//        xAxis.labelPosition = .bottom
-//
-//        chartView.rightAxis.enabled = false
-//
-////        setDataCount(1,range: 2)
-//    }
 
+    }
     
     func setData(data: [DashboardChart]) {
         
@@ -142,7 +84,7 @@ class BarChartTableViewCell: UITableViewCell, ChartViewDelegate {
         yaxis.axisMinimum = 0
         yaxis.drawGridLinesEnabled = false
         
-        barChartView.rightAxis.enabled = true
+        barChartView.rightAxis.enabled = false
         barChartView.delegate = self
         barChartView.noDataText = "You need to provide data for the chart."
         barChartView.chartDescription?.textColor = UIColor.clear
@@ -150,34 +92,32 @@ class BarChartTableViewCell: UITableViewCell, ChartViewDelegate {
         let xaxis = barChartView.xAxis
         //xaxis.valueFormatter = axisFormatDelegate
         xaxis.forceLabelsEnabled = true
-        xaxis.drawGridLinesEnabled = false
+        xaxis.drawGridLinesEnabled = true
         xaxis.labelPosition = .top
         xaxis.centerAxisLabelsEnabled = true
-        xaxis.valueFormatter = IndexAxisValueFormatter(values:self.months)
+        //xaxis.valueFormatter = IndexAxisValueFormatter(values:self.months)
         xaxis.granularityEnabled = true
-        xaxis.granularity = 1
-    
+        xaxis.granularity = 5
         
-        var defaultProduct:String = "Cihaz"
-        print(#function)
-        print(data.count)
+        let defaultProduct:String = "Cihaz"
         var dataEntries: [BarChartDataEntry] = []
         var dataEntries1: [BarChartDataEntry] = []
-        var chartDataSe: [BarChartDataSet] = [BarChartDataSet]()
         
        let filteredData = data.filter{($0.product_group==defaultProduct)}
         
         var xAxisData:[String] = []
+        
         for i in 0..<filteredData.count {
             xAxisData.append(filteredData[i].employee)
             let dataEntry = BarChartDataEntry(x: Double(i) , y: Double(filteredData[i].sales))
             dataEntries.append(dataEntry)
-            
             let dataEntry1 = BarChartDataEntry(x: Double(i) , y: Double(filteredData[i].expectation))
             dataEntries1.append(dataEntry1)
-
         }
         
+        #if DEBUG
+        print(xAxisData)
+        #endif
         xaxis.valueFormatter = IndexAxisValueFormatter(values:xAxisData)
 
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Satış")
@@ -187,26 +127,20 @@ class BarChartTableViewCell: UITableViewCell, ChartViewDelegate {
         chartDataSet.colors = [UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 0.5)]
         chartDataSet1.colors = [UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 0.8)]
 
-        //chartDataSet.colors = ChartColorTemplates.colorful()
-        //let chartData = BarChartData(dataSet: chartDataSet)
         let chartData = BarChartData(dataSets: dataSets)
-        let groupSpace = 0.5
-        let barSpace = 0.3
+        let groupSpace = 0.63
+        let barSpace = 0.05
         let barWidth = groupSpace
         
-        let groupCount = data.count
+        let groupCount = xAxisData.count
         let startYear = 0
         
         chartData.barWidth = barWidth;
         barChartView.xAxis.axisMinimum = Double(startYear)
         let gg = chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
-        
         barChartView.xAxis.axisMaximum = Double(startYear) + gg * Double(groupCount)
-        
         chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
-        
         barChartView.data = chartData
-        
         barChartView.setVisibleXRangeMaximum(15)
         barChartView.animate(yAxisDuration: 1.0, easingOption: .easeInOutBounce)
     }

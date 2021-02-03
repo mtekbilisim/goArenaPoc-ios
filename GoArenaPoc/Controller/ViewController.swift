@@ -205,6 +205,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
     
     func uploadImage( endUrl: String, imageData: Data?, parameters: [String : Any]?, onCompletion: ((_ file:File) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
        
+        let token = User.storedToken()
+        let headers = [
+                "Authorization": token,
+                "Content-Type": "application/x-www-form-urlencoded"
+            ]
         AF.upload(multipartFormData: { multipartFormData in
             
             if let parameters = parameters {
@@ -234,7 +239,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UINavigatio
                 multipartFormData.append(data, withName: "file", fileName: "\(Date.init().timeIntervalSince1970).png", mimeType: "image/png")
             }
         },
-                  to: endUrl, method: .post , headers: nil)
+                  to: endUrl, method: .post , headers: [
+                    "Authorization": token,
+                    "Content-Type": "application/x-www-form-urlencoded"
+                ])
             .responseJSON(completionHandler: { (response) in
                 
                 print(response)

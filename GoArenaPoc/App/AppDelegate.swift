@@ -49,6 +49,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func goToLogin() {
+      window?.rootViewController = UINavigationController(rootViewController: LoginViewController(networkManager: self.networkManager))
+        
+    }
+    
     func goToDashboardForDemoPurpose() {
         window?.rootViewController = ArenaTabbarController()
     }

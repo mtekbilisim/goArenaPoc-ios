@@ -138,9 +138,7 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
             guard let self = self else { return }
             if let _ = error {
                 DispatchQueue.main.async {
-                    DispatchQueue.main.async {
-                        self.showLogin()
-                    }
+                    self.showLogin()
                 }
             }
             if let result = result {
@@ -154,7 +152,7 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
     
     private func showLogin() {
         if let app = UIApplication.shared.delegate as? AppDelegate {
-            app.openApp()
+            app.goToLogin()
         }
     }
     
