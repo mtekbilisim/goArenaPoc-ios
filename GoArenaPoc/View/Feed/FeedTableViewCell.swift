@@ -203,9 +203,11 @@ class FeedTableViewCell: UITableViewCell {
         profilePicture.setImage(link: feed.user?.avatar ?? "")
         title.text = feed.user?.username ?? ""
         if let datepost = feed.postDate {
-            date.text = datepost
-//            let postDate = date.toDateString(dateFormatter: DateFormatter(format: "yyyy-MM-dd'T'HH:mm:ssZ"), outputFormat: "HH:mm")
-//            print(postDate)
+            let postDate1 = datepost.toDateString(dateFormatter: DateFormatter(format: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"), outputFormat: "yyyy-MM-dd HH:mm:ss")
+            let date1 = postDate1?.toDate(dateFormatter: DateFormatter(format: "yyyy-MM-dd HH:mm:ss"))
+            date.text = date1?.timeAgoSinceDate
+
+            print(date1)
 //            date.text = postDate!.timeAgoSinceDate
         }
 

@@ -33,6 +33,8 @@ public enum GoArenaApi {
     case employeeSalesWithShopId
     case getExpectationWithEmployeeAndShopId
     case dashboardChartUser(userId:Int)
+    case dashboardChartShop(shopId:Int)
+
     
     case getToken(email:String, password:String)
     case me
@@ -108,6 +110,9 @@ extension GoArenaApi: EndPointType {
             
         case .dashboardChartUser(let userId):
             return "dashboard/charts/shop/\(userId)/employees"
+            
+        case .dashboardChartShop(let shopId):
+            return "dashboard/charts/shop/\(shopId)"
         }
             
     }
@@ -147,7 +152,7 @@ extension GoArenaApi: EndPointType {
         case .me:
             return .get
 
-        case .dashboardChartUser:
+        case .dashboardChartUser, .dashboardChartShop:
             return .get
         
         // end httpMethod
@@ -219,6 +224,12 @@ extension GoArenaApi: EndPointType {
             
         case .dashboardChartUser:
             return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
+            
+            
+        case .dashboardChartShop:
+            return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
+        
+            
         // end task
         }
     }
@@ -226,7 +237,17 @@ extension GoArenaApi: EndPointType {
 
     var headers: HTTPHeaders? {
         switch self {
-        case .me,.feeds,. addPost , .postMediaForFeed, .updateFeed, .deleteFeed, .sales, .employeeSalesWithShopId, .getExpectationWithEmployeeAndShopId ,.dashboardChartUser:
+        case .me,
+             .feeds,
+             .addPost ,
+             .postMediaForFeed,
+             .updateFeed,
+             .deleteFeed,
+             .sales,
+             .dashboardChartShop,
+             .employeeSalesWithShopId,
+             .getExpectationWithEmployeeAndShopId,
+             .dashboardChartUser:
             return ["Authorization": User.storedToken()]
         default:
             return nil

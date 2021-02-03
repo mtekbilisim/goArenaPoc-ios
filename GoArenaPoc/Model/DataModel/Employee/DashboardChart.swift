@@ -14,3 +14,9 @@ struct DashboardChart: Codable{
     var product_group:String
     var employee:String
 }
+
+struct ShopChart:Codable {
+    var expectation:Int
+    var sales:Int
+    var product_group:String
+}
