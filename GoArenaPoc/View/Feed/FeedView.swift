@@ -110,22 +110,27 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
                 cell.playerView.link = media[0].uri
             }
             cell.setFeed(feed)
+            cell.contentView.isUserInteractionEnabled = true
+            cell.moreButton.tag = section
+            cell.moreButton.addTarget(self, action: #selector(moreButtonTapped(_  :)), for: .touchUpInside)
             return cell
         } else if feed.postType == .IMAGE {
             let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier,
                                                      for: indexPath) as! FeedTableViewCell
-            cell.isUserInteractionEnabled = true
+            cell.contentView.isUserInteractionEnabled = true
             cell.delegate = self
             cell.setFeed(feed)
             cell.commentsButton.tag = section
             cell.commentsButton.addTarget(self, action: #selector(commentsTapped), for: .touchUpInside)
             cell.likeButton.tag = section
             cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+            cell.moreButton.tag = section
+            cell.moreButton.addTarget(self, action: #selector(moreButtonTapped(_  :)), for: .touchUpInside)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier,
                                                      for: indexPath) as! FeedTableViewCell
-            cell.isUserInteractionEnabled = true
+            cell.contentView.isUserInteractionEnabled = true
 
             cell.setFeed(feed)
             cell.commentsButton.tag = section
@@ -136,8 +141,6 @@ extension FeedView:UITableViewDelegate, UITableViewDataSource {
             cell.moreButton.addTarget(self, action: #selector(moreButtonTapped(_  :)), for: .touchUpInside)
             return cell
         }
-   
-    
         
     }
     

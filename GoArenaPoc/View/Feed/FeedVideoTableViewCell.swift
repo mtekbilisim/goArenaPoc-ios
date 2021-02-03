@@ -89,6 +89,9 @@ class FeedVideoTableViewCell: UITableViewCell {
         moreButton.translatesAutoresizingMaskIntoConstraints = false
         let moreIcon = UIImage(named: "more")
         moreButton.setImage(moreIcon!)
+        moreButton.contentVerticalAlignment = .fill
+        moreButton.contentHorizontalAlignment = .fill
+        moreButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
         
 
         playerView = SPVideoPlayerView()
@@ -113,12 +116,12 @@ class FeedVideoTableViewCell: UITableViewCell {
                                                    leadingAnchor: (profilePicture.trailingAnchor, 8),
                                                    trailingAnchor: nil)
         
-        moreButton.setAnchorConstraintsEqualTo(widthAnchor: nil,
-                                                   heightAnchor: nil,
-                                                   topAnchor: (profilePicture.topAnchor, 0),
+        moreButton.setAnchorConstraintsEqualTo(widthAnchor: (moreIcon?.size.width)! + 20,
+                                                   heightAnchor: (moreIcon?.size.height)! + 20,
+                                                   topAnchor: (profilePicture.topAnchor, -10),
                                                    bottomAnchor: nil,
                                                    leadingAnchor: nil,
-                                                   trailingAnchor: (self.trailingAnchor, -16) )
+                                                   trailingAnchor: (self.trailingAnchor, -6) )
         
         date.setAnchorConstraintsEqualTo(widthAnchor: nil,
                                                    heightAnchor: nil,
@@ -168,6 +171,12 @@ class FeedVideoTableViewCell: UITableViewCell {
 //            let postDate = date.toDateString(dateFormatter: DateFormatter(format: "yyyy-MM-dd'T'HH:mm:ssZ"), outputFormat: "HH:mm")
 //            print(postDate)
 //            date.text = postDate!.timeAgoSinceDate
+        }
+        
+        if feed.user.id == 8 {
+            self.moreButton.isHidden = false
+        } else {
+            self.moreButton.isHidden = true
         }
 
         detailLabel.text = feed.title

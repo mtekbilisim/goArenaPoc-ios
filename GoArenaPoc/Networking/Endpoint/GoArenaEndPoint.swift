@@ -24,6 +24,8 @@ public enum GoArenaApi {
     case feeds
     case addPost(model: AddPostRequest)
     case postMediaForFeed(feedId: Int, file:File)
+    case deleteFeed(feedId:Int)
+    case updateFeed(feedId:Int, model: AddPostRequest)
    
     // MARK: - DASHBOARD
 
@@ -70,8 +72,15 @@ extension GoArenaApi: EndPointType {
 
         case .feeds, .addPost:
             return "feeds"
+       
         case .postMediaForFeed(let feedId, _ ):
             return "feeds/\(feedId)/medias"
+        
+        case .deleteFeed(let feedId):
+            return "feeds/\(feedId)"
+       
+        case .updateFeed(let feedId, _):
+            return "feeds/\(feedId)"
             
         // MARK: - DASHBOARD
         
@@ -96,6 +105,12 @@ extension GoArenaApi: EndPointType {
             return .post
         case .postMediaForFeed:
             return .post
+            
+        case .updateFeed:
+            return .put
+            
+        case .deleteFeed:
+            return .delete
             
         // MARK: - DASHBOARD
         case .sales:
@@ -137,6 +152,20 @@ extension GoArenaApi: EndPointType {
                                                        "userId": 8],
                                       bodyEncoding: .jsonEncoding,
                                       urlParameters: nil)
+            
+        case .updateFeed(let feedId, let model):
+            return .requestParameters(bodyParameters: ["id":feedId,
+                                                       "userId":8,
+                                                       "title": model.title as Any,
+                                                       "postType": model.postType!.rawValue,
+                                                       "likes": 0,
+                                                       "postDate": "2021-02-02T14:14:45.283Z",
+                                                       "status": "APPROVED"], // change thıs to Draft
+                                      bodyEncoding: .jsonEncoding,
+                                      urlParameters: nil)
+            
+        case .deleteFeed:
+            return .request
             
         // MARK: - DASHBOARD
         

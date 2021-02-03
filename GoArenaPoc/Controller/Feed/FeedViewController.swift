@@ -99,7 +99,11 @@ class FeedViewController: ViewController  {
     }
     
     func deleteFeed(feed:Feed) {
-        
+        guard let feedId = feed.id else { return }
+        self.showLoading()
+        networkManager.sendRequest(route: .deleteFeed(feedId: feedId), ArenaResponse.self) { (result, error) in
+            self.getFeeds()
+        }
     }
 }
 

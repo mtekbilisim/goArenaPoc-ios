@@ -12,11 +12,17 @@ import AVFoundation
 import AVKit
 import Photos
 
+enum FeedType:String,CaseIterable {
+    case add
+    case update
+}
 
 class AddPostViewController: ViewController {
     
     // MARK: - VARS
 
+    var feedType:FeedType = .add
+    
     let maxLength = 400
     var scrollView =  UIScrollView()
     var sendPostButton = SPButton()
@@ -65,6 +71,8 @@ class AddPostViewController: ViewController {
             }
         }
     }
+    
+    var updatedFeedItem:Feed?
     
     var imagesList:[UIImage] = [] {
         didSet {
@@ -338,6 +346,8 @@ class AddPostViewController: ViewController {
     
     func setFeed(_ feed:Feed) {
         self.showLoading()
+        self.feedType = .update
+        self.updatedFeedItem = feed
         delay(0.1) {
             self.textView.text = feed.title
             self.title = "İleti Güncelle"
@@ -351,14 +361,57 @@ class AddPostViewController: ViewController {
 
     @objc func sendPost(_ sender: UIButton) {
         self.showLoading()
-        if self.imagesList.count > 0 {
-            uploadFiles()
-        } else  {
-            if let v = self.selectedVideo {
-                self.isFilesReadyForUpload = true
-                self.uploadVideo(video: v)
-            } else {
-                self.isFilesReadyForUpload = true
+        if feedType == .add {
+            if self.imagesList.count > 0 {
+                uploadFiles()
+            } else  {
+                if let v = self.selectedVideo {
+                    self.isFilesReadyForUpload = true
+                    self.uploadVideo(video: v)
+                } else {
+                    self.isFilesReadyForUpload = true
+                }
+            }
+        } else {
+            if let updatedItem = self.updatedFeedItem {
+                updateFeed(feed:updatedItem)
+            }
+        }
+        
+    }
+    
+    func updateFeed(feed:Feed) {
+        guard let feedId = feed.id else { return }
+        self.showLoading()
+        var model = AddPostRequest(status: feed.status)
+        model.likes = feed.likes
+        model.postDate = feed.postDate
+        model.title = textView.text ?? ""
+        model.userId = feed.user.id!
+        let currentDate = Date()
+        let format = DateFormatter()
+        format.timeZone = .current
+        format.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let dateString = format.string(from: currentDate)
+        model.postDate = dateString
+        model.postType = feed.postType
+        
+        networkManager.sendRequest(route: .updateFeed(feedId: feedId, model: model), ArenaResponse.self) { (res, err) in
+            if let err = err {
+                DispatchQueue.main.async {
+                    self.hideLoading()
+                    self.showAlert(string: err)
+                }
+            }
+            if let _ = res {
+                DispatchQueue.main.async {
+                    
+                    NotificationCenter.default.post(name: Notification.Name(Notifs.Feed.posted.rawValue),
+                                                    object: nil,
+                                                    userInfo: nil)
+                    self.hideLoading()
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
