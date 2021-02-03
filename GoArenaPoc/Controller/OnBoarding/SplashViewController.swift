@@ -107,6 +107,7 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
         } else if reachability.connection == .cellular || reachability.connection == .wifi {
             isOnline = true
             connectAPI()
+            checkToken()
         }
     }
     
@@ -116,7 +117,44 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
         if delayable{
             delay(Double(delayDuration)){
                 self.scaleLogo()
+                
             }
+        }
+    }
+    
+    func checkToken() {
+        print("3")
+        if User.loggedIn() {
+            self.tokenRequest()
+        } else {
+            DispatchQueue.main.async {
+                self.showLogin()
+            }
+        }
+    }
+    
+    private func tokenRequest () {
+        networkManager.sendRequest(route: .me, User.self) { [weak self] (result, error) in
+            guard let self = self else { return }
+            if let _ = error {
+                DispatchQueue.main.async {
+                    DispatchQueue.main.async {
+                        self.showLogin()
+                    }
+                }
+            }
+            if let result = result {
+                if let user = result.data   {
+                    User.saveUser(user: user)
+                    self.scaleLogo()
+                }
+            }
+        }
+    }
+    
+    private func showLogin() {
+        if let app = UIApplication.shared.delegate as? AppDelegate {
+            app.openApp()
         }
     }
     
@@ -133,7 +171,6 @@ class SplashViewController: ViewController, UIViewControllerTransitioningDelegat
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
                         self.goToDashboard()
                     }
-
                 }
             }
         }

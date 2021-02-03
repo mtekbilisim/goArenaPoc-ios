@@ -173,7 +173,7 @@ class FeedVideoTableViewCell: UITableViewCell {
 //            date.text = postDate!.timeAgoSinceDate
         }
         
-        if feed.user.id == 8 {
+        if feed.user.id == User.currentUser()?.id {
             self.moreButton.isHidden = false
         } else {
             self.moreButton.isHidden = true
@@ -182,6 +182,8 @@ class FeedVideoTableViewCell: UITableViewCell {
         detailLabel.text = feed.title
         if let likeCount = feed.likes {
             likeButton.setTitle("\(likeCount)")
+        } else {
+            likeButton.setTitle("0 ")
         }
         
         if let count = feed.comments?.count, count > 0 {

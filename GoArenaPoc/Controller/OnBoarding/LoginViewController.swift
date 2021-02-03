@@ -37,9 +37,8 @@ class LoginViewController: ViewController {
     
     @objc
     func loginTapped() {
-        self.showLoading()
         if let email = loginView.emailField.textField.text, let password = loginView.passwordField.textField.text {
-            delay(2) {
+            delay(0.2) {
                 self.loginWith(name: email, pass: password)
             }
         } else {
@@ -55,19 +54,62 @@ class LoginViewController: ViewController {
             GoArenaUser().setRememberMe(bool: false)
         }
         loginRequest(name, pass)
+        
     }
     
     private func loginRequest (_ name:String, _ password: String) {
-        DispatchQueue.main.async {
-            self.hideLoading()
-            if let app = UIApplication.shared.delegate as? AppDelegate {
-                if SPApp.Launch.isFirstLaunch {
-                    SPApp.Launch.run()
+        if !name.isEmpty && !password.isEmpty {
+            if name.isEmail {
+                self.showLoading()
+                networkManager.getToken(email: name, password: password) { [weak self] (res, err) in
+                    guard let self = self else { return }
+                    if let _ = err {
+                        DispatchQueue.main.async {
+                            self.showAlert(string: "Giriş yapılamadı.")
+                            self.hideLoading()
+                        }
+                    }
+                    if let result = res, let token = result.access_token  {
+                        User.saveToken(token: token)
+                        
+                        self.getMyUserInfo()
+                    }
                 }
-                app.goToDashboardForDemoPurpose()
+
+            } else {
+                self.showAlert(string: "Geçersiz e-posta adresi.")
+            }
+        }
+
+        
+
+    }
+    
+    func getMyUserInfo() {
+        networkManager.sendRequest(route: .me, User.self) { [weak self] (result, error) in
+            guard let self = self else { return }
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.hideLoading()
+                }
+            }
+            if let result = result, let user = result.data {
+                User.saveUser(user: user)
+                
+                DispatchQueue.main.async {
+                    self.hideLoading()
+                    if let app = UIApplication.shared.delegate as? AppDelegate {
+                        if SPApp.Launch.isFirstLaunch {
+                            SPApp.Launch.run()
+                        }
+                        app.openApp()
+                    }
+                }
             }
         }
     }
+    
+    
 }
 
 extension LoginViewController {

@@ -31,6 +31,9 @@ public enum GoArenaApi {
 
     case sales
     case employeeSalesWithShopId
+    
+    case getToken(email:String, password:String)
+    case me
 
 }
 
@@ -89,6 +92,14 @@ extension GoArenaApi: EndPointType {
         case .employeeSalesWithShopId:
             return "dashboard"
          // end path
+        
+        // MARK: - AUTH
+        
+        case .getToken:
+            return "authentication/token"
+       
+        case .me:
+            return "authentication/me"
         }
             
     }
@@ -117,6 +128,12 @@ extension GoArenaApi: EndPointType {
             return .get
             
         case .employeeSalesWithShopId:
+            return .get
+            
+        case .getToken:
+            return .post
+            
+        case .me:
             return .get
 
         
@@ -172,7 +189,15 @@ extension GoArenaApi: EndPointType {
         case .sales:
             return .request
         case .employeeSalesWithShopId:
-            return .requestParameters(bodyParameters: nil, bodyEncoding: .urlEncoding, urlParameters: ["employee":7,"shop":3])
+            return .requestParameters(bodyParameters: nil, bodyEncoding: .urlEncoding, urlParameters: ["employee":8,"shop":3])
+            
+        case .getToken(let email, let password):
+            return .requestParameters(bodyParameters: ["email":email,
+                                                       "password":password], bodyEncoding: .jsonEncoding,
+                                      urlParameters: nil)
+            
+        case .me:
+            return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
         // end task
 
         }
@@ -181,7 +206,8 @@ extension GoArenaApi: EndPointType {
 
     var headers: HTTPHeaders? {
         switch self {
-
+        case .me:
+            return ["Authorization": User.storedToken()]
         default:
             return nil
         // end headers

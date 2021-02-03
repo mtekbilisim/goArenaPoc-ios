@@ -19,6 +19,7 @@
 		0D80B74025C9D89B00D9F0A2 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B73F25C9D89B00D9F0A2 /* Expectation.swift */; };
 		0D80B74725C9F08200D9F0A2 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B74625C9F08200D9F0A2 /* ReportTableViewCell.swift */; };
 		0D80B76325CA022E00D9F0A2 /* EditFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B76225CA022E00D9F0A2 /* EditFeedViewController.swift */; };
+		0D80B76825CA72BA00D9F0A2 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B76725CA72BA00D9F0A2 /* AuthResponse.swift */; };
 		0D9FA8DD25C458DD00EF7A7B /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */; };
 		0D9FA8ED25C46B4600EF7A7B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E725C46B4600EF7A7B /* Type.swift */; };
 		0D9FA8EE25C46B4600EF7A7B /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E825C46B4600EF7A7B /* Version.swift */; };
@@ -277,6 +278,7 @@
 		0D80B73F25C9D89B00D9F0A2 /* Expectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expectation.swift; sourceTree = "<group>"; };
 		0D80B74625C9F08200D9F0A2 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
 		0D80B76225CA022E00D9F0A2 /* EditFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFeedViewController.swift; sourceTree = "<group>"; };
+		0D80B76725CA72BA00D9F0A2 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		0D9FA8E725C46B4600EF7A7B /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		0D9FA8E825C46B4600EF7A7B /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
@@ -748,6 +750,7 @@
 			isa = PBXGroup;
 			children = (
 				0DB7E1CD25C1D46900117844 /* GenericResponse.swift */,
+				0D80B76725CA72BA00D9F0A2 /* AuthResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1856,6 +1859,7 @@
 				0DB7E32525C1DB7E00117844 /* SPUITabBarControllerExtenshion.swift in Sources */,
 				0DB7E33725C1DB7E00117844 /* SPMail.swift in Sources */,
 				0DB7E1B925C1D29200117844 /* Alamofire+ArrayEncoding.swift in Sources */,
+				0D80B76825CA72BA00D9F0A2 /* AuthResponse.swift in Sources */,
 				0DB7E14325C1CB4000117844 /* AppDelegate.swift in Sources */,
 				0DB7E32725C1DB7E00117844 /* SPCGRectExtension.swift in Sources */,
 				0DB7E30E25C1DB7E00117844 /* SPCollectionViewLayout.swift in Sources */,

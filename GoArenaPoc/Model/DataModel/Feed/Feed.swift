@@ -17,6 +17,7 @@ struct Feed:Codable {
     var medias:[Media]?
     var user:User
     var status:FeedStatus
+    var tags:[String]?
 }
 
 

@@ -13,10 +13,23 @@ struct User: Codable {
     var username: String?
     var avatar:String?
     
+    var first_name:String?
+    var last_name:String?
+    var password:String?
+    var employee_type:EmployeeType?
+    var shopId:Int?
+    
     private enum UserCodingKeys : String, CodingKey {
         case id = "id"
         case username = "username"
         case avatar = "avatar"
+        
+        case first_name = "first_name"
+        case last_name = "last_name"
+        case password = "password"
+        case employee_type = "employee_type"
+        case shopId = "shopId"
+
     }
     
     init(id:Int) {
@@ -28,6 +41,13 @@ struct User: Codable {
         id = try container.decode(Int.self, forKey: .id)
         username = try container.decodeIfPresent(String.self, forKey: .username) ?? ""
         avatar = try container.decodeIfPresent(String.self, forKey: .avatar) ?? ""
+        
+        first_name = try container.decodeIfPresent(String.self, forKey: .first_name) ?? ""
+        last_name = try container.decodeIfPresent(String.self, forKey: .last_name) ?? ""
+        password = try container.decodeIfPresent(String.self, forKey: .password) ?? ""
+        employee_type = try container.decode(EmployeeType.self, forKey: .employee_type)
+        shopId = try container.decode(Int.self, forKey: .shopId)
+
 
     }
 
@@ -36,6 +56,13 @@ struct User: Codable {
         try container.encode(id, forKey: .id)
         try container.encode(username, forKey: .username)
         try container.encode(avatar, forKey: .avatar)
+        
+        try container.encode(first_name, forKey: .first_name)
+        try container.encode(last_name, forKey: .last_name)
+        try container.encode(password, forKey: .password)
+        try container.encode(employee_type, forKey: .employee_type)
+        try container.encode(shopId, forKey: .shopId)
+
     }
 }
 
