@@ -8,14 +8,12 @@
 import UIKit
 import Charts
 
-class BarChartTableViewCell: UITableViewCell, ChartViewDelegate, IAxisValueFormatter {
+class BarChartTableViewCell: UITableViewCell, ChartViewDelegate {
+     
+    var months = ["Jan", "Feb", "Mar", "Apr", "May"]
+    let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0]
+    let unitsBought = [10.0, 14.0, 60.0, 13.0, 2.0]
     
-    let months = ["ocak","şubat","mart","nisan"]
-    
-    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        return months[Int(value) % months.count]
-    }
-           
     lazy var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 1
@@ -24,118 +22,19 @@ class BarChartTableViewCell: UITableViewCell, ChartViewDelegate, IAxisValueForma
         return formatter
     }()
     
-    var chartView: LineChartView!
+    var barChartView =  BarChartView()
 
     var shouldHideData: Bool = false
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
-        chartView =  LineChartView()
-        chartView.roundTop(radius: 20)
-        chartView.backgroundColor = UIColor.init(hex: "023953")
-        chartView.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(chartView)
-        chartView.setAnchorConstraintsEqualTo(widthAnchor: nil, heightAnchor: nil,
-                                              topAnchor: (self.topAnchor, 50),
-                                              bottomAnchor: (self.bottomAnchor, 0),
-                                              leadingAnchor: (self.leadingAnchor, 0),
-                                              trailingAnchor: (self.trailingAnchor, 0))
-//
-        chartView.delegate = self
-        
-        let l = chartView.legend
-        l.wordWrapEnabled = true
-        l.horizontalAlignment = .center
-        l.verticalAlignment = .bottom
-        l.orientation = .horizontal
-        l.drawInside = false
-//        chartView.legend = l
-
-        let rightAxis = chartView.rightAxis
-        rightAxis.axisMinimum = 0
-        rightAxis.labelFont = AppAppearance.eleven!
-        rightAxis.labelTextColor = .white
-        
-        let leftAxis = chartView.leftAxis
-        leftAxis.axisMinimum = 0
-        leftAxis.labelFont = AppAppearance.eleven!
-        leftAxis.labelTextColor = .white
-        
-        let xAxis = chartView.xAxis
-        xAxis.labelPosition = .bottom
-        xAxis.axisMinimum = 0
-        xAxis.granularity = 1
-        xAxis.valueFormatter = self
-        xAxis.labelFont = AppAppearance.eleven!
-        xAxis.labelTextColor = .white
-        
-        chartView.rightAxis.enabled = false
-        chartView.legend.form = .square
-        chartView.legend.textColor = .white
-        chartView.legend.font = AppAppearance.eleven!
-        chartView.animate(xAxisDuration: 2.5)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setDataCount(_ count: Int, range: UInt32) {
-//        let yVals1 = (0..<count).map { (i) -> ChartDataEntry in
-//            var val : Double = 0.0
-//            if i == 0 {
-//                val = 0.0
-//            } else {
-//                val = Double(arc4random_uniform(range) + 24)
-//            }
-//            return ChartDataEntry(x: Double(i), y: val)
-//        }
-//        let yVals2 = (0..<count).map { (i) -> ChartDataEntry in
-//            var val : Double = 0.0
-//            if i == 0 {
-//                val = 0.0
-//            } else {
-//                val = Double(arc4random_uniform(range) + 79)
-//            }
-//            return ChartDataEntry(x: Double(i), y: val)
-//        }
-//
-//        let set1: LineChartDataSet = LineChartDataSet(entries: yVals1, label: "Telefon")
-//
-//        set1.axisDependency = .left
-//        set1.setColor(UIColor.init(hex: "059FE7"))
-//        set1.setCircleColor(.white)
-//        set1.lineWidth = 2
-//        set1.circleRadius = 5
-//        set1.mode = .cubicBezier
-//        set1.fillAlpha = 1
-//        set1.fillColor = SPNativeColors.pink
-//        set1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
-//        set1.drawCircleHoleEnabled = true
-//
-//        let set2: LineChartDataSet = LineChartDataSet(entries: yVals2, label: "Tablet")
-//        set2.axisDependency = .right
-//        set2.setColor(UIColor.init(hex: "F0E204"))
-//        set2.setCircleColor(.white)
-//        set2.lineWidth = 2
-//        set2.circleRadius = 5
-//        set2.fillAlpha = 65/255
-//        set2.mode = .cubicBezier
-//        set2.fillColor = .blue
-//        set2.highlightColor = SPNativeColors.purple
-//        set2.drawCircleHoleEnabled = true
-//
-//        let lineChartData = LineChartData(dataSets: [set1, set2])
-//
-//        lineChartData.setValueTextColor(SPNativeColors.white)
-//        lineChartData.setValueFont(AppAppearance.thirteen!)
-//
-//        chartView.data = lineChartData
-//        chartView.xAxis.axisMaximum = lineChartData.xMax + 0.25
-    }
-    
-    
     private func setupView() {
         self.backgroundColor = .white//UIColor.init(hex: "FFFFFF")
         let chartTitleLabel = UILabel()
@@ -146,30 +45,171 @@ class BarChartTableViewCell: UITableViewCell, ChartViewDelegate, IAxisValueForma
         self.addSubview(chartTitleLabel)
         chartTitleLabel.leading(16)
         chartTitleLabel.top(4)
+        
+        barChartView =  BarChartView()
+        barChartView.roundTop(radius: 20)
+        barChartView.backgroundColor = UIColor.init(hex: "023953")
+        barChartView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(barChartView)
+        
+        barChartView.setAnchorConstraintsEqualTo(widthAnchor: nil, heightAnchor: nil,
+                                              topAnchor: (self.topAnchor, 50),
+                                              bottomAnchor: (self.bottomAnchor, 0),
+                                              leadingAnchor: (self.leadingAnchor, 0),
+                                              trailingAnchor: (self.trailingAnchor, 0))
+        barChartView.delegate = self
+        
+//        self.setup(barLineChartView: self.barChartView)
+                
+//        barChartView.drawBarShadowEnabled = false
+//        barChartView.drawValueAboveBarEnabled = false
+//
+//        barChartView.maxVisibleCount = 60
+//
+//        let legend = barChartView.legend
+//        legend.enabled = true
+//        legend.horizontalAlignment = .right
+//        legend.verticalAlignment = .top
+//        legend.orientation = .vertical
+//        legend.drawInside = true
+//        legend.yOffset = 10.0;
+//        legend.xOffset = 10.0;
+//        legend.yEntrySpace = 0.0;
+//
+//
+//        let yaxis = barChartView.leftAxis
+//        yaxis.spaceTop = 0.35
+//        yaxis.axisMinimum = 0
+//        yaxis.drawGridLinesEnabled = false
+//
+//        barChartView.rightAxis.enabled = true
+//
+//
+//        barChartView.delegate = self
+//        barChartView.noDataText = "You need to provide data for the chart."
+//        barChartView.chartDescription?.textColor = UIColor.clear
+//
+//        let xaxis = barChartView.xAxis
+//        //xaxis.valueFormatter = axisFormatDelegate
+//        xaxis.forceLabelsEnabled = true
+//        xaxis.drawGridLinesEnabled = false
+//        xaxis.labelPosition = .bottom
+//        xaxis.centerAxisLabelsEnabled = true
+//        xaxis.valueFormatter = IndexAxisValueFormatter(values:self.months)
+//        xaxis.granularityEnabled = true
+//        xaxis.granularity = 1
+//
     }
     
-//    func generateLineData(count: Int) -> LineChartData {
-//        let entries = (0..<count).map { (i) -> ChartDataEntry in
-//            return ChartDataEntry(x: Double(i) + 0.5, y: Double(arc4random_uniform(15) + 5))
-//        }
+//    func setup(barLineChartView chartView: BarLineChartViewBase) {
+//        chartView.chartDescription!.enabled = false
 //
-//        let set = LineChartDataSet(entries: entries, label: "Line DataSet")
-//        set.setColor(UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1))
-//        set.lineWidth = 2.5
-//        set.setCircleColor(UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1))
-//        set.circleRadius = 5
-//        set.circleHoleRadius = 2.5
-//        set.fillColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
-//        set.mode = .cubicBezier
-//        set.drawValuesEnabled = true
-//        set.valueFont = .systemFont(ofSize: 10)
-//        set.valueTextColor = UIColor(red: 240/255, green: 238/255, blue: 70/255, alpha: 1)
+//        chartView.dragEnabled = true
+//        chartView.setScaleEnabled(true)
+//        chartView.pinchZoomEnabled = false
 //
-//        set.axisDependency = .left
+//        // ChartYAxis *leftAxis = chartView.leftAxis;
 //
-//        return LineChartData(dataSet: set)
+//        let xAxis = chartView.xAxis
+//        xAxis.labelPosition = .bottom
+//
+//        chartView.rightAxis.enabled = false
+//
+////        setDataCount(1,range: 2)
 //    }
-//
+
+    
+    func setData(data: [DashboardChart]) {
+        
+        barChartView.drawBarShadowEnabled = false
+        barChartView.drawValueAboveBarEnabled = false
+        
+        barChartView.maxVisibleCount = 60
+        
+        let legend = barChartView.legend
+        legend.enabled = true
+        legend.horizontalAlignment = .right
+        legend.verticalAlignment = .top
+        legend.orientation = .vertical
+        legend.drawInside = true
+        legend.yOffset = 10.0;
+        legend.xOffset = 10.0;
+        legend.yEntrySpace = 0.0;
+        
+        
+        let yaxis = barChartView.leftAxis
+        yaxis.spaceTop = 0.35
+        yaxis.axisMinimum = 0
+        yaxis.drawGridLinesEnabled = false
+        
+        barChartView.rightAxis.enabled = true
+        barChartView.delegate = self
+        barChartView.noDataText = "You need to provide data for the chart."
+        barChartView.chartDescription?.textColor = UIColor.clear
+        
+        let xaxis = barChartView.xAxis
+        //xaxis.valueFormatter = axisFormatDelegate
+        xaxis.forceLabelsEnabled = true
+        xaxis.drawGridLinesEnabled = false
+        xaxis.labelPosition = .top
+        xaxis.centerAxisLabelsEnabled = true
+        xaxis.valueFormatter = IndexAxisValueFormatter(values:self.months)
+        xaxis.granularityEnabled = true
+        xaxis.granularity = 1
+    
+        
+        var defaultProduct:String = "Cihaz"
+        print(#function)
+        print(data.count)
+        var dataEntries: [BarChartDataEntry] = []
+        var dataEntries1: [BarChartDataEntry] = []
+        var chartDataSe: [BarChartDataSet] = [BarChartDataSet]()
+        
+       let filteredData = data.filter{($0.product_group==defaultProduct)}
+        
+        var xAxisData:[String] = []
+        for i in 0..<filteredData.count {
+            xAxisData.append(filteredData[i].employee)
+            let dataEntry = BarChartDataEntry(x: Double(i) , y: Double(filteredData[i].sales))
+            dataEntries.append(dataEntry)
+            
+            let dataEntry1 = BarChartDataEntry(x: Double(i) , y: Double(filteredData[i].expectation))
+            dataEntries1.append(dataEntry1)
+
+        }
+        
+        xaxis.valueFormatter = IndexAxisValueFormatter(values:xAxisData)
+
+        let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Satış")
+        let chartDataSet1 = BarChartDataSet(entries: dataEntries1, label: "Hedef")
+        
+        let dataSets: [BarChartDataSet] = [chartDataSet, chartDataSet1]
+        chartDataSet.colors = [UIColor(red: 0/255, green: 255/255, blue: 0/255, alpha: 0.5)]
+        chartDataSet1.colors = [UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 0.8)]
+
+        //chartDataSet.colors = ChartColorTemplates.colorful()
+        //let chartData = BarChartData(dataSet: chartDataSet)
+        let chartData = BarChartData(dataSets: dataSets)
+        let groupSpace = 0.5
+        let barSpace = 0.3
+        let barWidth = groupSpace
+        
+        let groupCount = data.count
+        let startYear = 0
+        
+        chartData.barWidth = barWidth;
+        barChartView.xAxis.axisMinimum = Double(startYear)
+        let gg = chartData.groupWidth(groupSpace: groupSpace, barSpace: barSpace)
+        
+        barChartView.xAxis.axisMaximum = Double(startYear) + gg * Double(groupCount)
+        
+        chartData.groupBars(fromX: Double(startYear), groupSpace: groupSpace, barSpace: barSpace)
+        
+        barChartView.data = chartData
+        
+        barChartView.setVisibleXRangeMaximum(15)
+        barChartView.animate(yAxisDuration: 1.0, easingOption: .easeInOutBounce)
+    }
     
     
 }

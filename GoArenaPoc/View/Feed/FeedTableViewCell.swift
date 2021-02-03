@@ -81,7 +81,7 @@ class FeedTableViewCell: UITableViewCell {
         let icon = UIImage(named: "heart")
         likeButton.setImage(icon!)
         likeButton.semanticContentAttribute = .forceLeftToRight
-        likeButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 12);
+        likeButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 5);
         
         commentsButton = SPButton()
         commentsButton.translatesAutoresizingMaskIntoConstraints = false

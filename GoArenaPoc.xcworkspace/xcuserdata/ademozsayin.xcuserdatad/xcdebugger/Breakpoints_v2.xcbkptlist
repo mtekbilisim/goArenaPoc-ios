@@ -14,8 +14,8 @@
             filePath = "GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "622"
-            endingLineNumber = "622"
+            startingLineNumber = "621"
+            endingLineNumber = "621"
             landmarkName = "addAccessory()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "660"
-            endingLineNumber = "660"
+            startingLineNumber = "659"
+            endingLineNumber = "659"
             landmarkName = "calculateCharacters()"
             landmarkType = "7">
          </BreakpointContent>
@@ -205,8 +205,8 @@
             filePath = "GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "632"
-            endingLineNumber = "632"
+            startingLineNumber = "631"
+            endingLineNumber = "631"
             landmarkName = "deletePhotoImage(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -501,7 +501,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E392F298-D509-4045-A1ED-E8DBEDE0B301"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Networking/Manager/NetworkManager.swift"
@@ -517,7 +517,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D50EDF35-065C-4BEC-ABC4-FD87B9D34686"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Networking/Manager/NetworkManager.swift"
@@ -533,7 +533,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "4D95E823-32FB-4E3B-B197-5684C35E3E1A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Networking/Manager/NetworkManager.swift"
@@ -549,7 +549,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "380DDAAF-4628-457B-83BD-58D334DEEE8B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Networking/Manager/NetworkManager.swift"
@@ -581,7 +581,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8A2FACC1-ED1A-44CD-BB35-59CFB8A289AE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Networking/Manager/NetworkManager.swift"
@@ -763,13 +763,13 @@
             filePath = "GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "487"
-            endingLineNumber = "487"
+            startingLineNumber = "486"
+            endingLineNumber = "486"
             landmarkName = "uploadVideo(video:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "4C6AE854-EE29-4F75-82BF-605E655C21A2 - e40ede4f1595009b"
+                  uuid = "4C6AE854-EE29-4F75-82BF-605E655C21A2 - e40ede4f15950174"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -779,12 +779,12 @@
                   urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "487"
-                  endingLineNumber = "487"
+                  startingLineNumber = "486"
+                  endingLineNumber = "486"
                   offsetFromSymbolStart = "176">
                </Location>
                <Location
-                  uuid = "4C6AE854-EE29-4F75-82BF-605E655C21A2 - 3acb19719844b4c1"
+                  uuid = "4C6AE854-EE29-4F75-82BF-605E655C21A2 - 3acb19719844b4e0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -794,8 +794,8 @@
                   urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/AddPost/AddPostViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "488"
-                  endingLineNumber = "488"
+                  startingLineNumber = "487"
+                  endingLineNumber = "487"
                   offsetFromSymbolStart = "236">
                </Location>
             </Locations>
@@ -821,7 +821,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "043BF3F2-CDED-40FA-A6B2-BEDE962DAD11"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Controller/Feed/FeedViewController.swift"
@@ -837,7 +837,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F716947D-19EC-4310-ABBF-C392143CD8FA"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Controller/Feed/FeedViewController.swift"
@@ -853,7 +853,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A89DFF56-2B38-462B-ADA1-9C22C2DC4E98"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Controller/Feed/FeedViewController.swift"
@@ -863,13 +863,45 @@
             endingLineNumber = "50"
             landmarkName = "getFeeds()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A89DFF56-2B38-462B-ADA1-9C22C2DC4E98 - 56288439e936b7f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;Swift.Array&lt;GoArenaPoc.Feed&gt;&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.FeedViewController.getFeeds() -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/Feed/FeedViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "620">
+               </Location>
+               <Location
+                  uuid = "A89DFF56-2B38-462B-ADA1-9C22C2DC4E98 - f484c38ecbf64afc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;Swift.Array&lt;GoArenaPoc.Feed&gt;&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.FeedViewController.getFeeds() -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/Feed/FeedViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "63F34767-4C00-492F-896E-2E7305431410"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Controller/Feed/FeedViewController.swift"
@@ -885,7 +917,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6C4ADE13-2A72-4AC1-A1A5-7BE3925C4C1C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Controller/Feed/FeedViewController.swift"
@@ -895,6 +927,38 @@
             endingLineNumber = "58"
             landmarkName = "getFeeds()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C4ADE13-2A72-4AC1-A1A5-7BE3925C4C1C - 56288439e936b10b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;Swift.Array&lt;GoArenaPoc.Feed&gt;&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.FeedViewController.getFeeds() -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/Feed/FeedViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1412">
+               </Location>
+               <Location
+                  uuid = "6C4ADE13-2A72-4AC1-A1A5-7BE3925C4C1C - 885098f36f6791da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;Swift.Array&lt;GoArenaPoc.Feed&gt;&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.FeedViewController.getFeeds() -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/Feed/FeedViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1061,7 +1125,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6D799300-2341-44C0-8BCB-388ADA58DC65"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
@@ -1077,7 +1141,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0B4308ED-0617-422A-8553-B6D7F09A29B2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
@@ -1125,7 +1189,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "10E16FA7-CB04-4D5F-B1A2-6EED184CC1C0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
@@ -1157,7 +1221,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "22683338-5B39-47CA-8B55-7CEF84E3436E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Controller/OnBoarding/SplashViewController.swift"
@@ -1179,8 +1243,8 @@
             filePath = "GoArenaPoc/Networking/Manager/NetworkManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "sendRequest(route:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1189,7 +1253,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "488ABBC8-00DE-4173-8BCA-9AD3D82BC5C2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoArenaPoc/Networking/Manager/NetworkManager.swift"
@@ -1199,6 +1263,326 @@
             endingLineNumber = "52"
             landmarkName = "sendRequest(route:_:_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "01A5DEB4-0391-4CCB-99DC-7A6073ED48DB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Networking/Manager/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "sendRequest(route:_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "01A5DEB4-0391-4CCB-99DC-7A6073ED48DB - 42a211ce1021a829"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in GoArenaPoc.NetworkManager.sendRequest&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(route: GoArenaPoc.GoArenaApi, _: Swift.Optional&lt;A.Type&gt;, _: (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;A&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Networking/Manager/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "2557">
+               </Location>
+               <Location
+                  uuid = "01A5DEB4-0391-4CCB-99DC-7A6073ED48DB - 42a211ce1021a829"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in GoArenaPoc.NetworkManager.sendRequest&lt;A where A: Swift.Decodable, A: Swift.Encodable&gt;(route: GoArenaPoc.GoArenaApi, _: Swift.Optional&lt;A.Type&gt;, _: (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;A&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Networking/Manager/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "3431">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1428686-1BD7-4896-9B1A-431C6EAD17FC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B07CBA89-E3A1-4361-9558-2F3FBE57DC09"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/View/Dashboard/BarChartTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "setData(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5AA7486-8BD4-4BF4-90CE-DF1C9FC9FA77"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/View/Dashboard/BarChartTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "setData(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC63E53E-AEEE-4E4B-8FBD-2152CF2DA47F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/View/Dashboard/BarChartTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "setData(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "23ADC860-B280-46B7-8D59-42AC62F58CC6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/View/Dashboard/BarChartTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "setData(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D861DCB6-DF74-4559-B2BF-D0D317F277A4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/View/Dashboard/BarChartTableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "setData(data:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22916D1A-A65F-4B28-B9FF-0ABFEFD610FB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "getUserDashboardChartData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EB9D3CB5-240C-4CFA-B616-900ADFAD2F0A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getUserDashboardChartData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63698CC8-F3C7-4446-A28D-3D37343591CF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "getUserDashboardChartData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2223282A-1C11-4FE2-8DE0-09F0D1669DED"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getUserDashboardChartData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2223282A-1C11-4FE2-8DE0-09F0D1669DED - 22234513709a3752"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;Swift.Array&lt;GoArenaPoc.DashboardChart&gt;&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.DashboardViewController.getUserDashboardChartData() -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "532">
+               </Location>
+               <Location
+                  uuid = "2223282A-1C11-4FE2-8DE0-09F0D1669DED - cfd077fd5200f30"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;Swift.Array&lt;GoArenaPoc.DashboardChart&gt;&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.DashboardViewController.getUserDashboardChartData() -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DFFA425-4893-4C82-8BEA-A2B6D4528318"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "getUserDashboardChartData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D109F3F2-D89A-4AB5-942C-808B34267CF9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getUserDashboardChartData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B07D4F4D-9F4C-4C46-B47F-AB61A0DC5C3C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "getUserDashboardChartData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B07D4F4D-9F4C-4C46-B47F-AB61A0DC5C3C - 22234513709a3898"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;Swift.Array&lt;GoArenaPoc.DashboardChart&gt;&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.DashboardViewController.getUserDashboardChartData() -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "1108">
+               </Location>
+               <Location
+                  uuid = "B07D4F4D-9F4C-4C46-B47F-AB61A0DC5C3C - 87897eb43eb1acfc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 (Swift.Optional&lt;GoArenaPoc.ResponseModel&lt;Swift.Array&lt;GoArenaPoc.DashboardChart&gt;&gt;&gt;, Swift.Optional&lt;Swift.String&gt;) -&gt; () in GoArenaPoc.DashboardViewController.getUserDashboardChartData() -&gt; ()"
+                  moduleName = "GoArenaPoc"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ademozsayin/Desktop/GoArenaPoc/GoArenaPoc/Controller/Dashboard/DashboardViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

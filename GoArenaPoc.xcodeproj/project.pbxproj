@@ -20,6 +20,7 @@
 		0D80B74725C9F08200D9F0A2 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B74625C9F08200D9F0A2 /* ReportTableViewCell.swift */; };
 		0D80B76325CA022E00D9F0A2 /* EditFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B76225CA022E00D9F0A2 /* EditFeedViewController.swift */; };
 		0D80B76825CA72BA00D9F0A2 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B76725CA72BA00D9F0A2 /* AuthResponse.swift */; };
+		0D80B76F25CAB2D600D9F0A2 /* DashboardChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D80B76E25CAB2D600D9F0A2 /* DashboardChart.swift */; };
 		0D9FA8DD25C458DD00EF7A7B /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */; };
 		0D9FA8ED25C46B4600EF7A7B /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E725C46B4600EF7A7B /* Type.swift */; };
 		0D9FA8EE25C46B4600EF7A7B /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9FA8E825C46B4600EF7A7B /* Version.swift */; };
@@ -279,6 +280,7 @@
 		0D80B74625C9F08200D9F0A2 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
 		0D80B76225CA022E00D9F0A2 /* EditFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFeedViewController.swift; sourceTree = "<group>"; };
 		0D80B76725CA72BA00D9F0A2 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		0D80B76E25CAB2D600D9F0A2 /* DashboardChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardChart.swift; sourceTree = "<group>"; };
 		0D9FA8DC25C458DD00EF7A7B /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		0D9FA8E725C46B4600EF7A7B /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		0D9FA8E825C46B4600EF7A7B /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
@@ -1401,6 +1403,7 @@
 				0D80B73525C9D7D000D9F0A2 /* Sale.swift */,
 				0D80B73A25C9D87700D9F0A2 /* Shop.swift */,
 				0D80B73F25C9D89B00D9F0A2 /* Expectation.swift */,
+				0D80B76E25CAB2D600D9F0A2 /* DashboardChart.swift */,
 			);
 			path = Employee;
 			sourceTree = "<group>";
@@ -1763,6 +1766,7 @@
 				0DB7E35525C1DB7E00117844 /* SPLarkSettingsCollectionView.swift in Sources */,
 				0DE07D5B25C96A00002BCCFC /* Media.swift in Sources */,
 				0DB7E2E625C1DB7E00117844 /* SPTableView.swift in Sources */,
+				0D80B76F25CAB2D600D9F0A2 /* DashboardChart.swift in Sources */,
 				0D9FA8F025C46B4600EF7A7B /* Size.swift in Sources */,
 				0DB7E34025C1DB7E00117844 /* SPBufer.swift in Sources */,
 				0DB7E2DD25C1DB7E00117844 /* SPFormTextFiledTableViewCell.swift in Sources */,

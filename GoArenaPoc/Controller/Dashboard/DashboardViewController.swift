@@ -7,22 +7,38 @@
 
 import UIKit
 
+//struct ProductGroupName:Codable {
+
 class DashboardViewController: ViewController {
 
     var tableView = UITableView()
-    var sales:[Sale] = []
+
+    var usertChart:[DashboardChart] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Dashboard"
         setupView()
-        
-        getSalesForEmployee()
+        getUserDashboardChartData()
+
     }
     
-    func getSalesForEmployee() {
-        networkManager.sendRequest(route: .employeeSalesWithShopId, [Sale].self) { [weak self] (result, error) in
+    func getUserDashboardChartData() {
+        guard let userId = User.currentUser()?.id else { return }
+        self.showLoading()
+        self.networkManager.sendRequest(route: .dashboardChartUser(userId: 14), [DashboardChart].self) {[weak self] (result, error) in
             guard let self = self else { return }
-            
+            if let _ = error {
+                DispatchQueue.main.async {
+                    self.hideLoading()
+                }
+            }
+            if let result = result {
+                self.usertChart = result.data ?? []
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.hideLoading()
+                }
+            }
         }
     }
 }
@@ -45,7 +61,7 @@ extension DashboardViewController {
 extension DashboardViewController:UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,24 +69,19 @@ extension DashboardViewController:UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: BarChartTableViewCell.identifier, for: indexPath) as! BarChartTableViewCell
             cell.contentView.isUserInteractionEnabled = false
-            cell.setDataCount(4, range: 4)
+            cell.setData(data: self.usertChart)
+            //cell.setDataCount(4, range: 4)
             return cell
-        } else  if indexPath.row == 1{
+        } else  {
             let cell = tableView.dequeueReusableCell(withIdentifier: DashboardLineTableCell.identifier, for: indexPath) as! DashboardLineTableCell
             cell.contentView.isUserInteractionEnabled = false
-            cell.setDataCount(5, range: 31)
+            cell.setDataCount(5, range: 2)
             return cell
-        } else {
-            return UITableViewCell()
         }
     }
             
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 2 {
-            return CGFloat(sales.count > 0 ? sales.count * 60 : 0)
-        } else {
-            return 500//UITableView.automaticDimension
-        }
+      return 500//UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

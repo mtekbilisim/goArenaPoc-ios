@@ -31,6 +31,8 @@ public enum GoArenaApi {
 
     case sales
     case employeeSalesWithShopId
+    case getExpectationWithEmployeeAndShopId
+    case dashboardChartUser(userId:Int)
     
     case getToken(email:String, password:String)
     case me
@@ -91,6 +93,9 @@ extension GoArenaApi: EndPointType {
             return "dashboard"
         case .employeeSalesWithShopId:
             return "dashboard"
+            
+        case .getExpectationWithEmployeeAndShopId:
+            return "dashboard/expectations"
          // end path
         
         // MARK: - AUTH
@@ -100,6 +105,9 @@ extension GoArenaApi: EndPointType {
        
         case .me:
             return "authentication/me"
+            
+        case .dashboardChartUser(let userId):
+            return "dashboard/charts/shop/\(userId)/employees"
         }
             
     }
@@ -130,12 +138,17 @@ extension GoArenaApi: EndPointType {
         case .employeeSalesWithShopId:
             return .get
             
+        case .getExpectationWithEmployeeAndShopId:
+            return .get
+            
         case .getToken:
             return .post
             
         case .me:
             return .get
 
+        case .dashboardChartUser:
+            return .get
         
         // end httpMethod
 
@@ -200,8 +213,14 @@ extension GoArenaApi: EndPointType {
             
         case .me:
             return .requestParametersAndHeaders(bodyParameters: nil, bodyEncoding: .jsonEncoding, urlParameters: nil, additionHeaders: headers)
+            
+            
+        case .getExpectationWithEmployeeAndShopId:
+            return .requestParameters(bodyParameters: nil, bodyEncoding: .urlEncoding, urlParameters: ["employee":8,"shop":3])
+            
+        case .dashboardChartUser:
+            return .request
         // end task
-
         }
     }
     // MARK: - HTTPHeaders

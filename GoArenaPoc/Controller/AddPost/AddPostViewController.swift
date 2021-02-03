@@ -377,7 +377,6 @@ class AddPostViewController: ViewController {
                 updateFeed(feed:updatedItem)
             }
         }
-        
     }
     
     func updateFeed(feed:Feed) {

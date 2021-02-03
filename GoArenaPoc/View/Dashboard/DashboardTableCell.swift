@@ -97,12 +97,22 @@ class DashboardLineTableCell: UITableViewCell, ChartViewDelegate, IAxisValueForm
             if i == 0 {
                 val = 0.0
             } else {
-                val = Double(arc4random_uniform(range) + 79)
+                val = Double(arc4random_uniform(range) + 39)
+            }
+            return ChartDataEntry(x: Double(i), y: val)
+        }
+        
+        let yVals3 = (0..<count).map { (i) -> ChartDataEntry in
+            var val : Double = 0.0
+            if i == 0 {
+                val = 0.0
+            } else {
+                val = Double(arc4random_uniform(range) + 49)
             }
             return ChartDataEntry(x: Double(i), y: val)
         }
 
-        let set1: LineChartDataSet = LineChartDataSet(entries: yVals1, label: "Telefon")
+        let set1: LineChartDataSet = LineChartDataSet(entries: yVals1, label: "TELKO")
 
         set1.axisDependency = .left
         set1.setColor(UIColor.init(hex: "059FE7"))
@@ -115,7 +125,7 @@ class DashboardLineTableCell: UITableViewCell, ChartViewDelegate, IAxisValueForm
         set1.highlightColor = UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
         set1.drawCircleHoleEnabled = true
 
-        let set2: LineChartDataSet = LineChartDataSet(entries: yVals2, label: "Tablet")
+        let set2: LineChartDataSet = LineChartDataSet(entries: yVals2, label: "Cihaz")
         set2.axisDependency = .right
         set2.setColor(UIColor.init(hex: "F0E204"))
         set2.setCircleColor(.white)
@@ -126,8 +136,20 @@ class DashboardLineTableCell: UITableViewCell, ChartViewDelegate, IAxisValueForm
         set2.fillColor = .blue
         set2.highlightColor = SPNativeColors.purple
         set2.drawCircleHoleEnabled = true
+        
+        let set3: LineChartDataSet = LineChartDataSet(entries: yVals3, label: "Aksesuar")
+        set3.axisDependency = .right
+        set3.setColor(SPNativeColors.orange)
+        set3.setCircleColor(.white)
+        set3.lineWidth = 2
+        set3.circleRadius = 5
+        set3.fillAlpha = 65/255
+        set3.mode = .cubicBezier
+        set3.fillColor = SPNativeColors.orange
+        set3.highlightColor = SPNativeColors.purple
+        set3.drawCircleHoleEnabled = true
 
-        let lineChartData = LineChartData(dataSets: [set1, set2])
+        let lineChartData = LineChartData(dataSets: [set1, set2, set3])
 
         lineChartData.setValueTextColor(SPNativeColors.white)
         lineChartData.setValueFont(AppAppearance.thirteen!)
