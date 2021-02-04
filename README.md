@@ -98,11 +98,7 @@ Uygulamayı kendi tarafınızda kurabilmek ve çalıştırabilmek için aşağı
 
 4.Open Xcode with .xcworkspace file. Build and Run 
  
- <!-- CONTRIBUTING -->
-## Katılım
-
-Katılım projenin bir POC olması sebebi ile **kapatılmıştır**. Ancak projemizi beğendiyseniz paylaşıma açığız. Bu sebeple MIT lisansını tercih ettik.</br>
-[![LinkedIn][linkedin-shield]][linkedin-url]
+ 
 <!-- LICENSE -->
 ## Lisans
 
