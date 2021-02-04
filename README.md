@@ -49,7 +49,7 @@ Bu bölümde oluşturduğumuz kullandığımız ana kütüphaneler, çatı ve 3n
 * [Swift](https://developer.apple.com/swift/)
 * [MVC](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
 * [Navigation](https://developer.apple.com/documentation/uikit/uitabbarcontroller)
-* [CocoaPods - Dependency manager] https://cocoapods.org/ 
+* [Dependency manager] https://cocoapods.org/ 
 * [YPImagePicker](https://github.com/Yummypets/YPImagePicker)
 * [SDWebImage](https://github.com/SDWebImage/SDWebImage)
 * [Charts](https://github.com/danielgindi/Charts)
@@ -88,11 +88,17 @@ Uygulamayı kendi tarafınızda kurabilmek ve çalıştırabilmek için aşağı
    ```sh
    git clone https://github.com/mtekbilisim/goArenaPoc-ios
    ```
-2. pod init
+2. 
 
-3.pod install
+ ```sh
+   pod init
+   ```
 
-4.Build
+3. ```sh
+   pod install
+   ```
+
+4.Run
  
  <!-- CONTRIBUTING -->
 ## Katılım
