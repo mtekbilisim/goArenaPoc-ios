@@ -88,9 +88,7 @@ Uygulamayı kendi tarafınızda kurabilmek ve çalıştırabilmek için aşağı
    ```sh
    git clone https://github.com/mtekbilisim/goArenaPoc-ios
    ```
-2. 
-
- ```sh
+2. ```sh
    pod init
    ```
 
@@ -98,7 +96,7 @@ Uygulamayı kendi tarafınızda kurabilmek ve çalıştırabilmek için aşağı
    pod install
    ```
 
-4.Run
+4.Open Xcode with .xcworkspace file. Build and Run 
  
  <!-- CONTRIBUTING -->
 ## Katılım
