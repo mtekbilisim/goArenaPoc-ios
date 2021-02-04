@@ -59,7 +59,7 @@ Bu bölümde oluşturduğumuz kullandığımız ana kütüphaneler, çatı ve 3n
 <br />
 <p align="center">
   <a href="https://github.com/mtekbilisim">
-    <img src="https://user-images.githubusercontent.com/34453671/106795233-e20cfa80-666a-11eb-8cb1-22e9c9c85409.png" alt="Logo">
+    <img src="https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Art/model_view_controller_2x.png" alt="Logo">
   </a>
 </p>
 
